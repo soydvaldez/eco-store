@@ -1,0 +1,44 @@
+body.dark {
+  background-color: #474747;
+}
+body.dark nav p {
+  color: #ddbd11;
+}
+body.dark nav .icons svg path {
+  stroke: #ddbd11;
+}
+body.dark article h1 {
+  color: #ddbd11;
+}
+body.dark article p {
+  color: #ddbd11;
+}
+body.dark section h2 {
+  color: #ddbd11;
+}
+body.dark section .healthcare, body.dark section .furniture {
+  background-color: #474747;
+}
+body.dark section .healthcare .card-section .product-card, body.dark section .furniture .card-section .product-card {
+  background-color: #f3f2f2;
+}
+body.dark section .healthcare .card-section .product-card h3, body.dark section .furniture .card-section .product-card h3 {
+  color: rgb(117, 117, 117);
+  font-weight: 700;
+}
+body.dark section .healthcare .card-section .product-card p, body.dark section .furniture .card-section .product-card p {
+  color: rgb(117, 117, 117);
+}
+body.dark section .furniture .card-section .product-card h3 {
+  color: rgb(67, 67, 67);
+  font-weight: 700;
+}
+body.dark section .furniture .card-section .product-card p {
+  color: rgb(67, 67, 67);
+}
+body.dark .main-section {
+  background-color: #474747;
+}
+body.dark .earth svg path, body.dark .innovation svg path {
+  fill: #ddbd11;
+}/*# sourceMappingURL=dark-mode.css.map */

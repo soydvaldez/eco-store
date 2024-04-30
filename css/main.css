@@ -1,0 +1,556 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #ffefe7;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+nav {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #7c6a0a;
+  padding: 15px 20px;
+}
+nav p {
+  font-size: 1.5em;
+  padding-left: 15px;
+}
+nav .icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+nav .icons button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+nav .icons button:hover {
+  opacity: 0.5;
+}
+
+article {
+  width: auto;
+  color: #7c6a0a;
+  padding: 0px 30px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+article .impact-section {
+  text-align: center;
+}
+article .impact-section h1 {
+  text-align: left;
+  margin: 10px 0;
+  font-size: 25px;
+}
+article .impact-section p {
+  width: 100%;
+  text-align: justify;
+  margin: 20px 0px;
+  font-size: 15px;
+}
+article .impact-section button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+article .impact-section button:hover {
+  opacity: 0.5;
+}
+article .impact-section button:hover {
+  transform: scale(1.1);
+  animation: aumento 5s ease-in-out infinite 0.4s;
+}
+@keyframes aumento {
+  0% {
+    background-color: #fa9500;
+  }
+  20% {
+    background-color: #ffd6be;
+    color: #fa9500;
+  }
+  50% {
+    background: #ffd6be;
+    color: #fa6800;
+  }
+  80% {
+    background-color: #ffd6be;
+    color: #fa9500;
+  }
+  100% {
+    background-color: #fa9500;
+  }
+}
+article .impact-section button {
+  background-color: #fa9500;
+  color: #fff;
+  width: 150px;
+  padding: 20px;
+  border-radius: 35px;
+  font-size: 1em;
+}
+article img {
+  width: 50vw;
+  border-radius: 35px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-width: 280px;
+}
+
+section h2 {
+  font-weight: 300;
+  color: #7c6a0a;
+  margin: 60px 0 30px 30px;
+}
+section .healthcare .card-section, section .furniture .card-section {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: scroll;
+  gap: 30px;
+  justify-content: space-evenly;
+}
+section .healthcare .card-section .product-card, section .furniture .card-section .product-card {
+  width: auto;
+  height: auto;
+  background-color: #ffdac6;
+  color: #7c6a0a;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+section .healthcare .card-section .product-card .icon, section .furniture .card-section .product-card .icon {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 0;
+}
+section .healthcare .card-section .product-card .icon svg, section .furniture .card-section .product-card .icon svg {
+  width: 24px;
+  height: 24px;
+}
+section .healthcare .card-section .product-card .icon svg path, section .furniture .card-section .product-card .icon svg path {
+  stroke: #7c6a0a;
+}
+section .healthcare .card-section .product-card .product-image, section .furniture .card-section .product-card .product-image {
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+section .healthcare .card-section .product-card .product-image img, section .furniture .card-section .product-card .product-image img {
+  width: 30vw;
+  min-width: 200px;
+  height: 35vw;
+  min-height: 240px;
+  border-radius: 6px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section .healthcare .card-section .product-card .card-description, section .furniture .card-section .product-card .card-description {
+  width: 100%;
+  height: 100%;
+  padding: 0px 15px;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+section .healthcare .card-section .product-card:first-child, section .furniture .card-section .product-card:first-child {
+  margin-left: 30px;
+}
+section .healthcare .card-section .product-card:last-child, section .furniture .card-section .product-card:last-child {
+  margin-right: 30px;
+}
+section .healthcare .card-section::-webkit-scrollbar, section .furniture .card-section::-webkit-scrollbar {
+  display: none;
+}
+
+main {
+  background-color: #ffefe7;
+}
+main .about-us .mision-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+main .about-us .mision-section .earth, main .about-us .mision-section .innovation {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+main .about-us .mision-section .earth img, main .about-us .mision-section .innovation img {
+  width: 30vw;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main .about-us .mision-section .earth p, main .about-us .mision-section .innovation p {
+  width: 60%;
+  font-size: 13.5px;
+  color: #e86424;
+  text-align: center;
+}
+main .gallery {
+  margin-top: 60px;
+}
+main .gallery h2 {
+  margin-top: 0;
+}
+main .gallery .gallery-images {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 54px;
+}
+main .gallery .gallery-images img {
+  border-radius: 16px;
+  width: 80vw;
+  height: 40vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.4s;
+}
+main .gallery .gallery-images img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+main .location {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+main .location .map {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  margin-left: 30px;
+  border-radius: 20px;
+}
+main .location .map img {
+  width: auto;
+  height: 60vh;
+  margin: 0 200px;
+}
+main .location .address h3,
+main .location .address p {
+  color: #e86424;
+  font-weight: 300;
+}
+main .location .address h3 {
+  margin-top: 45px;
+  margin-left: 30px;
+  font-size: 20px;
+  width: 50%;
+  margin-bottom: 15px;
+}
+main .location .address p {
+  margin-left: 30px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  background-color: #fa9500;
+}
+footer h3,
+footer p {
+  color: #fff;
+}
+footer h3 {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+footer p {
+  margin-left: 30px;
+  margin-top: 15px;
+}
+footer p:last-child {
+  margin-bottom: 20px;
+}
+footer .social-media {
+  width: 50%;
+  display: flex;
+  margin-top: 25px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .social-media img {
+  width: 25px;
+}
+
+@media (900px <= width) {
+  nav {
+    height: 100px;
+    padding: 15px 90px;
+  }
+  nav p {
+    font-size: 1.3em;
+    padding-left: 0px;
+  }
+  nav .icons {
+    gap: 50px;
+  }
+  article {
+    width: auto;
+    margin: 0 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 90px;
+  }
+  article .impact-section {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  article .impact-section h1 {
+    font-size: 60px;
+    margin: 0;
+  }
+  article .impact-section p {
+    width: 80%;
+    font-size: 1.5em;
+  }
+  article .impact-section button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  article .impact-section button:hover {
+    opacity: 0.5;
+  }
+  article .impact-section button {
+    background-color: #fa9500;
+    width: 250px;
+    margin-bottom: 180px;
+    font-size: 15px;
+  }
+  article .image-section img {
+    width: 30vw;
+    max-width: 530px;
+    border-radius: 35px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  section {
+    width: 100%;
+    height: auto;
+    padding: 0 60px;
+  }
+  section h2 {
+    color: #7c6a0a;
+    font-size: 35px;
+    font-weight: 300;
+    padding-bottom: 60px;
+    margin-left-top: 10px;
+    margin-left-bottom: 10px;
+    margin-left-lef: 45px;
+  }
+  section .healthcare, section .furniture {
+    padding-bottom: 60px;
+  }
+  section .healthcare .card-section, section .furniture .card-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    row-gap: 50px;
+  }
+  section .healthcare .card-section .product-card, section .furniture .card-section .product-card {
+    width: 24vw;
+    max-width: 550px;
+    height: auto;
+    background-color: #ffdac6;
+    color: #7c6a0a;
+    padding: 10px 12px;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
+  section .healthcare .card-section .product-card .icon, section .furniture .card-section .product-card .icon {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 15px;
+  }
+  section .healthcare .card-section .product-card .icon svg, section .furniture .card-section .product-card .icon svg {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+  section .healthcare .card-section .product-card .icon svg:active, section .furniture .card-section .product-card .icon svg:active {
+    fill: #7c6a0a;
+  }
+  section .healthcare .card-section .product-card .icon svg path, section .furniture .card-section .product-card .icon svg path {
+    stroke: #7c6a0a;
+    transition: all 0.5s ease-in-out;
+  }
+  section .healthcare .card-section .product-card .icon svg:hover path, section .furniture .card-section .product-card .icon svg:hover path {
+    stroke: #7c6a0a;
+    transition: all 0.5s ease-in-out;
+  }
+  section .healthcare .card-section .product-card .product-image, section .furniture .card-section .product-card .product-image {
+    width: 100%;
+    max-height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  section .healthcare .card-section .product-card .product-image img, section .furniture .card-section .product-card .product-image img {
+    width: 80%;
+    height: 400px;
+    max-width: 400px;
+    max-height: 500px;
+    border-radius: 6px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  section .healthcare .card-section .product-card .card-description, section .furniture .card-section .product-card .card-description {
+    width: 80%;
+    min-width: 260px;
+    max-width: 340px;
+    height: auto;
+    padding: 0 30px;
+  }
+  section .healthcare .card-section .product-card:first-child, section .furniture .card-section .product-card:first-child {
+    margin-left: 0;
+  }
+  section .healthcare .card-section .product-card:last-child, section .furniture .card-section .product-card:last-child {
+    margin-right: 0;
+  }
+  main .info-section {
+    margin-bottom: 100px;
+  }
+  main .info-section .about-us {
+    margin: 50px 0;
+  }
+  main .info-section .about-us .mision-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    -moz-column-gap: 100px;
+         column-gap: 100px;
+  }
+  main .info-section .about-us .mision-section .earth, main .info-section .about-us .mision-section .innovation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  main .info-section .about-us .mision-section .earth img, main .info-section .about-us .mision-section .innovation img {
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 10vw;
+  }
+  main .info-section .about-us .mision-section .earth p, main .info-section .about-us .mision-section .innovation p {
+    width: 40%;
+    font-size: 1.3em;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #e86424;
+  }
+  main .info-section .gallery {
+    margin: 100px 0;
+  }
+  main .info-section .gallery .gallery-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  main .info-section .gallery .gallery-images img {
+    border-radius: 16px;
+    width: 28vw;
+    height: 34vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main .info-section .location {
+    width: 100%;
+  }
+  main .info-section .location .map {
+    border-radius: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  main .info-section .location .map img {
+    margin: 0;
+    width: 90%;
+    max-width: 1200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main .info-section .location .address h3,
+  main .info-section .location .address p {
+    margin-left: 30px;
+    padding: 0;
+  }
+  main .info-section .location .address h3 {
+    font-size: 27px;
+  }
+  main .info-section .location .address p {
+    font-size: 18px;
+  }
+}
+.furniture .product-card {
+  background-color: #babd8d !important;
+  height: 900px;
+  color: #fff !important;
+}
+
+footer .social-media {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}/*# sourceMappingURL=main.css.map */

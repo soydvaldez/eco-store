@@ -1,0 +1,613 @@
+$primary-color: #ffefe7;
+$secondary-color: #ffdac6;
+$thirdy-color: #babd8d;
+$fourthy-color: #fa9500;
+$primary-text-color: #7c6a0a;
+$font-stack: "IBM Plex Sans", sans-serif;
+$paragraph-size: 1.3em;
+
+@mixin flexProperties($direction, $content, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $align;
+}
+
+@mixin buttonStyle {
+  button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.5;
+  }
+}
+
+@mixin buttonAnimation {
+  button:hover {
+    transform: scale(1.1);
+    animation: aumento 5s ease-in-out infinite 0.4s;
+
+    @keyframes aumento {
+      0% {
+        background-color: #fa9500;
+      }
+      20% {
+        background-color: #ffd6be;
+        color: #fa9500;
+      }
+      50% {
+        background: #ffd6be;
+        color: #fa6800;
+      }
+      80% {
+        background-color: #ffd6be;
+        color: #fa9500;
+      }
+      100% {
+        background-color: #fa9500;
+      }
+    }
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: $primary-color;
+  font-family: $font-stack;
+}
+
+nav {
+  width: auto;
+  @include flexProperties(row, space-between, center);
+
+  color: $primary-text-color;
+  padding: 15px 20px;
+  p {
+    font-size: 1.5em;
+    padding-left: 15px;
+  }
+  .icons {
+    @include flexProperties(row, center, center);
+    gap: 20px;
+
+    @include buttonStyle;
+  }
+}
+
+article {
+  width: auto;
+  color: $primary-text-color;
+  padding: 0px 30px;
+  @include flexProperties(column-reverse, space-between, center);
+
+  .impact-section {
+    text-align: center;
+
+    h1 {
+      text-align: left;
+      margin: 10px 0;
+      font-size: 25px;
+    }
+
+    p {
+      width: 100%;
+      text-align: justify;
+      margin: 20px 0px;
+      font-size: 15px;
+    }
+
+    @include buttonStyle;
+    @include buttonAnimation;
+    button {
+      background-color: $fourthy-color;
+      color: #fff;
+      width: 150px;
+      padding: 20px;
+      border-radius: 35px;
+      font-size: 1em;
+    }
+  }
+
+  img {
+    width: 50vw;
+    border-radius: 35px;
+    object-fit: cover;
+    min-width: 280px;
+  }
+}
+
+section {
+  // width: 100%;
+  // height: auto;
+  // padding: 0 60px;
+
+  h2 {
+    font-weight: 300;
+    color: $primary-text-color;
+    margin: 60px 0 30px 30px;
+  }
+
+  .healthcare {
+    .card-section {
+      width: 100%;
+      display: grid;
+      grid-auto-flow: column;
+      overflow-x: scroll;
+      gap: 30px;
+      justify-content: space-evenly;
+
+      .product-card {
+        width: auto;
+        height: auto;
+        background-color: $secondary-color;
+        color: $primary-text-color;
+        padding: 10px 20px;
+
+        @include flexProperties(column, center, center);
+        border-radius: 8px;
+
+        .icon {
+          width: 100%;
+          @include flexProperties(row, flex-end, center);
+          padding: 10px 0;
+
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+          svg path {
+            stroke: $primary-text-color;
+          }
+        }
+
+        .product-image {
+          width: 100%;
+          // border: 1px solid #fa9500;
+          padding: 0 10px;
+          @include flexProperties(row, center, center);
+
+          img {
+            width: 30vw;
+            min-width: 200px;
+            height: 35vw;
+            min-height: 240px;
+            border-radius: 6px;
+            object-fit: cover;
+          }
+        }
+
+        .card-description {
+          width: 100%;
+          height: 100%;
+          padding: 0px 15px;
+          margin-top: 15px;
+          margin-bottom: 50px;
+        }
+      }
+
+      .product-card:first-child {
+        margin-left: 30px;
+      }
+
+      .product-card:last-child {
+        margin-right: 30px;
+      }
+    }
+
+    .card-section::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+main {
+  background-color: $primary-color;
+
+  .about-us {
+    .mision-section {
+      @include flexProperties(column, space-around, center);
+
+      .earth {
+        height: 200px;
+        @include flexProperties(column, space-evenly, center);
+        img {
+          width: 30vw;
+          object-fit: contain;
+        }
+        p {
+          width: 60%;
+          font-size: 13.5px;
+          color: #e86424;
+          text-align: center;
+        }
+      }
+
+      .innovation {
+        @extend .earth;
+      }
+    }
+  }
+
+  .gallery {
+    margin-top: 60px;
+
+    h2 {
+      margin-top: 0;
+    }
+    .gallery-images {
+      @include flexProperties(column, space-between, center);
+      row-gap: 54px;
+      img {
+        border-radius: 16px;
+        width: 80vw;
+        height: 40vh;
+        object-fit: cover;
+        transition: transform 0.4s;
+        &:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .location {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    .map {
+      width: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+
+      margin-left: 30px;
+      border-radius: 20px;
+
+      img {
+        width: auto;
+        height: 60vh;
+        margin: 0 200px;
+      }
+    }
+
+    .address {
+      h3,
+      p {
+        color: #e86424;
+        font-weight: 300;
+      }
+      h3 {
+        margin: {
+          top: 45px;
+          left: 30px;
+        }
+        font-size: 20px;
+        width: 50%;
+        margin-bottom: 15px;
+      }
+      p {
+        margin-left: 30px;
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  background-color: $fourthy-color;
+
+  h3,
+  p {
+    color: #fff;
+  }
+
+  h3 {
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  p {
+    margin: {
+      left: 30px;
+      top: 15px;
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 20px;
+  }
+
+  .social-media {
+    width: 50%;
+    display: flex;
+
+    margin: {
+      top: 25px;
+      left: 10px;
+      bottom: 25px;
+    }
+    justify-content: space-around;
+    align-items: center;
+    img {
+      width: 25px;
+    }
+  }
+}
+
+@media (900px <= width) {
+  nav {
+    height: 100px;
+    padding: 15px 90px;
+
+    p {
+      font-size: $paragraph-size;
+      padding-left: 0px;
+    }
+
+    .icons {
+      gap: 50px;
+    }
+  }
+  article {
+    width: auto;
+    margin: 0 65px;
+    @include flexProperties(row, space-between, center);
+
+    padding: 0px 90px;
+
+    .impact-section {
+      text-align: left;
+      @include flexProperties(column, space-around, flex-start);
+
+      h1 {
+        font-size: 60px;
+        margin: 0;
+      }
+
+      p {
+        width: 80%;
+        font-size: 1.5em;
+      }
+
+      @include buttonStyle;
+      button {
+        background-color: #fa9500;
+        width: 250px;
+        margin-bottom: 180px;
+        font-size: 15px;
+      }
+    }
+    .image-section {
+      img {
+        width: 30vw;
+        max-width: 530px;
+        border-radius: 35px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  section {
+    width: 100%;
+    height: auto;
+    padding: 0 60px;
+
+    h2 {
+      color: $primary-text-color;
+      font-size: 35px;
+      font-weight: 300;
+      padding-bottom: 60px;
+      margin-left: {
+        top: 10px;
+        bottom: 10px;
+        lef: 45px;
+      }
+    }
+
+    .healthcare {
+      padding-bottom: 60px;
+
+      .card-section {
+        @include flexProperties(row, space-around, flex-start);
+        flex-wrap: wrap;
+        width: auto;
+        height: auto;
+        row-gap: 50px;
+
+        .product-card {
+          width: 24vw;
+          max-width: 550px;
+          height: auto;
+          background-color: $secondary-color;
+          color: $primary-text-color;
+          padding: 10px 12px;
+          margin: 0;
+          padding: 0;
+          border-radius: 8px;
+          justify-content: space-evenly;
+          margin-top: 20px;
+          .icon {
+            width: 100%;
+            height: auto;
+            @include flexProperties(row, flex-end, center);
+            padding: 20px 15px;
+
+            svg {
+              width: 32px;
+              height: 32px;
+              cursor: pointer;
+            }
+
+            svg:active {
+              fill: $primary-text-color;
+            }
+
+            svg path {
+              stroke: $primary-text-color;
+              transition: all 0.5s ease-in-out;
+            }
+
+            svg:hover path {
+              stroke: $primary-text-color;
+              transition: all 0.5s ease-in-out;
+            }
+          }
+          .product-image {
+            width: 100%;
+            max-height: 400px;
+            @include flexProperties(row, center, center);
+
+            img {
+              width: 80%;
+              height: 400px;
+              max-width: 400px;
+              max-height: 500px;
+              border-radius: 6px;
+              object-fit: contain;
+            }
+          }
+
+          .card-description {
+            width: 80%;
+            min-width: 260px;
+            max-width: 340px;
+            height: auto;
+            padding: 0 30px;
+          }
+        }
+
+        .product-card:first-child {
+          margin-left: 0;
+        }
+
+        .product-card:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  main {
+    .info-section {
+      margin-bottom: 100px;
+      .about-us {
+        margin: 50px 0;
+
+        .mision-section {
+          @include flexProperties(row, space-evenly, center);
+          column-gap: 100px;
+          .earth {
+            @include flexProperties(row, center, center);
+
+            text-align: center;
+
+            img {
+              object-fit: contain;
+              width: 10vw;
+            }
+
+            p {
+              width: 40%;
+              font-size: $paragraph-size;
+              text-align: center;
+              letter-spacing: 2px;
+              color: #e86424;
+            }
+          }
+        }
+      }
+
+      .gallery {
+        margin: 100px 0;
+        .gallery-images {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+
+          img {
+            border-radius: 16px;
+            width: 28vw;
+            height: 34vh;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .location {
+        width: 100%;
+        .map {
+          border-radius: 20px;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          img {
+            margin: 0;
+            width: 90%;
+            max-width: 1200px;
+            object-fit: cover;
+          }
+        }
+
+        .address {
+          h3,
+          p {
+            margin-left: 30px;
+            padding: 0;
+          }
+
+          h3 {
+            font-size: 27px;
+          }
+
+          p {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.furniture {
+  @extend .healthcare;
+  .product-card {
+    background-color: $thirdy-color !important;
+    height: 900px;
+    color: #fff !important;
+  }
+}
+
+.innovation {
+  @extend .earth;
+}
+
+footer {
+  .social-media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+    // background-color: #e86424;
+  }
+}

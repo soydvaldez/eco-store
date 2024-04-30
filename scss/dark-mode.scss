@@ -1,0 +1,78 @@
+$primary-background-color: #474747;
+$primary-text-color: #ddbd11;
+
+body.dark {
+  background-color: $primary-background-color;
+
+  nav {
+    p {
+      color: $primary-text-color;
+    }
+
+    .icons {
+      svg path {
+        stroke: $primary-text-color;
+      }
+    }
+  }
+
+  article {
+    h1 {
+      color: $primary-text-color;
+    }
+
+    p {
+      color: $primary-text-color;
+    }
+  }
+
+  section {
+    h2 {
+      color: $primary-text-color;
+    }
+    .healthcare {
+      background-color: #474747;
+      .card-section {
+        .product-card {
+          background-color: #f3f2f2;
+          h3 {
+            color: rgb(117, 117, 117);
+            font-weight: 700;
+          }
+          p {
+            color: rgb(117, 117, 117);
+          }
+        }
+      }
+    }
+
+    .furniture {
+      @extend .healthcare;
+      .card-section {
+        .product-card {
+          h3 {
+            color: rgb(67 67 67);
+            font-weight: 700;
+          }
+          p {
+            color: rgb(67 67 67);
+          }
+        }
+      }
+    }
+  }
+
+  .main-section {
+    background-color: $primary-background-color;
+  }
+
+  .earth {
+    svg path {
+      fill: $primary-text-color;
+    }
+  }
+
+  .innovation {
+    @extend .earth;
+  }
+}
