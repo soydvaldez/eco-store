@@ -1,10 +1,15 @@
 $primary-color: #ffefe7;
+// $primary-color: #fff;
 $secondary-color: #ffdac6;
 $thirdy-color: #babd8d;
 $fourthy-color: #fa9500;
 $primary-text-color: #7c6a0a;
+// $primary-text-color: #cfb20e;
 $font-stack: "IBM Plex Sans", sans-serif;
 $paragraph-size: 1.3em;
+
+$sombraDark: 10px 10px 20px rgba(170, 170, 170, 0.16);
+$sombraLight: 10px 10px 20px rgba(0, 0, 0, 0.16);
 
 @mixin flexProperties($direction, $content, $align) {
   display: flex;
@@ -21,7 +26,7 @@ $paragraph-size: 1.3em;
   }
 
   button:hover {
-    opacity: 0.5;
+    opacity: 0.9;
   }
 }
 
@@ -64,15 +69,37 @@ body {
   height: 100vh;
   background-color: $primary-color;
   font-family: $font-stack;
+  padding-top: 130px;
+}
+
+header {
+  width: 100%;
+  max-height: 120px;
+  min-height: auto;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  scroll-padding-top: none;
+  scroll-margin-top: none;
+  transition: background 0.5s;
+  // background-color: #fce8de;
 }
 
 nav {
-  width: auto;
+  position: relative;
+  top: 10px;
+
   @include flexProperties(row, space-between, center);
 
   color: $primary-text-color;
-  padding: 15px 20px;
+  padding: 0 20px;
+  padding-top: 5px;
+  padding-bottom: 25px;
+  display: flex;
+  align-items: flex-end;
   p {
+    position: relative;
     font-size: 1.5em;
     padding-left: 15px;
   }
@@ -81,6 +108,65 @@ nav {
     gap: 20px;
 
     @include buttonStyle;
+
+    .profile,
+    .wishlist,
+    .cart {
+      display: none;
+    }
+
+    .toggle {
+      border-radius: 100px;
+      position: relative;
+      background-color: #404e7d;
+      border: 1px solid #989898;
+      transition: 0.5s ease all;
+      display: flex;
+      // Border por defecto agregado por google chrome
+      outline: none;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        background-color: #f1f1f1;
+        top: 0;
+        left: 0;
+        right: unset;
+        border-radius: 100px;
+        transition: 0.5s ease all;
+        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      &.active {
+        background-color: orange;
+        color: #000;
+        &::after {
+          right: 0;
+          left: unset;
+        }
+      }
+
+      span {
+        width: 35px;
+        height: 35px;
+        line-height: 40px;
+        display: block;
+        background-color: transparent;
+        color: #fff;
+
+        i {
+          font-size: 16px;
+        }
+      }
+
+      &:active {
+        background-color: transparent;
+        border-style: outset;
+      }
+    }
   }
 }
 
@@ -212,6 +298,7 @@ section {
 
 main {
   background-color: $primary-color;
+  transition: 0.5s ease all;
 
   .about-us {
     .mision-section {
@@ -352,17 +439,28 @@ footer {
 }
 
 @media (900px <= width) {
+  body {
+    margin-top: 50px;
+  }
   nav {
-    height: 100px;
-    padding: 15px 90px;
+    // background-color: #fce8de;
+    top: 0;
+    padding: 25px 90px;
+    transition: background ease 5s;
 
     p {
-      font-size: $paragraph-size;
+      font-size: 26px;
       padding-left: 0px;
     }
 
     .icons {
       gap: 50px;
+
+      .profile,
+      .wishlist,
+      .cart {
+        display: flex;
+      }
     }
   }
   article {
@@ -425,7 +523,7 @@ footer {
       padding-bottom: 60px;
 
       .card-section {
-        @include flexProperties(row, space-around, flex-start);
+        @include flexProperties(row, space-evenly, flex-start);
         flex-wrap: wrap;
         width: auto;
         height: auto;
@@ -610,4 +708,16 @@ footer {
     column-gap: 40px;
     // background-color: #e86424;
   }
+}
+
+// Efectos
+.test {
+  background-color: #fff;
+  transition: background 0.5s;
+  border-radius: 0 0 3px 3px;
+}
+
+.toggle-efect {
+  transition: left 5s;
+  transition: right 5s;
 }

@@ -1,10 +1,15 @@
 $primary-background-color: #474747;
 $primary-text-color: #ddbd11;
-
+$sombraDark: 10px 10px 20px rgba(170, 170, 170, 0.16);
 body.dark {
   background-color: $primary-background-color;
+  transition: 0.5s ease all;
 
   nav {
+    transition: 0.5s ease all;
+    // background-color: #474747;
+    box-shadow: $sombraDark;
+
     p {
       color: $primary-text-color;
     }

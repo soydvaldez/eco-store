@@ -9,18 +9,38 @@ body {
   height: 100vh;
   background-color: #ffefe7;
   font-family: "IBM Plex Sans", sans-serif;
+  padding-top: 130px;
+}
+
+header {
+  width: 100%;
+  max-height: 120px;
+  min-height: auto;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  scroll-padding-top: none;
+  scroll-margin-top: none;
+  transition: background 0.5s;
 }
 
 nav {
-  width: auto;
+  position: relative;
+  top: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   color: #7c6a0a;
-  padding: 15px 20px;
+  padding: 0 20px;
+  padding-top: 5px;
+  padding-bottom: 25px;
+  display: flex;
+  align-items: flex-end;
 }
 nav p {
+  position: relative;
   font-size: 1.5em;
   padding-left: 15px;
 }
@@ -37,7 +57,58 @@ nav .icons button {
   cursor: pointer;
 }
 nav .icons button:hover {
-  opacity: 0.5;
+  opacity: 0.9;
+}
+nav .icons .profile,
+nav .icons .wishlist,
+nav .icons .cart {
+  display: none;
+}
+nav .icons .toggle {
+  border-radius: 100px;
+  position: relative;
+  background-color: #404e7d;
+  border: 1px solid #989898;
+  transition: 0.5s ease all;
+  display: flex;
+  outline: none;
+}
+nav .icons .toggle::after {
+  content: "";
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  background-color: #f1f1f1;
+  top: 0;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: 0.5s ease all;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+nav .icons .toggle.active {
+  background-color: orange;
+  color: #000;
+}
+nav .icons .toggle.active::after {
+  right: 0;
+  left: unset;
+}
+nav .icons .toggle span {
+  width: 35px;
+  height: 35px;
+  line-height: 40px;
+  display: block;
+  background-color: transparent;
+  color: #fff;
+}
+nav .icons .toggle span i {
+  font-size: 16px;
+}
+nav .icons .toggle:active {
+  background-color: transparent;
+  border-style: outset;
 }
 
 article {
@@ -69,7 +140,7 @@ article .impact-section button {
   cursor: pointer;
 }
 article .impact-section button:hover {
-  opacity: 0.5;
+  opacity: 0.9;
 }
 article .impact-section button:hover {
   transform: scale(1.1);
@@ -187,6 +258,7 @@ section .healthcare .card-section::-webkit-scrollbar, section .furniture .card-s
 
 main {
   background-color: #ffefe7;
+  transition: 0.5s ease all;
 }
 main .about-us .mision-section {
   display: flex;
@@ -310,16 +382,25 @@ footer .social-media img {
 }
 
 @media (900px <= width) {
+  body {
+    margin-top: 50px;
+  }
   nav {
-    height: 100px;
-    padding: 15px 90px;
+    top: 0;
+    padding: 25px 90px;
+    transition: background ease 5s;
   }
   nav p {
-    font-size: 1.3em;
+    font-size: 26px;
     padding-left: 0px;
   }
   nav .icons {
     gap: 50px;
+  }
+  nav .icons .profile,
+  nav .icons .wishlist,
+  nav .icons .cart {
+    display: flex;
   }
   article {
     width: auto;
@@ -351,7 +432,7 @@ footer .social-media img {
     cursor: pointer;
   }
   article .impact-section button:hover {
-    opacity: 0.5;
+    opacity: 0.9;
   }
   article .impact-section button {
     background-color: #fa9500;
@@ -386,7 +467,7 @@ footer .social-media img {
   section .healthcare .card-section, section .furniture .card-section {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: flex-start;
     flex-wrap: wrap;
     width: auto;
@@ -553,4 +634,15 @@ footer .social-media {
   align-items: center;
   -moz-column-gap: 40px;
        column-gap: 40px;
+}
+
+.test {
+  background-color: #fff;
+  transition: background 0.5s;
+  border-radius: 0 0 3px 3px;
+}
+
+.toggle-efect {
+  transition: left 5s;
+  transition: right 5s;
 }/*# sourceMappingURL=main.css.map */
