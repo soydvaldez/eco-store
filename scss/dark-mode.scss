@@ -31,10 +31,11 @@ body.dark {
     }
   }
 
-  section {
+  .product-section {
     h2 {
       color: $primary-text-color;
     }
+
     .healthcare {
       background-color: #474747;
       .card-section {
@@ -44,11 +45,33 @@ body.dark {
             color: rgb(117, 117, 117);
             font-weight: 700;
           }
+
           p {
             color: rgb(117, 117, 117);
           }
         }
+
+        // Estilos actions
+        .product-card.selected {
+          background-color: yellowgreen;
+          h3,
+          p {
+            color: #fff;
+          }
+        }
+
+        .product-card.alert {
+          background-color: tomato;
+          h3,
+          p {
+            color: #fff;
+          }
+        }
       }
+
+      // .selected.product-card {
+      //   background-color: yellowgreen;
+      // }
     }
 
     .furniture {
@@ -80,4 +103,9 @@ body.dark {
   .innovation {
     @extend .earth;
   }
+}
+
+h1[title="main"] {
+  background-color: yellowgreen;
+  color: #fff;
 }

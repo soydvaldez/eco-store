@@ -18,27 +18,43 @@ body.dark article h1 {
 body.dark article p {
   color: #ddbd11;
 }
-body.dark section h2 {
+body.dark .product-section h2 {
   color: #ddbd11;
 }
-body.dark section .healthcare, body.dark section .furniture {
+body.dark .product-section .healthcare, body.dark .product-section .furniture {
   background-color: #474747;
 }
-body.dark section .healthcare .card-section .product-card, body.dark section .furniture .card-section .product-card {
+body.dark .product-section .healthcare .card-section .product-card, body.dark .product-section .furniture .card-section .product-card {
   background-color: #f3f2f2;
 }
-body.dark section .healthcare .card-section .product-card h3, body.dark section .furniture .card-section .product-card h3 {
+body.dark .product-section .healthcare .card-section .product-card h3, body.dark .product-section .furniture .card-section .product-card h3 {
   color: rgb(117, 117, 117);
   font-weight: 700;
 }
-body.dark section .healthcare .card-section .product-card p, body.dark section .furniture .card-section .product-card p {
+body.dark .product-section .healthcare .card-section .product-card p, body.dark .product-section .furniture .card-section .product-card p {
   color: rgb(117, 117, 117);
 }
-body.dark section .furniture .card-section .product-card h3 {
+body.dark .product-section .healthcare .card-section .product-card.selected, body.dark .product-section .furniture .card-section .product-card.selected {
+  background-color: yellowgreen;
+}
+body.dark .product-section .healthcare .card-section .product-card.selected h3, body.dark .product-section .furniture .card-section .product-card.selected h3,
+body.dark .product-section .healthcare .card-section .product-card.selected p,
+body.dark .product-section .furniture .card-section .product-card.selected p {
+  color: #fff;
+}
+body.dark .product-section .healthcare .card-section .product-card.alert, body.dark .product-section .furniture .card-section .product-card.alert {
+  background-color: tomato;
+}
+body.dark .product-section .healthcare .card-section .product-card.alert h3, body.dark .product-section .furniture .card-section .product-card.alert h3,
+body.dark .product-section .healthcare .card-section .product-card.alert p,
+body.dark .product-section .furniture .card-section .product-card.alert p {
+  color: #fff;
+}
+body.dark .product-section .furniture .card-section .product-card h3 {
   color: rgb(67, 67, 67);
   font-weight: 700;
 }
-body.dark section .furniture .card-section .product-card p {
+body.dark .product-section .furniture .card-section .product-card p {
   color: rgb(67, 67, 67);
 }
 body.dark .main-section {
@@ -46,4 +62,8 @@ body.dark .main-section {
 }
 body.dark .earth svg path, body.dark .innovation svg path {
   fill: #ddbd11;
+}
+h1[title=main] {
+  background-color: yellowgreen;
+  color: #fff;
 }/*# sourceMappingURL=dark-mode.css.map */

@@ -64,12 +64,13 @@
                 <img src="./assets/img/main-2.jpg" alt="">
             </div>
         </article>
+        
         <section class="product-section">
             <div class="healthcare">
                 <h2>Cuidado de la salud</h2>
-                <div class="card-section">
-                    <div class="product-card">
-                        <div class="icon">
+                <div class="card-section click-listener">
+                    <div product="product1" class="product-card">
+                        <div class="icon wish-list"> <!-- Dispara Accion: Me gusta el producto -->
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -78,14 +79,14 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/products/toothbrush.jpg" alt="">
+                            <img product="product1" src="./assets/img/products/toothbrush.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <h3>Cepillo de bambú</h3>
                             <p>Paquete de 2 unidades hecho 100% de materiales ecológicos</p>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div product="product2" class="product-card">
                         <div class="icon">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -95,14 +96,14 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/products/hand-cream.jpeg" alt="">
+                            <img product="product2" src="./assets/img/products/hand-cream.jpeg" alt="">
                         </div>
-                        <div class="card-description">
+                        <div class="card-description alert">
                             <h3>Crema para manos</h3>
                             <p>Crema hidratante con eucalipto ayuda al cuidado de la piel.</p>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div product="product3" class="product-card">
                         <div class="icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -112,14 +113,14 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/products/serum.jpg" alt="">
+                            <img product="product3" src="./assets/img/products/serum.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <h3>Serum hidratante</h3>
                             <p>Sérum hecho a base de extractos naturales y ácido hialurónico.</p>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div product="product4" class="product-card">
                         <div class="icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -129,7 +130,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/products/organic-kit.jpg" alt="">
+                            <img product="product4" src="./assets/img/products/organic-kit.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <h3>Kit de viaje</h3>
@@ -137,7 +138,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div product="product5" class="product-card">
                         <div class="icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -147,14 +148,14 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/products/organic-soap.jpg" alt="">
+                            <img product="product5" src="./assets/img/products/organic-soap.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <h3>Set de jabones</h3>
                             <p>Paquete de 2 unidades jabón de carbón activado con coco.</p>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div product="product6" class="product-card">
                         <div class="icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -164,7 +165,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/products/guasha-kit.jpg" alt="">
+                            <img product="product6" src="./assets/img/products/guasha-kit.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <h3>Kit de skincare</h3>
@@ -332,7 +333,6 @@
                 </div>
             </div>
         </section>
-
         <section class="info-section">
             <div class="about-us">
                 <h2>¿Por qué nosotros?</h2>
@@ -434,7 +434,6 @@
             document.querySelector('body').classList.toggle('dark');
         });
 
-        console.log(window.scrollY);
 
         window.addEventListener('scroll', function (e) {
             // if (window.scrollY > 10) {
@@ -442,7 +441,7 @@
             // } else {
             //     document.querySelector('header').style.background = 'transparent';
             // }
-            console.log(window.outerWidth >= 900, window.scrollY < 10);
+            // console.log(window.outerWidth >= 900, window.scrollY < 10);
             if (window.scrollY < 10) {
                 document.querySelector('header').classList.remove('test');
             } else {
@@ -461,6 +460,7 @@
             // }
         });
     </script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
