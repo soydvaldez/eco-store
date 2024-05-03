@@ -260,9 +260,6 @@ main {
   background-color: #ffefe7;
   transition: 0.5s ease all;
 }
-main h2 {
-  color: #ddbd11;
-}
 main .about-us .mision-section {
   display: flex;
   flex-direction: column;
