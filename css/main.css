@@ -260,6 +260,9 @@ main {
   background-color: #ffefe7;
   transition: 0.5s ease all;
 }
+main h2 {
+  color: #ddbd11;
+}
 main .about-us .mision-section {
   display: flex;
   flex-direction: column;
@@ -353,6 +356,95 @@ footer {
   padding: 10px 0;
   background-color: #fa9500;
 }
+footer .contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+}
+footer .contact-form h2 {
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+footer .contact-form .form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+footer .contact-form .form-container form {
+  border-radius: 6px;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+footer .contact-form .form-container label {
+  color: #fff;
+  width: 200px;
+  display: block;
+  padding: 10px 0;
+}
+footer .contact-form .form-container input,
+footer .contact-form .form-container textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  background-color: rgb(27, 27, 27);
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 15px;
+}
+footer .contact-form .form-container input {
+  background-color: transparent;
+}
+footer .contact-form .form-container input[type=submit] {
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  background-color: #28c740;
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+}
+footer .contact-form .form-container input[type=submit]:hover {
+  cursor: pointer;
+}
+footer .contact-form .form-container .form-control {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 10px;
+  background-color: #535965;
+}
+footer .contact-form .form-container .form-control input {
+  /* width: 50%; */
+  /* border: 1px solid #fff; */
+  display: inline;
+}
+footer .contact-form .form-container .form-control ::-moz-placeholder {
+  color: #949494;
+  font-weight: 700;
+}
+footer .contact-form .form-container .form-control ::placeholder {
+  color: #949494;
+  font-weight: 700;
+}
+footer .contact-form .form-container .form-control .icon {
+  color: #32d197;
+  /* border: 1px solid #fff; */
+  /* color: #FFF; */
+  display: inline;
+}
 footer h3,
 footer p {
   color: #fff;
@@ -369,16 +461,38 @@ footer p:last-child {
   margin-bottom: 20px;
 }
 footer .social-media {
-  width: 50%;
+  width: 90%;
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  color: #fff;
   margin-top: 25px;
   margin-left: 10px;
   margin-bottom: 25px;
   justify-content: space-around;
   align-items: center;
 }
+footer .social-media h2 {
+  font-size: 16px;
+}
+footer .social-media .social {
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 footer .social-media img {
   width: 25px;
+}
+footer .social-media img:hover {
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 @media (1100px <= width) {
@@ -628,20 +742,159 @@ footer .social-media img {
   main .info-section .location .address p {
     font-size: 18px;
   }
+  footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #e58a01;
+  }
+  footer h2 {
+    width: 100%;
+    color: #fff;
+    padding: 10px 0;
+    text-align: left;
+    padding: 0 40px;
+  }
+  footer p {
+    width: 100%;
+    padding-left: 28px;
+    justify-content: flex-end;
+  }
+  footer .social-media {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+  }
+  footer .social-media h2 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 25px;
+  }
+  footer .social-media .social {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 100px;
+         column-gap: 100px;
+  }
+  footer .social-media img {
+    width: 35px;
+  }
+  footer .contact-form {
+    width: 50%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+  }
+  footer .contact-form .form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  footer .contact-form .form-container form {
+    width: 100%;
+    border-radius: 6px;
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer .contact-form .form-container label {
+    color: #fff;
+    width: 200px;
+    display: block;
+    padding: 10px 0;
+  }
+  footer .contact-form .form-container input,
+  footer .contact-form .form-container textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    background-color: rgb(27, 27, 27);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 15px;
+  }
+  footer .contact-form .form-container input {
+    background-color: transparent;
+  }
+  footer .contact-form .form-container input[type=submit] {
+    width: 40%;
+    max-width: 300px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #28c740;
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+  }
+  footer .contact-form .form-container input[type=submit]:hover {
+    cursor: pointer;
+  }
+  footer .contact-form .form-container .form-control {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 12px 10px;
+    background-color: #535965;
+  }
+  footer .contact-form .form-container .form-control input {
+    /* width: 50%; */
+    /* border: 1px solid #fff; */
+    display: inline;
+  }
+  footer .contact-form .form-container .form-control ::-moz-placeholder {
+    color: #949494;
+    font-weight: 700;
+  }
+  footer .contact-form .form-container .form-control ::placeholder {
+    color: #949494;
+    font-weight: 700;
+  }
+  footer .contact-form .form-container .form-control .icon {
+    color: #32d197;
+    /* border: 1px solid #fff; */
+    /* color: #FFF; */
+    display: inline;
+  }
+  footer .contact-form .form-container .contanct-saleman {
+    box-sizing: border-box;
+    text-align: left;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .contact-form .form-container .contanct-saleman p {
+    background-color: #474747;
+    width: 50%;
+    height: 200px;
+    font-size: 23px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 20px;
+  }
 }
 .furniture .product-card {
   background-color: #babd8d !important;
   height: 900px;
   color: #fff !important;
-}
-
-footer .social-media {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
 }
 
 .test {

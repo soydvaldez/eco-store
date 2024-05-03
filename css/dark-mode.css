@@ -1,66 +1,66 @@
-body.dark {
+body.dark-mode {
   background-color: #474747;
   transition: 0.5s ease all;
 }
-body.dark nav {
+body.dark-mode nav {
   transition: 0.5s ease all;
   box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.16);
 }
-body.dark nav p {
+body.dark-mode nav p {
   color: #ddbd11;
 }
-body.dark nav .icons svg path {
+body.dark-mode nav .icons svg path {
   stroke: #ddbd11;
 }
-body.dark article h1 {
+body.dark-mode article h1 {
   color: #ddbd11;
 }
-body.dark article p {
+body.dark-mode article p {
   color: #ddbd11;
 }
-body.dark .product-section h2 {
+body.dark-mode .product-section h2 {
   color: #ddbd11;
 }
-body.dark .product-section .healthcare, body.dark .product-section .furniture {
+body.dark-mode .product-section .healthcare, body.dark-mode .product-section .furniture {
   background-color: #474747;
 }
-body.dark .product-section .healthcare .card-section .product-card, body.dark .product-section .furniture .card-section .product-card {
+body.dark-mode .product-section .healthcare .card-section .product-card, body.dark-mode .product-section .furniture .card-section .product-card {
   background-color: #f3f2f2;
 }
-body.dark .product-section .healthcare .card-section .product-card h3, body.dark .product-section .furniture .card-section .product-card h3 {
+body.dark-mode .product-section .healthcare .card-section .product-card h3, body.dark-mode .product-section .furniture .card-section .product-card h3 {
   color: rgb(117, 117, 117);
   font-weight: 700;
 }
-body.dark .product-section .healthcare .card-section .product-card p, body.dark .product-section .furniture .card-section .product-card p {
+body.dark-mode .product-section .healthcare .card-section .product-card p, body.dark-mode .product-section .furniture .card-section .product-card p {
   color: rgb(117, 117, 117);
 }
-body.dark .product-section .healthcare .card-section .product-card.selected, body.dark .product-section .furniture .card-section .product-card.selected {
+body.dark-mode .product-section .healthcare .card-section .product-card.selected, body.dark-mode .product-section .furniture .card-section .product-card.selected {
   background-color: yellowgreen;
 }
-body.dark .product-section .healthcare .card-section .product-card.selected h3, body.dark .product-section .furniture .card-section .product-card.selected h3,
-body.dark .product-section .healthcare .card-section .product-card.selected p,
-body.dark .product-section .furniture .card-section .product-card.selected p {
+body.dark-mode .product-section .healthcare .card-section .product-card.selected h3, body.dark-mode .product-section .furniture .card-section .product-card.selected h3,
+body.dark-mode .product-section .healthcare .card-section .product-card.selected p,
+body.dark-mode .product-section .furniture .card-section .product-card.selected p {
   color: #fff;
 }
-body.dark .product-section .healthcare .card-section .product-card.alert, body.dark .product-section .furniture .card-section .product-card.alert {
+body.dark-mode .product-section .healthcare .card-section .product-card.alert, body.dark-mode .product-section .furniture .card-section .product-card.alert {
   background-color: tomato;
 }
-body.dark .product-section .healthcare .card-section .product-card.alert h3, body.dark .product-section .furniture .card-section .product-card.alert h3,
-body.dark .product-section .healthcare .card-section .product-card.alert p,
-body.dark .product-section .furniture .card-section .product-card.alert p {
+body.dark-mode .product-section .healthcare .card-section .product-card.alert h3, body.dark-mode .product-section .furniture .card-section .product-card.alert h3,
+body.dark-mode .product-section .healthcare .card-section .product-card.alert p,
+body.dark-mode .product-section .furniture .card-section .product-card.alert p {
   color: #fff;
 }
-body.dark .product-section .furniture .card-section .product-card h3 {
+body.dark-mode .product-section .furniture .card-section .product-card h3 {
   color: rgb(67, 67, 67);
   font-weight: 700;
 }
-body.dark .product-section .furniture .card-section .product-card p {
+body.dark-mode .product-section .furniture .card-section .product-card p {
   color: rgb(67, 67, 67);
 }
-body.dark .main-section {
+body.dark-mode .main-section {
   background-color: #474747;
 }
-body.dark .earth svg path, body.dark .innovation svg path {
+body.dark-mode .earth svg path, body.dark-mode .innovation svg path {
   fill: #ddbd11;
 }
 h1[title=main] {

@@ -15,7 +15,7 @@
     <title>Document</title>
 </head>
 
-<body class="dark">
+<body class="dark-mode">
     <header>
         <nav>
             <p>Eco-store</p>
@@ -64,7 +64,7 @@
                 <img src="./assets/img/main-2.jpg" alt="">
             </div>
         </article>
-        
+
         <section class="product-section">
             <div class="healthcare">
                 <h2>Cuidado de la salud</h2>
@@ -413,17 +413,48 @@
         </section>
     </main>
     <footer>
-        <h3>Eco-store</h3>
-        <p>Careers</p>
-        <p>Careers</p>
-        <p>Careers</p>
-        <p>Careers</p>
-        <p>Careers</p>
-        <p>Careers</p>
+        <div class="contact-form">
+            <h2>Contactanos</h2>
+            <p style="display: block;">
+                Llena el formulario y uno de nuestros vendedores te atendera a la
+                brevedad.</p>
+            <div class="form-container">
+                <form action="">
+                    <div class="form-control">
+                        <!-- <label for="">Nombre</label> -->
+                        <i class="fa-solid fa-user icon"></i>
+                        <input type="text" placeholder="Nombre" autocomplete="name" required>
+                    </div>
+                    <div class="form-control">
+                        <!-- <label for="">Email</label> -->
+                        <i class="fa-solid fa-envelope icon"></i>
+                        <input type="email" placeholder="Email" autocomplete="email" required>
+                        <i class="fa-solid fa-check icon" style="color: #28c740; font-size: 16px;"></i>
+                    </div>
+                    <div class="form-control">
+                        <!-- <label for="">Telefono</label> -->
+                        <i class="fa-solid fa-phone icon"></i>
+                        <input type="tel" placeholder="Telefono" autocomplete="tel">
+                    </div>
+                    <div class="form-control">
+                        <!-- <label for="">Mensaje</label> -->
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Escribenos un mensaje"></textarea>
+                    </div>
+                    <input type="submit" value="Enviar">
+                </form>
+                <!-- <div class="contanct-saleman">
+                    <p>Contactanos <br> LLena el formulario y uno de nuestros vendedores te atendera.</p>
+                </div> -->
+            </div>
+        </div>
+        
         <div class="social-media">
-            <img src="./assets/img/instagram-logo.png" alt="instagram-logo">
-            <img src="./assets/img/facebook-logo.png" alt="facebook-logo">
-            <img src="./assets/img/twitter-logo.png" alt="twitter-logo">
+            <h2>Nuestras redes sociales</h2>
+            <div class="social">
+                <img src="./assets/img/instagram-logo.png" alt="instagram-logo">
+                <img src="./assets/img/facebook-logo.png" alt="facebook-logo">
+                <img src="./assets/img/twitter-logo.png" alt="twitter-logo">
+            </div>
         </div>
     </footer>
     <script>
@@ -431,7 +462,7 @@
 
         btnToggle.addEventListener("click", function (e) {
             this.classList.toggle("active");
-            document.querySelector('body').classList.toggle('dark');
+            document.querySelector('body').classList.toggle('dark-mode');
         });
 
 
