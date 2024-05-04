@@ -14,6 +14,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
+<!-- dark-mode -->
 
 <body class="dark-mode">
     <header>
@@ -413,41 +414,94 @@
         </section>
     </main>
     <footer>
-        <div class="contact-form">
+        <style>
+            .loader-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(255, 170, 0, .7);
+                border-radius: 10px;
+                cursor: progress;
+            }
+
+            .loader-container span {
+                color: white;
+                font-size: 18px;
+                margin-top: 105px;
+            }
+
+            .loader {
+                position: absolute;
+                z-index: 2;
+                width: 60px;
+                height: 60px;
+                border: 8px solid #f3f3f3;
+                border-top: 8px solid #3498db;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                padding-left: 10px;
+                /* background-color: black; */
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+
+            }
+
+            .hidden {
+                display: none;
+            }
+        </style>
+        <div class="contact-form" style="position: relative;">
+            <div class="loader-container hidden">
+                <div class="loader"></div>
+                <span>Enviando mensaje</span>
+            </div>
             <h2>Contactanos</h2>
             <p style="display: block;">
-                Llena el formulario y uno de nuestros vendedores te atendera a la
+                Llena el formulario y uno de nuestros vendedores te respondera a la
                 brevedad.</p>
             <div class="form-container">
-                <form action="">
+                <form action="" enctype="multipart/form-data">
                     <div class="form-control">
                         <!-- <label for="">Nombre</label> -->
                         <i class="fa-solid fa-user icon"></i>
-                        <input type="text" placeholder="Nombre" autocomplete="name" required>
+                        <input type="text" name="fullname" placeholder="Ingresa tu nombre" autocomplete="name" required>
                     </div>
                     <div class="form-control">
                         <!-- <label for="">Email</label> -->
                         <i class="fa-solid fa-envelope icon"></i>
-                        <input type="email" placeholder="Email" autocomplete="email" required>
-                        <i class="fa-solid fa-check icon" style="color: #28c740; font-size: 16px;"></i>
+                        <input type="email" name="email" placeholder="Ingresa tu email" autocomplete="email" required>
+                        <!-- <i class="fa-solid fa-check icon" style="color: #28c740; font-size: 16px;"></i> -->
                     </div>
                     <div class="form-control">
                         <!-- <label for="">Telefono</label> -->
                         <i class="fa-solid fa-phone icon"></i>
-                        <input type="tel" placeholder="Telefono" autocomplete="tel">
+                        <input type="tel" name="phone-number" placeholder="Ingresa un número" autocomplete="tel">
                     </div>
                     <div class="form-control">
                         <!-- <label for="">Mensaje</label> -->
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Escribenos un mensaje"></textarea>
+                        <textarea name="message" id="" cols="30" rows="10"
+                            placeholder="Escribenos un mensaje"></textarea>
                     </div>
-                    <input type="submit" value="Enviar">
+                    <input type="submit" value="Enviar" onclick="handlerSubmit(event)">
                 </form>
-                <!-- <div class="contanct-saleman">
-                    <p>Contactanos <br> LLena el formulario y uno de nuestros vendedores te atendera.</p>
-                </div> -->
             </div>
         </div>
-        
+
         <div class="social-media">
             <h2>Nuestras redes sociales</h2>
             <div class="social">
@@ -492,6 +546,7 @@
         });
     </script>
     <script src="./js/main.js"></script>
+    <script src="./js/utilerias.js"></script>
 </body>
 
 </html>

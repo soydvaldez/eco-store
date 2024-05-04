@@ -27,6 +27,12 @@ body.dark-mode .product-section .healthcare, body.dark-mode .product-section .fu
 body.dark-mode .product-section .healthcare .card-section .product-card, body.dark-mode .product-section .furniture .card-section .product-card {
   background-color: #f3f2f2;
 }
+body.dark-mode .product-section .healthcare .card-section .product-card .icon svg path, body.dark-mode .product-section .furniture .card-section .product-card .icon svg path {
+  stroke: rgb(221, 189, 17);
+}
+body.dark-mode .product-section .healthcare .card-section .product-card .icon svg:active, body.dark-mode .product-section .furniture .card-section .product-card .icon svg:active {
+  fill: rgb(221, 189, 17);
+}
 body.dark-mode .product-section .healthcare .card-section .product-card h3, body.dark-mode .product-section .furniture .card-section .product-card h3 {
   color: rgb(117, 117, 117);
   font-weight: 700;
@@ -65,6 +71,312 @@ body.dark-mode .main-section h2 {
 }
 body.dark-mode .earth svg path, body.dark-mode .innovation svg path {
   fill: #ddbd11;
+}
+body.dark-mode footer {
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+}
+body.dark-mode footer .contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+}
+body.dark-mode footer .contact-form h2 {
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+body.dark-mode footer .contact-form .form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+body.dark-mode footer .contact-form .form-container form {
+  border-radius: 6px;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+body.dark-mode footer .contact-form .form-container label {
+  color: #fff;
+  width: 200px;
+  display: block;
+  padding: 10px 0;
+}
+body.dark-mode footer .contact-form .form-container input,
+body.dark-mode footer .contact-form .form-container textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  background-color: rgb(27, 27, 27);
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  font-size: 15px;
+}
+body.dark-mode footer .contact-form .form-container input {
+  background-color: transparent;
+}
+body.dark-mode footer .contact-form .form-container input[type=submit] {
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  background-color: #28c740;
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+  transition: 0.3s ease all;
+}
+body.dark-mode footer .contact-form .form-container input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #27c63f;
+}
+body.dark-mode footer .contact-form .form-container input[type=submit]:active {
+  padding: 15px;
+  transition: scale 0.3s ease;
+  background-color: #29a83a;
+}
+body.dark-mode footer .contact-form .form-container .form-control {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 10px;
+  background-color: #535965;
+}
+body.dark-mode footer .contact-form .form-container .form-control input {
+  display: inline;
+}
+body.dark-mode footer .contact-form .form-container .form-control ::-moz-placeholder {
+  color: #949494;
+  opacity: 0.7;
+  font-weight: 700;
+  font-size: 13px;
+}
+body.dark-mode footer .contact-form .form-container .form-control ::placeholder {
+  color: #949494;
+  opacity: 0.7;
+  font-weight: 700;
+  font-size: 13px;
+}
+body.dark-mode footer .contact-form .form-container .form-control .icon {
+  color: #32d197;
+  /* border: 1px solid #fff; */
+  /* color: #FFF; */
+  display: inline;
+}
+body.dark-mode footer h3,
+body.dark-mode footer p {
+  color: #fff;
+}
+body.dark-mode footer h3 {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+body.dark-mode footer p {
+  margin-left: 30px;
+  margin-top: 15px;
+}
+body.dark-mode footer p:last-child {
+  margin-bottom: 20px;
+}
+body.dark-mode footer .social-media {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  color: #fff;
+  margin-top: 25px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+  justify-content: space-around;
+  align-items: center;
+}
+body.dark-mode footer .social-media h2 {
+  font-size: 16px;
+}
+body.dark-mode footer .social-media .social {
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body.dark-mode footer .social-media img {
+  width: 25px;
+  transition: 0.5s ease all;
+}
+body.dark-mode footer .social-media img:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transform: scale(1.2);
+}
+
+@media (1100px <= width) {
+  body.dark-mode footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #e58a01;
+  }
+  body.dark-mode footer h2 {
+    width: 100%;
+    color: #fff;
+    padding: 10px 0;
+    text-align: left;
+    padding: 0 40px;
+  }
+  body.dark-mode footer p {
+    width: 100%;
+    padding-left: 28px;
+    justify-content: flex-end;
+  }
+  body.dark-mode footer .social-media {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+  }
+  body.dark-mode footer .social-media h2 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 25px;
+  }
+  body.dark-mode footer .social-media .social {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 100px;
+         column-gap: 100px;
+  }
+  body.dark-mode footer .social-media img {
+    width: 35px;
+  }
+  body.dark-mode footer .contact-form {
+    width: 50%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+  }
+  body.dark-mode footer .contact-form .form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  body.dark-mode footer .contact-form .form-container form {
+    width: 100%;
+    border-radius: 6px;
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  body.dark-mode footer .contact-form .form-container label {
+    color: #fff;
+    width: 200px;
+    display: block;
+    padding: 10px 0;
+  }
+  body.dark-mode footer .contact-form .form-container input,
+  body.dark-mode footer .contact-form .form-container textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgb(27, 27, 27);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 15px;
+  }
+  body.dark-mode footer .contact-form .form-container input {
+    background-color: transparent;
+  }
+  body.dark-mode footer .contact-form .form-container input[type=submit] {
+    width: 40%;
+    max-width: 300px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #28c740;
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+  }
+  body.dark-mode footer .contact-form .form-container input[type=submit]:hover {
+    cursor: pointer;
+  }
+  body.dark-mode footer .contact-form .form-container .form-control {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 12px 10px;
+    background-color: #535965;
+  }
+  body.dark-mode footer .contact-form .form-container .form-control input {
+    /* width: 50%; */
+    /* border: 1px solid #fff; */
+    display: inline;
+  }
+  body.dark-mode footer .contact-form .form-container .form-control ::-moz-placeholder {
+    color: #949494;
+    font-weight: 700;
+  }
+  body.dark-mode footer .contact-form .form-container .form-control ::placeholder {
+    color: #949494;
+    font-weight: 700;
+  }
+  body.dark-mode footer .contact-form .form-container .form-control .icon {
+    color: #32d197;
+    /* border: 1px solid #fff; */
+    /* color: #FFF; */
+    display: inline;
+  }
+  body.dark-mode footer .contact-form .form-container .contanct-saleman {
+    box-sizing: border-box;
+    text-align: left;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body.dark-mode footer .contact-form .form-container .contanct-saleman p {
+    background-color: #474747;
+    width: 50%;
+    height: 200px;
+    font-size: 23px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 20px;
+  }
 }
 h1[title=main] {
   background-color: yellowgreen;

@@ -392,8 +392,8 @@ footer .contact-form .form-container textarea {
   border: none;
   outline: none;
   border-radius: 3px;
-  background-color: rgb(27, 27, 27);
-  color: #fff;
+  letter-spacing: 1px;
+  color: #000;
   padding: 5px 10px;
   font-size: 15px;
 }
@@ -408,9 +408,16 @@ footer .contact-form .form-container input[type=submit] {
   text-align: center;
   margin-top: 20px;
   color: #fff;
+  transition: 0.3s ease all;
 }
 footer .contact-form .form-container input[type=submit]:hover {
   cursor: pointer;
+  background-color: #27c63f;
+}
+footer .contact-form .form-container input[type=submit]:active {
+  padding: 15px;
+  transition: scale 0.3s ease;
+  background-color: #29a83a;
 }
 footer .contact-form .form-container .form-control {
   width: 100%;
@@ -422,19 +429,22 @@ footer .contact-form .form-container .form-control {
   align-items: center;
   padding: 12px 10px;
   background-color: #535965;
+  background-color: #FFF;
 }
 footer .contact-form .form-container .form-control input {
-  /* width: 50%; */
-  /* border: 1px solid #fff; */
   display: inline;
 }
 footer .contact-form .form-container .form-control ::-moz-placeholder {
   color: #949494;
+  opacity: 0.7;
   font-weight: 700;
+  font-size: 13px;
 }
 footer .contact-form .form-container .form-control ::placeholder {
   color: #949494;
+  opacity: 0.7;
   font-weight: 700;
+  font-size: 13px;
 }
 footer .contact-form .form-container .form-control .icon {
   color: #32d197;
@@ -486,10 +496,12 @@ footer .social-media .social {
 }
 footer .social-media img {
   width: 25px;
+  transition: 0.5s ease all;
 }
 footer .social-media img:hover {
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.7;
+  transform: scale(1.2);
 }
 
 @media (1100px <= width) {
@@ -586,7 +598,7 @@ footer .social-media img:hover {
     row-gap: 50px;
   }
   section .healthcare .card-section .product-card, section .furniture .card-section .product-card {
-    width: 24vw;
+    width: 34vw;
     max-width: 550px;
     height: 660px;
     max-height: 660px;
@@ -818,9 +830,7 @@ footer .social-media img:hover {
     width: 100%;
     border: none;
     outline: none;
-    border-radius: 3px;
-    background-color: rgb(27, 27, 27);
-    color: #fff;
+    border-radius: 10px;
     padding: 5px 10px;
     font-size: 15px;
   }
@@ -849,7 +859,6 @@ footer .social-media img:hover {
     justify-content: flex-start;
     align-items: center;
     padding: 12px 10px;
-    background-color: #535965;
   }
   footer .contact-form .form-container .form-control input {
     /* width: 50%; */

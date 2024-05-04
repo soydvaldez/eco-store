@@ -427,7 +427,7 @@ footer {
         justify-content: center;
         align-items: center;
         width: 100%;
-        // background-color: #2b2f35;
+        // background-color: #f79f06;
       }
 
       label {
@@ -443,8 +443,10 @@ footer {
         border: none;
         outline: none;
         border-radius: 3px;
-        background-color: rgb(27, 27, 27);
-        color: #fff;
+        // background-color: rgb(27, 27, 27);
+        // color: #fff;
+        letter-spacing: 1px;
+        color: #000;
         padding: 5px 10px;
         font-size: 15px;
       }
@@ -462,8 +464,18 @@ footer {
         margin-top: 20px;
         color: #fff;
 
+        transition: 0.3s ease all;
+
         &:hover {
           cursor: pointer;
+          // opacity: 0.8;
+          background-color: #27c63f;
+        }
+
+        &:active {
+          padding: 15px;
+          transition: scale 0.3s ease;
+          background-color: #29a83a;
         }
       }
 
@@ -478,16 +490,17 @@ footer {
 
         padding: 12px 10px;
         background-color: #535965;
+        background-color: #FFF;
 
         input {
-          /* width: 50%; */
-          /* border: 1px solid #fff; */
           display: inline;
         }
 
         ::placeholder {
           color: #949494;
+          opacity: .7;
           font-weight: 700;
+          font-size: 13px;
         }
 
         .icon {
@@ -555,9 +568,11 @@ footer {
     align-items: center;
     img {
       width: 25px;
+      transition: .5s ease all;
       &:hover {
         cursor: pointer;
-        opacity: 0.5;
+        opacity: 0.7;
+        transform: scale(1.2);
       }
     }
   }
@@ -655,7 +670,7 @@ footer {
         row-gap: 50px;
 
         .product-card {
-          width: 24vw;
+          width: 34vw;
           max-width: 550px;
           height: 660px;
           max-height: 660px;
@@ -905,9 +920,9 @@ footer {
           width: 100%;
           border: none;
           outline: none;
-          border-radius: 3px;
-          background-color: rgb(27, 27, 27);
-          color: #fff;
+          border-radius: 10px;
+          // background-color: rgb(27, 27, 27);
+          // color: #fff;
           padding: 5px 10px;
           font-size: 15px;
         }
@@ -942,7 +957,7 @@ footer {
           align-items: center;
 
           padding: 12px 10px;
-          background-color: #535965;
+          // background-color: #535965;
 
           input {
             /* width: 50%; */
