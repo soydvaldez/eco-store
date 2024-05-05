@@ -1,5 +1,7 @@
+// Manejadores de eventos
 function handlerSubmit(event) {
-  event.preventDefault();
+  // event.preventDefault();
+  
   handlerLoader();
   setTimeout((e) => handlerLoader(), 2000);
 
