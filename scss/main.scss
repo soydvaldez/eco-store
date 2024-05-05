@@ -813,10 +813,12 @@ footer {
         width: auto;
         height: auto;
         column-gap: 0;
+        max-width: 1700px;
+        margin: 0 auto;
 
         .product-card {
           width: 30vw;
-          // min-width: 450px;
+          min-width: 450px;
           max-width: 450px;
           height: 650px;
           max-height: 700px;

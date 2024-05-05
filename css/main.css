@@ -726,9 +726,12 @@ footer .hidden {
     height: auto;
     -moz-column-gap: 0;
          column-gap: 0;
+    max-width: 1700px;
+    margin: 0 auto;
   }
   section .healthcare .card-section .product-card, section .furniture .card-section .product-card {
     width: 30vw;
+    min-width: 450px;
     max-width: 450px;
     height: 650px;
     max-height: 700px;
