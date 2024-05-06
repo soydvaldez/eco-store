@@ -7,7 +7,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background-color: #ffefe7;
+  background-color: #fff;
   font-family: "IBM Plex Sans", sans-serif;
   padding-top: 80px;
 }
@@ -185,7 +185,7 @@ article img {
 section h2 {
   font-weight: 300;
   color: #7c6a0a;
-  margin: 60px 0 30px 30px;
+  padding: 60px 0 30px 30px;
 }
 section .healthcare .card-section, section .furniture .card-section {
   width: 100%;
@@ -279,7 +279,6 @@ section .healthcare .card-section::-webkit-scrollbar, section .furniture .card-s
 }
 
 main {
-  background-color: #ffefe7;
   transition: 0.5s ease all;
 }
 main .about-us .mision-section {
@@ -306,11 +305,9 @@ main .about-us .mision-section .earth p, main .about-us .mision-section .innovat
   color: #e86424;
   text-align: center;
 }
-main .gallery {
-  margin-top: 60px;
-}
 main .gallery h2 {
   margin-top: 0;
+  padding: 60px 0 30px 30px;
 }
 main .gallery .gallery-images {
   display: flex;
@@ -337,49 +334,46 @@ main .location {
   margin-bottom: 30px;
 }
 main .location .map {
-  width: 340px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
-  margin-left: 30px;
   border-radius: 20px;
 }
 main .location .map img {
-  width: auto;
+  width: 90%;
   height: 60vh;
-  margin: 0 200px;
+  margin: 0 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .location .address {
+  padding: 45px 0 0 30px;
 }
 main .location .address h3,
 main .location .address p {
   color: #e86424;
-  font-weight: 300;
+  font-size: 15px;
 }
 main .location .address h3 {
-  margin-top: 45px;
-  margin-left: 30px;
-  font-size: 20px;
-  width: 50%;
-  margin-bottom: 15px;
-}
-main .location .address p {
-  margin-left: 30px;
-  font-size: 15px;
-  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  width: 100%;
+  padding-bottom: 5px;
 }
 
 footer {
   width: 100%;
   height: auto;
   padding: 10px 0;
-  background-color: #fa9500;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 footer .contact-form {
   padding: 10px 15px;
 }
 footer .contact-form h2 {
-  font-size: 24px;
   width: 100%;
   text-align: left;
   color: #fff;
@@ -405,7 +399,7 @@ footer .contact-form .contact-data div span {
 }
 footer .contact-form .contact-data div .icon {
   color: #4ddb34;
-  font-size: 22px;
+  font-size: 27px;
   cursor: pointer;
   /* margin-top: 10px; */
 }
@@ -414,9 +408,9 @@ footer .contact-form .contact-data div .icon:hover {
   transform: scale(1.1);
   transition: 0.5s ease-in-out transform;
 }
-footer .contact-form .contact-data div .icon.fa-copy {
-  color: #9b9b9b;
-  font-size: 22px;
+footer .contact-form .email.contact-data {
+  color: #fff;
+  font-size: 25px;
 }
 footer .contact-form p {
   width: 100%;
@@ -633,6 +627,31 @@ footer .hidden {
   display: none;
 }
 
+footer {
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+footer .contact-form,
+footer .copyright {
+  position: relative;
+}
+footer::before {
+  content: "";
+  background-image: url("../assets/background-img/vitalii-khodzinskyi-1o4tbPh9cWQ-unsplash.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.5;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: auto;
+}
+
 @media (1100px <= width) {
   body {
     margin-top: 50px;
@@ -804,9 +823,6 @@ footer .hidden {
   section .healthcare .card-section .product-card:last-child, section .furniture .card-section .product-card:last-child {
     margin-right: 0;
   }
-  main .info-section {
-    margin-bottom: 100px;
-  }
   main .info-section .about-us {
     margin: 50px 0;
   }
@@ -884,7 +900,7 @@ footer .hidden {
   }
   footer {
     width: 100%;
-    background-color: #e58a01;
+    padding-top: 100px;
   }
   footer .social-media {
     width: 50%;
@@ -918,7 +934,7 @@ footer .hidden {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 10px 200px;
+    padding: 10px 150px;
   }
   footer .contact-form h2 {
     width: 100%;
@@ -948,7 +964,8 @@ footer .hidden {
   }
   footer .contact-form .form-container form {
     width: 100%;
-    max-width: 790px;
+    min-width: 650px;
+    max-width: 700px;
     border-radius: 6px;
     padding: 10px 40px;
     display: flex;
