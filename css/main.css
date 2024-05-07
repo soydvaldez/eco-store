@@ -1,33 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+.lato-light {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-bold-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 
 body {
   width: 100%;
   height: 100vh;
-  background-color: #fff;
+  background-color: rgb(236, 252, 215);
   font-family: "IBM Plex Sans", sans-serif;
-  padding-top: 80px;
 }
 
 header {
   width: 100%;
-  max-height: 120px;
+  height: auto;
   min-height: auto;
   overflow: hidden;
-  position: fixed;
   top: 0;
   z-index: 9999;
   scroll-padding-top: none;
   scroll-margin-top: none;
   transition: background 0.5s;
 }
-
-nav {
-  position: relative;
-  top: 10px;
+header nav {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 9999;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -39,32 +65,32 @@ nav {
   display: flex;
   align-items: flex-end;
 }
-nav p {
+header nav p {
   position: relative;
   font-size: 1.5em;
   padding-left: 15px;
 }
-nav .icons {
+header nav .icons {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
-nav .icons button {
+header nav .icons button {
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
-nav .icons button:hover {
+header nav .icons button:hover {
   opacity: 0.9;
 }
-nav .icons .profile,
-nav .icons .wishlist,
-nav .icons .cart {
+header nav .icons .profile,
+header nav .icons .wishlist,
+header nav .icons .cart {
   display: none;
 }
-nav .icons .toggle {
+header nav .icons .toggle {
   border-radius: 100px;
   position: relative;
   background-color: #404e7d;
@@ -73,7 +99,7 @@ nav .icons .toggle {
   display: flex;
   outline: none;
 }
-nav .icons .toggle::after {
+header nav .icons .toggle::after {
   content: "";
   display: block;
   width: 35px;
@@ -87,15 +113,15 @@ nav .icons .toggle::after {
   transition: 0.5s ease all;
   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
-nav .icons .toggle.active {
+header nav .icons .toggle.active {
   background-color: orange;
   color: #000;
 }
-nav .icons .toggle.active::after {
+header nav .icons .toggle.active::after {
   right: 0;
   left: unset;
 }
-nav .icons .toggle span {
+header nav .icons .toggle span {
   width: 35px;
   height: 35px;
   line-height: 40px;
@@ -103,46 +129,49 @@ nav .icons .toggle span {
   background-color: transparent;
   color: #fff;
 }
-nav .icons .toggle span i {
+header nav .icons .toggle span i {
   font-size: 16px;
 }
-nav .icons .toggle:active {
+header nav .icons .toggle:active {
   background-color: transparent;
   border-style: outset;
 }
-
-article {
+header article {
   width: auto;
-  color: #7c6a0a;
-  padding: 0px 30px;
+  color: #12101d;
+  padding: 0 30px;
+  padding-top: 60px;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-article .impact-section {
+header article .impact-section {
   text-align: center;
 }
-article .impact-section h1 {
+header article .impact-section h1 {
   text-align: left;
   margin: 10px 0;
   font-size: 25px;
 }
-article .impact-section p {
+header article .impact-section p {
   width: 100%;
   text-align: justify;
   margin: 20px 0px;
-  font-size: 15px;
+  font-size: 17px;
+  color: #3d9128;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
 }
-article .impact-section button {
+header article .impact-section button {
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
-article .impact-section button:hover {
+header article .impact-section button:hover {
   opacity: 0.9;
 }
-article .impact-section button:hover {
+header article .impact-section button:hover {
   transform: scale(1.1);
   animation: aumento 5s ease-in-out infinite 0.4s;
 }
@@ -166,7 +195,7 @@ article .impact-section button:hover {
     background-color: #fa9500;
   }
 }
-article .impact-section button {
+header article .impact-section button {
   background-color: #fa9500;
   color: #fff;
   width: 150px;
@@ -174,9 +203,15 @@ article .impact-section button {
   border-radius: 35px;
   font-size: 1em;
 }
-article img {
-  width: 50vw;
-  border-radius: 35px;
+header article .image-section {
+  padding: 30px 0;
+  width: 100%;
+  max-width: 1125px;
+  text-align: center;
+}
+header article .image-section img {
+  width: 10vw;
+  border-radius: 5px;
   -o-object-fit: cover;
      object-fit: cover;
   min-width: 220px;
@@ -185,7 +220,7 @@ article img {
 section h2 {
   font-weight: 300;
   color: #7c6a0a;
-  padding: 60px 0 30px 30px;
+  padding: 0px 0 30px 30px;
 }
 section .healthcare .card-section, section .furniture .card-section {
   width: 100%;
@@ -194,11 +229,13 @@ section .healthcare .card-section, section .furniture .card-section {
   overflow-x: scroll;
   gap: 30px;
   justify-content: space-evenly;
+  padding-bottom: 20px;
 }
 section .healthcare .card-section .product-card, section .furniture .card-section .product-card {
   width: auto;
-  height: auto;
-  background-color: #ffdac6;
+  height: 535px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: #7c6a0a;
   padding: 10px 20px;
   display: flex;
@@ -222,8 +259,13 @@ section .healthcare .card-section .product-card .icon svg, section .furniture .c
 section .healthcare .card-section .product-card .icon svg path, section .furniture .card-section .product-card .icon svg path {
   stroke: #7c6a0a;
 }
+section .healthcare .card-section .product-card .icon h3, section .furniture .card-section .product-card .icon h3 {
+  font-size: 17px;
+}
 section .healthcare .card-section .product-card .product-image, section .furniture .card-section .product-card .product-image {
+  position: relative;
   width: 100%;
+  height: 900px;
   padding: 0 10px;
   display: flex;
   flex-direction: row;
@@ -231,6 +273,7 @@ section .healthcare .card-section .product-card .product-image, section .furnitu
   align-items: center;
 }
 section .healthcare .card-section .product-card .product-image img, section .furniture .card-section .product-card .product-image img {
+  position: relative;
   width: 30vw;
   min-width: 200px;
   height: 35vw;
@@ -281,6 +324,48 @@ section .healthcare .card-section::-webkit-scrollbar, section .furniture .card-s
 main {
   transition: 0.5s ease all;
 }
+main .main-gallery {
+  width: auto;
+  height: auto;
+  padding: 50px 30px;
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  width: 100%;
+  overflow-x: scroll;
+}
+main .main-gallery img {
+  border-radius: 10px;
+  width: 35%;
+  min-width: 160px;
+  max-width: 300px;
+  -webkit-mask-image: linear-gradient(black 95%, transparent);
+          mask-image: linear-gradient(black 95%, transparent);
+}
+main .main-gallery::-webkit-scrollbar {
+  display: none;
+}
+main .info-materiales {
+  height: auto;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .info-materiales img {
+  border-radius: 10px;
+  width: 80%;
+}
+main .info-materiales p {
+  width: 100%;
+  margin: auto 20px;
+  padding: 20px 50px;
+  line-height: 1.8;
+  font-size: 18px;
+  color: #9AB558;
+}
 main .about-us .mision-section {
   display: flex;
   flex-direction: column;
@@ -302,7 +387,7 @@ main .about-us .mision-section .earth img, main .about-us .mision-section .innov
 main .about-us .mision-section .earth p, main .about-us .mision-section .innovation p {
   width: 60%;
   font-size: 13.5px;
-  color: #e86424;
+  color: #9AB558;
   text-align: center;
 }
 main .gallery h2 {
@@ -394,7 +479,7 @@ footer .contact-form .contact-data div {
   margin: 10px 0;
 }
 footer .contact-form .contact-data div span {
-  font-size: 18px;
+  font-size: 14px;
   color: #fff;
 }
 footer .contact-form .contact-data div .icon {
@@ -413,14 +498,14 @@ footer .contact-form .email.contact-data {
   font-size: 25px;
 }
 footer .contact-form p {
-  width: 100%;
+  width: 90%;
   color: #fff;
   padding-left: 10px;
-  font-size: 16px;
+  font-size: 14px;
 }
 footer .contact-form .form-container {
+  display: none;
   width: 100%;
-  display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
 }
@@ -544,23 +629,20 @@ footer .contact-form .form-container .form-control.text-area div span {
   height: 20px;
 }
 footer .social-media {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   display: flex;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  margin-top: 15px;
   color: #fff;
-  margin-top: 25px;
-  margin-left: 10px;
-  margin-bottom: 25px;
   justify-content: space-around;
   align-items: center;
 }
 footer .social-media h2 {
   font-size: 16px;
+  text-align: center;
 }
 footer .social-media .social {
   margin-top: 10px;
@@ -636,44 +718,44 @@ footer {
 footer .contact-form,
 footer .copyright {
   position: relative;
+  text-align: left;
+  color: #f3f3f3;
+  font-weight: 500;
+  margin: 10px 0;
+  font-size: 14px;
 }
-footer::before {
-  content: "";
-  background-image: url("../assets/background-img/vitalii-khodzinskyi-1o4tbPh9cWQ-unsplash.jpg");
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.5;
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: auto;
+footer .contact-form span,
+footer .copyright span {
+  padding-left: 30px;
+  width: 100%;
 }
 
 @media (1100px <= width) {
-  body {
-    margin-top: 50px;
+  header {
+    height: auto;
   }
-  nav {
+  header nav {
+    position: relative;
     top: 0;
     padding: 25px 90px;
     transition: background ease 5s;
   }
-  nav p {
+  header nav p {
+    position: relative;
     font-size: 26px;
     padding-left: 0px;
   }
-  nav .icons {
+  header nav .icons {
+    position: relative;
     gap: 50px;
   }
-  nav .icons .profile,
-  nav .icons .wishlist,
-  nav .icons .cart {
+  header nav .icons .profile,
+  header nav .icons .wishlist,
+  header nav .icons .cart {
     display: flex;
   }
-  article {
+  header article {
+    position: relative;
     width: auto;
     margin: 0 65px;
     display: flex;
@@ -682,51 +764,56 @@ footer::before {
     align-items: center;
     padding: 0px 90px;
   }
-  article .impact-section {
+  header article .impact-section {
+    position: relative;
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
   }
-  article .impact-section h1 {
+  header article .impact-section h1 {
     font-size: 60px;
     margin: 0;
   }
-  article .impact-section p {
-    width: 80%;
+  header article .impact-section p {
+    width: 100%;
+    max-width: 900px;
     font-size: 1.5em;
   }
-  article .impact-section button {
+  header article .impact-section button {
     border: none;
     background-color: transparent;
     cursor: pointer;
   }
-  article .impact-section button:hover {
+  header article .impact-section button:hover {
     opacity: 0.9;
   }
-  article .impact-section button {
+  header article .impact-section button {
     background-color: #fa9500;
     width: 250px;
     margin-bottom: 180px;
     font-size: 15px;
   }
-  article .image-section img {
-    width: 30vw;
+  header article .image-section img {
+    width: 35vw;
     max-width: 530px;
     border-radius: 35px;
     -o-object-fit: contain;
        object-fit: contain;
+    -webkit-mask-image: radial-gradient(black, transparent);
+            mask-image: radial-gradient(black, transparent);
   }
   section {
     width: 100%;
     height: auto;
-    padding: 0 50px;
+    padding: 0 70px;
   }
   section h2 {
     color: #7c6a0a;
     font-size: 35px;
     font-weight: 300;
+    padding: 0;
     padding-left: 30px;
   }
   section .healthcare, section .furniture {
@@ -742,7 +829,7 @@ footer::before {
     height: auto;
     max-width: 2150px;
     margin: 0 auto;
-    gap: 0;
+    row-gap: 20px;
   }
   section .healthcare .card-section .product-card, section .furniture .card-section .product-card {
     color: 1px solid #fff;
@@ -750,7 +837,6 @@ footer::before {
     min-width: 450px;
     max-width: 500px;
     height: 600px;
-    background-color: #ffdac6;
     color: #7c6a0a;
     padding: 10px 12px;
     margin: 0;
@@ -816,6 +902,31 @@ footer::before {
   section .healthcare .card-section .product-card:last-child, section .furniture .card-section .product-card:last-child {
     margin-right: 0;
   }
+  main .main-gallery {
+    width: auto;
+    height: auto;
+    padding: 50px 100px;
+  }
+  main .info-section .info-materiales {
+    height: auto;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  main .info-section .info-materiales img {
+    border-radius: 10px;
+    width: 30%;
+    max-width: 470px;
+  }
+  main .info-section .info-materiales p {
+    width: 700px;
+    margin: auto 20px;
+    padding: 0 100px;
+    line-height: 1.8;
+    font-size: 26px;
+    color: #9ab558;
+  }
   main .info-section .about-us {
     margin: 50px 0;
   }
@@ -844,7 +955,7 @@ footer::before {
     font-size: 1.3em;
     text-align: center;
     letter-spacing: 2px;
-    color: #e86424;
+    color: #9ab558;
   }
   main .info-section .gallery {
     margin: 100px 0;
@@ -876,9 +987,9 @@ footer::before {
   main .info-section .location .map img {
     margin: 0;
     width: 90%;
-    max-width: 1200px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    max-width: 910px;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   main .info-section .location .address h3,
   main .info-section .location .address p {
@@ -893,7 +1004,7 @@ footer::before {
   }
   footer {
     width: 100%;
-    padding-top: 100px;
+    padding-top: 10px;
   }
   footer .social-media {
     width: 50%;
@@ -927,7 +1038,7 @@ footer::before {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 10px 150px;
+    padding: 0 50px;
   }
   footer .contact-form h2 {
     width: 100%;
@@ -953,6 +1064,7 @@ footer::before {
     padding-left: 40px;
   }
   footer .contact-form .form-container {
+    display: none;
     width: 70%;
   }
   footer .contact-form .form-container form {
@@ -1076,17 +1188,21 @@ footer::before {
     vertical-align: middle;
     border-radius: 20px;
   }
+  footer .copyright {
+    position: relative;
+    text-align: left;
+    color: #f3f3f3;
+    font-weight: 500;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  footer .copyright span {
+    padding-left: 240px;
+    width: 100%;
+  }
 }
 .furniture .product-card {
-  background-color: #babd8d !important;
   height: 900px;
-  color: #fff !important;
-}
-
-.test {
-  background-color: #fff;
-  transition: background 0.5s;
-  border-radius: 0 0 3px 3px;
 }
 
 .toggle-efect {

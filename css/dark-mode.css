@@ -12,17 +12,11 @@ body.dark-mode nav p {
 body.dark-mode nav .icons svg path {
   stroke: #ddbd11;
 }
-body.dark-mode article h1 {
-  color: #ddbd11;
-}
-body.dark-mode article p {
-  color: #ddbd11;
+body.dark-mode article h1, body.dark-mode article p {
+  color: #9AB558;
 }
 body.dark-mode .product-section h2 {
   color: #ddbd11;
-}
-body.dark-mode .product-section .healthcare, body.dark-mode .product-section .furniture {
-  background-color: #474747;
 }
 body.dark-mode .product-section .healthcare .card-section .product-card, body.dark-mode .product-section .furniture .card-section .product-card {
   background-color: #f3f2f2;
@@ -67,6 +61,7 @@ body.dark-mode .main-section {
   background-color: #474747;
 }
 body.dark-mode .main-section h2 {
+  padding: 40px 20px;
   color: #ddbd11;
 }
 body.dark-mode .earth svg path, body.dark-mode .innovation svg path {
