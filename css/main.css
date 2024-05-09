@@ -53,7 +53,7 @@ header nav {
   position: fixed;
   width: 100%;
   top: 0px;
-  z-index: 9999;
+  z-index: 4;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -325,6 +325,7 @@ main {
   transition: 0.5s ease all;
 }
 main .main-gallery {
+  position: relative;
   width: auto;
   height: auto;
   padding: 50px 30px;
@@ -342,6 +343,24 @@ main .main-gallery img {
   max-width: 300px;
   -webkit-mask-image: linear-gradient(black 95%, transparent);
           mask-image: linear-gradient(black 95%, transparent);
+}
+main .main-gallery img:hover {
+  opacity: 0.7;
+}
+main .main-gallery .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #008cba;
+}
+main .main-gallery:hover .overlay {
+  opacity: 0.5;
 }
 main .main-gallery::-webkit-scrollbar {
   display: none;
@@ -364,7 +383,7 @@ main .info-materiales p {
   padding: 20px 50px;
   line-height: 1.8;
   font-size: 18px;
-  color: #9AB558;
+  color: #9ab558;
 }
 main .about-us .mision-section {
   display: flex;
@@ -387,7 +406,7 @@ main .about-us .mision-section .earth img, main .about-us .mision-section .innov
 main .about-us .mision-section .earth p, main .about-us .mision-section .innovation p {
   width: 60%;
   font-size: 13.5px;
-  color: #9AB558;
+  color: #9ab558;
   text-align: center;
 }
 main .gallery h2 {

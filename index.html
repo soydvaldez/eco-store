@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/dark-mode.css">
+    <link rel="stylesheet" href="./css/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -74,6 +75,7 @@
             <img src="./assets/muestrario/main-gallery/michela-ampolo-7tDGb3HrITg-unsplash.jpg" alt="">
             <img src="./assets/muestrario/main-gallery/micheile-henderson-wwTvwS9vKZs-unsplash.jpg" alt="">
             <img src="./assets/muestrario/main-gallery/sara-groblechner-h10-NImYZHs-unsplash.jpg" alt="">
+            <!-- <div class="overlay"></div> -->
         </div>
         <section class="product-section">
             <div class="healthcare">
@@ -196,13 +198,13 @@
                         </div>
                     </div>
                     <script>
-                        let card = document.querySelector('[product="product1"]');
+                        // let card = document.querySelector('[product="product1"]');
 
-                        card.addEventListener('click', function (e) {
-                            if (e.target.tagName === 'BUTTON') {
-                                // alert('submit event detected!');
-                            }
-                        });
+                        // card.addEventListener('click', function (e) {
+                        //     if (e.target.tagName === 'BUTTON') {
+                        //         // alert('submit event detected!');
+                        //     }
+                        // });
                     </script>
                     <div product="product1" class="product-card">
                         <div class="icon wish-list" style="display: flex; justify-content: space-between;">
@@ -635,8 +637,6 @@
     <script>
         const btnToggle = document.querySelector(".toggle");
 
-
-
         btnToggle.addEventListener("click", function (e) {
             this.classList.toggle("active");
             document.querySelector('body').classList.toggle('dark-mode');
@@ -665,6 +665,7 @@
     </script>
     <script src="./js/main.js"></script>
     <script src="./js/utilerias.js"></script>
+    <script src="./js/orquestador.js"></script>
 </body>
 
 </html>
