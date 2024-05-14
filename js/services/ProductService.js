@@ -6,9 +6,9 @@ function getAll() {
     },
     method: "GET",
   };
-
+  // https://soydvaldez.github.io/eco-store
   //   return fetch("http://localhost:3000/users", options)
-  return fetch("/js/data/products.json", options)
+  return fetch("eco-store/js/data/products.json", options)
     .then((response) => {
       if (response.ok) {
         return response.json();
