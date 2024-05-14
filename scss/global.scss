@@ -52,7 +52,7 @@
 }
 
 .hidden {
-  transition: visibility 1s, opacity 1s linear;
+  transition: visibility 0.5s, opacity 0.5s linear;
   opacity: 0;
   visibility: hidden;
 }
@@ -68,9 +68,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  transition: visibility 0.5s, opacity 0.5s linear;
   .hidden {
-    display: none;
+    visibility: hidden;
   }
 }
 
@@ -279,9 +279,8 @@
       }
       .flex-wrap {
         overflow: hidden;
-        max-height: 780px;
         height: 80vh;
-        flex-direction: row;
+        flex-direction: row-reverse;
 
         .container-caracteristicas {
           width: 50%;

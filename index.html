@@ -17,7 +17,7 @@
 </head>
 <!-- dark-mode -->
 
-<body class="disable-scroll">
+<body class="">
     <header>
         <nav>
             <p>Eco-store</p>
@@ -634,15 +634,45 @@
             <span>Eco-Store 2024 &copy;</span>
         </div>
     </footer>
-    <div open modal="product-details" class="modal listener-actions">
+    <div open modal="product-details" class="modal hidden listener-actions">
         <div class="container-product-details">
             <div class="header-product-details">
-                <h1>Cuidado de la Salud</h1>
+                <!-- <h1>Cuidado de la Salud</h1>
                 <button onclick="closedElement('product-details')">
                     <i modal="close-detail-product" class="fa-solid fa-xmark"></i>
-                </button>
+                </button> -->
             </div>
             <div class="flex-wrap">
+                <!-- renderizado dinamico -->
+                <!-- <div class="product-img-actions">
+                    <h2>Crema para manos</h2>
+                    <img src="./assets/transparent/hand-cream-removebg-preview.png" alt="">
+                    <span class="price">$100 MXN</span>
+                    <div class="container-collapsible">
+                        <div class="collapsible description">
+                            <button>Descripcion</button>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <div class="content description" style="max-height: 150px;">
+                            <p>Crema hidratante con eucalipto ayuda al
+                                cuidado de la piel. Todos
+                                nuestro producto estan elaborados con ingredientes 100% naturales para
+                                ayudar a cuidar tu salud sin descuidar el medio ambiente. La crema es ideal para
+                                hidratar la
+                                piel.</p>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button action="addToCart" class="button-product">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Agregar al carrito
+                        </button>
+                        <button action="addToWishList" class="button-product">
+                            <i class="fa-solid fa-heart"></i>
+                            Agregar a la lista de deseos
+                        </button>
+                    </div>
+                </div>
                 <div class="container-caracteristicas">
                     <div class="product-details"
                         style="display: flex; flex-direction: column; height: auto;overflow: scroll;">
@@ -684,39 +714,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="product-img-actions">
-                    <h2>Crema para manos</h2>
-                    <img src="./assets/transparent/hand-cream-removebg-preview.png" alt="">
-                    <span class="price">$100 MXN</span>
-                    <div class="container-collapsible">
-                        <div class="collapsible description">
-                            <button>Descripcion</button>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-                        <div class="content description" style="max-height: 150px;">
-                            <p>Crema hidratante con eucalipto ayuda al
-                                cuidado de la piel. Todos
-                                nuestro producto estan elaborados con ingredientes 100% naturales para
-                                ayudar a cuidar tu salud sin descuidar el medio ambiente. La crema es ideal para
-                                hidratar la
-                                piel.</p>
-                        </div>
-                    </div>
-                    <div class="actions">
-                        <button action="addToCart" class="button-product">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            Agregar al carrito
-                        </button>
-                        <button action="addToWishList" class="button-product">
-                            <i class="fa-solid fa-heart"></i>
-                            Agregar a la lista de deseos
-                        </button>
-                    </div>
-                </div>
+
             </div>
-
         </div>
         <!-- <p
                 style="position: absolute; bottom:40px; left: 0; background-color: #ECFCD7; color: black; padding: 12px;  border-radius: 0 5px 5px 0;">
@@ -749,8 +750,9 @@
 
         function closedElement(elementToClose) {
             let ref = document.querySelector(`[modal=${elementToClose}]`);
+            // ref.remove();
             disableScrolling();
-            ref.remove();
+            console.log(ref.classList.toggle('hidden'));
         }
 
         // actions: modal product details
@@ -780,11 +782,11 @@
             }
         }
 
-        // for (i = 0; i < coll.length; i++) {
-        //     let sibling = coll[i].nextElementSibling;
-        //     sibling.style.maxHeight = null;
-        //     sibling.style.maxHeight = "500px";
-        // }
+        for (i = 0; i < coll.length; i++) {
+            let sibling = coll[i].nextElementSibling;
+            sibling.style.maxHeight = null;
+            sibling.style.maxHeight = "500px";
+        }
 
 
         for (i = 0; i < coll.length; i++) {

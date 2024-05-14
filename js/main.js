@@ -47,24 +47,102 @@ function print() {
 }
 
 function renderProductDetails() {
+  document.body.querySelector(".modal").classList.remove("hidden");
   //Existe un modal abierto: si-cierralo y crea otro
-  if (document.querySelector('[modal="product-details"]')) {
-    document.querySelector('[modal="product-details"]').remove();
+  // if (document.querySelector('[modal="product-details"]')) {
+  //   document.querySelector('[modal="product-details"]').remove();
+  // }
+
+  // if (!selectedProductCard) {
+  //   return null;
+  // }
+  console.log(selectedProductCard);
+
+  let $header = document.body.querySelector(".header-product-details");
+
+  function setHeaderDetails(category) {
+    switch (category) {
+      case "healthcare":
+        return "Cuidado de la salud";
+      case "furniture":
+        return "Decoracion del Hogar";
+    }
   }
 
-  if (!selectedProductCard) {
-    return null;
-  }
+  $header.innerHTML = `<h1>${setHeaderDetails(
+    selectedProductCard.category
+  )}</h1>
+  <button onclick="closedElement('product-details')">
+      <i modal="close-detail-product" class="fa-solid fa-xmark"></i>
+  </button>`;
 
-  let element = document.createElement("div");
-  element.setAttribute("modal", "product-details");
-  element.setAttribute("open", "");
-  element.classList.add("modal");
-  element.innerHTML = `<div class="container-product-details">
-        ${JSON.stringify(selectedProductCard)}
-    </div>`;
-  element.style.color = "#000";
-  document.body.appendChild(element);
+  let $flexWrap = document.body.querySelector(".flex-wrap");
+  $flexWrap.innerHTML = `<div class="product-img-actions">
+  <h2>${selectedProductCard.name}</h2>
+  <img src="${selectedProductCard.imgs}" alt="">
+  <span class="price">$${selectedProductCard.price} MXN</span>
+  <div class="container-collapsible">
+      <div class="collapsible description">
+          <button>Descripcion</button>
+          <i class="fa-solid fa-angle-down"></i>
+      </div>
+      <div class="content description" style="max-height: 150px;">
+          <p>${selectedProductCard.description}</p>
+      </div>
+  </div>
+  <div class="actions">
+      <button action="addToCart" class="button-product">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Agregar al carrito
+      </button>
+      <button action="addToWishList" class="button-product">
+          <i class="fa-solid fa-heart"></i>
+          Agregar a la lista de deseos
+      </button>
+  </div>
+</div>
+<div class="container-caracteristicas">
+  <div class="product-details"
+      style="display: flex; flex-direction: column; height: auto;overflow: scroll;">
+      <div class="container-collapsible">
+          <div class="collapsible">
+              <button>Propiedades del eucalipto</button>
+              <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="content">
+              <ul>
+                  <li>Antiinflamatorias</li>
+                  <li>Expectorantes</li>
+                  <li>Calmantes</li>
+                  <li>Antioxidantes</li>
+                  <li>Antifúngicas</li>
+                  <li>Antisépticas</li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="container-collapsible">
+          <div class="collapsible">
+              <button>Otros beneficios</button>
+              <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="content">
+              <ul>
+                  <li>Alivia infecciones y enfermedades respiratorias</li>
+                  <li>Desinfecta el ambiente ante procesos virales</li>
+                  <li>Reduce la inflamación en la piel</li>
+                  <li>Previene la resequedad en la piel</li>
+                  <li>Desinfecta heridas</li>
+                  <li>Equilibra la producción de grasa en la piel</li>
+                  <li>Ayuda a que los granos desaparezcan más rápido</li>
+                  <li>Estimula el funcionamiento del sistema inmune</li>
+                  <li>Trata las manchas en la piel y unifica el tono facial</li>
+                  <li>Relaja la mente y el cuerpo</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  </div>`;
   disableScrolling();
 }
 
@@ -78,7 +156,7 @@ document.addEventListener("keydown", function (e) {
     if (
       document.querySelector(`[modal="product-details"]`).hasAttribute("open")
     ) {
-      document.querySelector(`[modal="product-details"]`).remove();
+      // document.querySelector(`[modal="product-details"]`).remove();
       disableScrolling();
     }
   }
