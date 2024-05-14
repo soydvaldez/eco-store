@@ -14,7 +14,7 @@
       "name": "Serum hidratante",
       "description": "Sérum hecho a base de extractos naturales y ácido hialurónico.",
       "price": 150,
-      "imgs": "/assets/img/products/serum.jpg"
+      "imgs": "assets/img/products/serum.jpg"
     },
     {
       "id": "product3",
@@ -22,7 +22,7 @@
       "name": "Kit de viaje",
       "description": "Incluye peine y cepillo de bambú, jabón orgánico de eucalipto y shampoo tamaño de viaje.",
       "price": 100,
-      "imgs": "/assets/img/products/organic-kit.jpg"
+      "imgs": "assets/img/products/organic-kit.jpg"
     },
     {
       "id": "product4",
@@ -30,7 +30,7 @@
       "name": "Set de jabones",
       "description": "Paquete de 2 unidades jabón de carbón activado con coco.",
       "price": 300,
-      "imgs": "/assets/img/products/organic-soap.jpg"
+      "imgs": "assets/img/products/organic-soap.jpg"
     },
     {
       "id": "product5",
@@ -38,7 +38,7 @@
       "name": "Kit de skincare",
       "description": "Incluye 2 rodillos y una gua sha",
       "price": 100,
-      "imgs": "/assets/img/products/guasha-kit.jpg"
+      "imgs": "assets/img/products/guasha-kit.jpg"
     },
     {
       "id": "product6",
@@ -46,7 +46,7 @@
       "name": "Cepillo de bambú",
       "description": "paquete de 2 unidades hecho 100% de materiales ecológicos",
       "price": 150,
-      "imgs": "/assets/img/products/toothbrush.jpg"
+      "imgs": "assets/img/products/toothbrush.jpg"
     },
     {
       "id": "product7",
@@ -54,7 +54,7 @@
       "name": "Silla de bambú",
       "description": "Disponible en 2 colores: blanco y negro, acabado de bambú.",
       "price": 100,
-      "imgs": "/assets/img/furniture/wood-chair.jpg"
+      "imgs": "assets/img/furniture/wood-chair.jpg"
     },
     {
       "id": "product8",
@@ -62,7 +62,7 @@
       "name": "Banco pequeño",
       "description": "Ideal para agregar un toque de estilo a tus espacios.",
       "price": 100,
-      "imgs": "/assets/img/furniture/small-table.jpeg"
+      "imgs": "assets/img/furniture/small-table.jpeg"
     },
     {
       "id": "product9",
@@ -70,7 +70,7 @@
       "name": "Buró",
       "description": "Elaborado con bambú, cuenta con 2 compartimentos para guardar cosas.",
       "price": 100,
-      "imgs": "/assets/img/furniture/stand-table.jpg"
+      "imgs": "assets/img/furniture/stand-table.jpg"
     },
     {
       "id": "product10",
@@ -78,7 +78,7 @@
       "name": "Cajonera",
       "description": "Paquete de 2 unidades hecho 100% de materiales ecológicos.",
       "price": 100,
-      "imgs": "/assets/img/furniture/mueble.jpg"
+      "imgs": "assets/img/furniture/mueble.jpg"
     },
     {
       "id": "product11",
@@ -86,7 +86,7 @@
       "name": "Espejo de pared",
       "description": "Paquete de 2 unidades hecho 100% de materiales ecológicos.",
       "price": 100,
-      "imgs": "/assets/img/furniture/mirror.jpg"
+      "imgs": "assets/img/furniture/mirror.jpg"
     },
     {
       "id": "product12",
@@ -94,7 +94,7 @@
       "name": "Lámpara bambú",
       "description": "Paquete de 2 unidades hecho 100% de materiales ecológicos.",
       "price": 100,
-      "imgs": "/assets/img/furniture/desk-lamp.jpg"
+      "imgs": "assets/img/furniture/desk-lamp.jpg"
     },
     {
       "id": "product13",
@@ -102,7 +102,7 @@
       "name": "Mesita decorativa",
       "description": "Paquete de 2 unidades hecho 100% de materiales ecológicos.",
       "price": 100,
-      "imgs": "/assets/img/furniture/stand.jpg"
+      "imgs": "assets/img/furniture/stand.jpg"
     },
     {
       "id": "product14",
@@ -110,7 +110,7 @@
       "name": "Mesa de desayuno",
       "description": "Paquete de 2 unidades hecho 100% de materiales ecológicos.",
       "price": 100,
-      "imgs": "/assets/img/furniture/mini-table.jpg"
+      "imgs": "assets/img/furniture/mini-table.jpg"
     },
     {
       "id": "product15",
@@ -118,7 +118,7 @@
       "name": "Mesa de desayuno",
       "description": "Paquete de 2 unidades hecho 100% de materiales ecológicos.",
       "price": 100,
-      "imgs": "/assets/img/furniture/table.jpg"
+      "imgs": "assets/img/furniture/table.jpg"
     }
   ]
 }

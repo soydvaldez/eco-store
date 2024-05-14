@@ -79,7 +79,7 @@ function renderProductDetails() {
   let $flexWrap = document.body.querySelector(".flex-wrap");
   $flexWrap.innerHTML = `<div class="product-img-actions">
   <h2>${selectedProductCard.name}</h2>
-  <img src="${selectedProductCard.imgs}" alt="">
+  <img src="${window.location.href}${selectedProductCard.imgs}" alt="">
   <span class="price">$${selectedProductCard.price} MXN</span>
   <div class="container-collapsible">
       <div class="collapsible description">
