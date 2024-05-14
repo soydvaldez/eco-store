@@ -40,8 +40,9 @@ function ctrlLoader() {
 
 createLoader();
 ctrlLoader();
+ctrlLoader();
 
-setTimeout((e) => {
-  ctrlLoader();
-  // removeMainLoader();
-}, 1000);
+// setTimeout((e) => {
+//   ctrlLoader();
+//   // removeMainLoader();
+// }, 1000);

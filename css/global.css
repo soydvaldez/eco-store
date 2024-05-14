@@ -49,4 +49,248 @@
   transition: visibility 1s, opacity 1s linear;
   opacity: 0;
   visibility: hidden;
+}
+
+.modal {
+  position: fixed;
+  z-index: 5;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .hidden {
+  display: none;
+}
+
+.container-product-details {
+  position: relative;
+  width: 90%;
+  max-width: 1024px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+}
+.container-product-details .header-product-details {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 10px 10px 0 0;
+  border: 2px solid #f4f4f4;
+}
+.container-product-details .header-product-details h1 {
+  width: 90%;
+  display: block;
+  padding: 10px 0;
+  font-size: 20px;
+}
+.container-product-details .header-product-details button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+}
+.container-product-details .header-product-details button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.container-product-details .flex-wrap {
+  overflow: scroll;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+.container-product-details .flex-wrap .collapsible {
+  width: 100%;
+  height: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: max-height 0.3s ease-in;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-product-details .flex-wrap .collapsible button {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  text-align: left;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  font-size: 15px;
+}
+.container-product-details .flex-wrap .collapsible p {
+  padding: 0 20px;
+}
+.container-product-details .flex-wrap .content {
+  width: 100%;
+  height: auto;
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in;
+}
+.container-product-details .flex-wrap .container-caracteristicas {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+.container-product-details .flex-wrap .container-caracteristicas p {
+  padding: 20px 10px;
+  font-size: 13px;
+  text-align: justify;
+}
+.container-product-details .flex-wrap .container-caracteristicas ul {
+  list-style-type: none;
+  padding: 10px 20px;
+}
+.container-product-details .flex-wrap .container-caracteristicas ul li {
+  line-height: 25px;
+  font-size: 12px;
+}
+.container-product-details .flex-wrap .product-img-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.container-product-details .flex-wrap .product-img-actions h2 {
+  padding: 5px 20px;
+  width: 100%;
+  font-size: 16px;
+}
+.container-product-details .flex-wrap .product-img-actions .price {
+  width: 100%;
+  padding: 5px 20px;
+  text-align: left;
+  font-size: 18px;
+}
+.container-product-details .flex-wrap .product-img-actions p {
+  text-align: justify;
+  width: auto;
+  padding: 5px 5px;
+  line-height: 20px;
+  font-size: 12px;
+}
+.container-product-details .flex-wrap .product-img-actions img {
+  width: 200px;
+  max-width: 330px;
+  border-radius: 15px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.container-product-details .flex-wrap .product-img-actions .actions {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 1rem;
+  margin: 10px 0;
+  height: auto;
+}
+.container-product-details .flex-wrap .product-img-actions .actions > * {
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
+.button-product {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  width: 100%;
+  border-radius: 10px;
+  color: black;
+  font-weight: bolder;
+  padding: 15px;
+  transition: 0.5s ease transform;
+}
+.button-product:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.5s ease transform;
+}
+.button-product:active {
+  cursor: pointer;
+  opacity: 0.4;
+  transition: 0.5s ease transform;
+}
+
+@media (800px <= width) {
+  .modal {
+    position: fixed;
+    z-index: 5;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal .hidden {
+    display: none;
+  }
+  .modal .container-product-details h1 {
+    font-size: 28px;
+  }
+  .modal .container-product-details .flex-wrap {
+    overflow: hidden;
+    max-height: 780px;
+    height: 80vh;
+    flex-direction: row;
+  }
+  .modal .container-product-details .flex-wrap .container-caracteristicas {
+    width: 50%;
+  }
+  .modal .container-product-details .flex-wrap p {
+    padding-bottom: 10px;
+    font-size: 16px;
+  }
+  .modal .container-product-details .flex-wrap .container-caracteristicas ul {
+    list-style-type: none;
+  }
+  .modal .container-product-details .flex-wrap .container-caracteristicas ul li {
+    line-height: 25px;
+    padding: 0 20px;
+    font-size: 16px;
+  }
+  .modal .container-product-details .flex-wrap .product-img-actions {
+    width: 50%;
+  }
+  .modal .container-product-details .flex-wrap .product-img-actions h2 {
+    padding: 5px 20px;
+    width: 100%;
+    font-size: 28px;
+  }
+  .modal .container-product-details .flex-wrap .product-img-actions .price {
+    width: 100%;
+    padding: 0 20px;
+    text-align: left;
+    font-size: 25px;
+  }
+  .modal .container-product-details .flex-wrap .product-img-actions p {
+    text-align: justify;
+    width: auto;
+    padding: 0 20px;
+    line-height: 25px;
+  }
+  .modal .container-product-details .flex-wrap .product-img-actions img {
+    width: 300px;
+    max-width: 330px;
+    border-radius: 15px;
+  }
+  .modal .container-product-details .flex-wrap .product-img-actions .actions {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    gap: 1rem;
+    padding: 20px 0px;
+  }
 }/*# sourceMappingURL=global.css.map */

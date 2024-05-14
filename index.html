@@ -17,7 +17,7 @@
 </head>
 <!-- dark-mode -->
 
-<body class="">
+<body class="disable-scroll">
     <header>
         <nav>
             <p>Eco-store</p>
@@ -77,11 +77,11 @@
             <img src="./assets/muestrario/main-gallery/sara-groblechner-h10-NImYZHs-unsplash.jpg" alt="">
             <!-- <div class="overlay"></div> -->
         </div>
-        <section class="product-section">
+        <section class="product-section click-listener">
             <div class="healthcare">
                 <h2>Cuidado de la salud</h2>
                 <div class="card-section click-listener">
-                    <div product="product2" class="product-card">
+                    <div product="product1" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Crema para manos</h3>
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -92,7 +92,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img product="product2" src="./assets/img/products/hand-cream.jpeg" alt="">
+                            <img product="product1" src="./assets/img/products/hand-cream.jpeg" alt="">
                         </div>
                         <div class="card-description alert">
                             <p>Crema hidratante con eucalipto ayuda al cuidado de la piel.</p>
@@ -104,7 +104,7 @@
                             </div>
                         </div>
                     </div>
-                    <div product="product3" class="product-card">
+                    <div product="product2" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Serum hidratante</h3>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -115,7 +115,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img product="product3" src="./assets/img/products/serum.jpg" alt="">
+                            <img product="product2" src="./assets/img/products/serum.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Sérum hecho a base de extractos naturales y ácido hialurónico.</p>
@@ -127,7 +127,7 @@
                             </div>
                         </div>
                     </div>
-                    <div product="product4" class="product-card">
+                    <div product="product3" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Kit de viaje</h3>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -138,7 +138,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img product="product4" src="./assets/img/products/organic-kit.jpg" alt="">
+                            <img product="product3" src="./assets/img/products/organic-kit.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Incluye peine y cepillo de bambú, jabón orgánico de eucalipto y shampoo tamaño de viaje.
@@ -151,7 +151,7 @@
                             </div>
                         </div>
                     </div>
-                    <div product="product5" class="product-card">
+                    <div product="product4" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Set de jabones</h3>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -162,7 +162,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img product="product5" src="./assets/img/products/organic-soap.jpg" alt="">
+                            <img product="product4" src="./assets/img/products/organic-soap.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Paquete de 2 unidades jabón de carbón activado con coco.</p>
@@ -174,7 +174,7 @@
                             </div>
                         </div>
                     </div>
-                    <div product="product6" class="product-card">
+                    <div product="product5" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Kit de skincare</h3>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -185,7 +185,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img product="product6" src="./assets/img/products/guasha-kit.jpg" alt="">
+                            <img product="product5" src="./assets/img/products/guasha-kit.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Incluye 2 rodillos y una gua sha</p>
@@ -198,15 +198,15 @@
                         </div>
                     </div>
                     <script>
-                        // let card = document.querySelector('[product="product1"]');
+                        let card = document.querySelector('[product="product1"]');
 
-                        // card.addEventListener('click', function (e) {
-                        //     if (e.target.tagName === 'BUTTON') {
-                        //         // alert('submit event detected!');
-                        //     }
-                        // });
+                        card.addEventListener('click', function (e) {
+                            if (e.target.tagName === 'BUTTON') {
+                                // alert('submit event detected!');
+                            }
+                        });
                     </script>
-                    <div product="product1" class="product-card">
+                    <div product="product6" class="product-card">
                         <div class="icon wish-list" style="display: flex; justify-content: space-between;">
                             <h3>Cepillo de bambú</h3>
                             <!-- Dispara Accion: Me gusta el producto -->
@@ -218,7 +218,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img product="product1" src="./assets/img/products/toothbrush.jpg" alt="">
+                            <img product="product6" src="./assets/img/products/toothbrush.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Paquete de 2 unidades hecho 100% de materiales ecológicos</p>
@@ -250,8 +250,8 @@
             </div>
             <div class="furniture">
                 <h2>Decoración del hogar</h2>
-                <div class="card-section">
-                    <div class="product-card">
+                <div class="card-section click-listener">
+                    <div product="product7" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Silla de bambú</h3>
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -262,7 +262,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/furniture/wood-chair.jpg" alt="">
+                            <img product="product7" src="./assets/img/furniture/wood-chair.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Disponible en 2 colores: blanco y negro, acabado de bambú.</p>
@@ -274,7 +274,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div product="product8" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Banco pequeño</h3>
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -285,7 +285,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/furniture/small-table.jpeg" alt="">
+                            <img product="product8" src="./assets/img/furniture/small-table.jpeg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Ideal para agregar un toque de estilo a tus espacios.</p>
@@ -297,7 +297,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div product="product9" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Buró</h3>
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -308,7 +308,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/furniture/stand-table.jpg" alt="">
+                            <img product="product9" src="./assets/img/furniture/stand-table.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Elaborado con bambú, cuenta con 2 compartimentos para guardar cosas.</p>
@@ -320,7 +320,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div product="product10" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Cajonera</h3>
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -331,7 +331,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/furniture/mueble.jpg" alt="">
+                            <img product="product10" src="./assets/img/furniture/mueble.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
@@ -343,7 +343,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div product="product11" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Espejo de pared</h3>
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -354,7 +354,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/furniture/mirror.jpg" alt="">
+                            <img product="product11" src="./assets/img/furniture/mirror.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
@@ -366,7 +366,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div product="product12" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Lámpara bambú</h3>
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -377,7 +377,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/furniture/desk-lamp.jpg" alt="">
+                            <img product="product12" src="./assets/img/furniture/desk-lamp.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
@@ -389,7 +389,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div product="product13" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Mesita decorativa</h3>
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -400,7 +400,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/furniture/stand.jpg" alt="">
+                            <img product="product13" src="./assets/img/furniture/stand.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
@@ -412,7 +412,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div product="product14" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Mesa de desayuno</h3>
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -423,7 +423,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/furniture/mini-table.jpg" alt="">
+                            <img product="product14" src="./assets/img/furniture/mini-table.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
@@ -435,7 +435,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div product="product15" class="product-card">
                         <div class="icon" style="display: flex; justify-content: space-between;">
                             <h3>Mesa decorativa</h3>
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -446,7 +446,7 @@
                             </svg>
                         </div>
                         <div class="product-image">
-                            <img src="./assets/img/furniture/table.jpg" alt="">
+                            <img product="product15" src="./assets/img/furniture/table.jpg" alt="">
                         </div>
                         <div class="card-description">
                             <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
@@ -634,6 +634,100 @@
             <span>Eco-Store 2024 &copy;</span>
         </div>
     </footer>
+    <div open modal="product-details" class="modal listener-actions">
+        <div class="container-product-details">
+            <div class="header-product-details">
+                <h1>Cuidado de la Salud</h1>
+                <button onclick="closedElement('product-details')">
+                    <i modal="close-detail-product" class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="flex-wrap">
+                <div class="container-caracteristicas">
+                    <div class="product-details"
+                        style="display: flex; flex-direction: column; height: auto;overflow: scroll;">
+                        <div class="container-collapsible">
+                            <div class="collapsible">
+                                <button>Propiedades del eucalipto</button>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                            <div class="content">
+                                <ul>
+                                    <li>Antiinflamatorias</li>
+                                    <li>Expectorantes</li>
+                                    <li>Calmantes</li>
+                                    <li>Antioxidantes</li>
+                                    <li>Antifúngicas</li>
+                                    <li>Antisépticas</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="container-collapsible">
+                            <div class="collapsible">
+                                <button>Otros beneficios</button>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                            <div class="content">
+                                <ul>
+                                    <li>Alivia infecciones y enfermedades respiratorias</li>
+                                    <li>Desinfecta el ambiente ante procesos virales</li>
+                                    <li>Reduce la inflamación en la piel</li>
+                                    <li>Previene la resequedad en la piel</li>
+                                    <li>Desinfecta heridas</li>
+                                    <li>Equilibra la producción de grasa en la piel</li>
+                                    <li>Ayuda a que los granos desaparezcan más rápido</li>
+                                    <li>Estimula el funcionamiento del sistema inmune</li>
+                                    <li>Trata las manchas en la piel y unifica el tono facial</li>
+                                    <li>Relaja la mente y el cuerpo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-img-actions">
+                    <h2>Crema para manos</h2>
+                    <img src="./assets/transparent/hand-cream-removebg-preview.png" alt="">
+                    <span class="price">$100 MXN</span>
+                    <div class="container-collapsible">
+                        <div class="collapsible description">
+                            <button>Descripcion</button>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <div class="content description" style="max-height: 150px;">
+                            <p>Crema hidratante con eucalipto ayuda al
+                                cuidado de la piel. Todos
+                                nuestro producto estan elaborados con ingredientes 100% naturales para
+                                ayudar a cuidar tu salud sin descuidar el medio ambiente. La crema es ideal para
+                                hidratar la
+                                piel.</p>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button action="addToCart" class="button-product">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Agregar al carrito
+                        </button>
+                        <button action="addToWishList" class="button-product">
+                            <i class="fa-solid fa-heart"></i>
+                            Agregar a la lista de deseos
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- <p
+                style="position: absolute; bottom:40px; left: 0; background-color: #ECFCD7; color: black; padding: 12px;  border-radius: 0 5px 5px 0;">
+                En tu primera compra llevate otro de regalo!
+            </p>
+            <p
+                style="position: absolute; bottom:100px; left: 0; background-color: #ECFCD7; color: black; padding: 12px;  border-radius: 0 5px 5px 0;">
+                Pide 3 productos y llevate uno gratis!
+            </p> -->
+    </div>
+    </div>
     <script>
         const btnToggle = document.querySelector(".toggle");
 
@@ -650,22 +744,57 @@
             } else {
                 // document.querySelector('header').classList.add('test');
             }
+
         });
 
-        window.addEventListener('resize', function (e) {
-            // console.log(window.innerWidth);
-            // console.log(window.outerWidth);
-            // if (window.outerWidth >= 900 && window.scrollY < 10) {
-            //     console.log('ajustando estilos a 900px');
-            //     document.querySelector('header').style.background = '#FFF';
-            // } else {
-            //     document.querySelector('header').style.background = 'transparent';
-            // }
+        function closedElement(elementToClose) {
+            let ref = document.querySelector(`[modal=${elementToClose}]`);
+            disableScrolling();
+            ref.remove();
+        }
+
+        // actions: modal product details
+        document.querySelector('.listener-actions').addEventListener("click", function (e) {
+            switch (e.target.getAttribute('action')) {
+                case "addToCart":
+                    console.log("addToCart");
+                    break;
+                case "addToWishList":
+                    console.log("addToWishList");
+                    break;
+            }
         });
+
+        let width = document.querySelector('.collapsible.description');
+
+
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        function handlerCollapseSection() {
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+
+        // for (i = 0; i < coll.length; i++) {
+        //     let sibling = coll[i].nextElementSibling;
+        //     sibling.style.maxHeight = null;
+        //     sibling.style.maxHeight = "500px";
+        // }
+
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", handlerCollapseSection);
+        }
     </script>
-    <script src="./js/main.js"></script>
     <script src="./js/utilerias.js"></script>
     <script src="./js/orquestador.js"></script>
+    <script src="./js/services/ProductService.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
