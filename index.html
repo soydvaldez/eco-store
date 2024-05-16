@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/dark-mode.css">
     <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/modal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -18,633 +19,656 @@
 <!-- dark-mode -->
 
 <body class="">
-    <header>
-        <nav>
-            <p>Eco-store</p>
-            <div class="icons">
-                <button class="profile">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M5.121 17.804C7.21942 16.6179 9.58958 15.9963 12 16C14.5 16 16.847 16.655 18.879 17.804M15 10C15 10.7956 14.6839 11.5587 14.1213 12.1213C13.5587 12.6839 12.7956 13 12 13C11.2044 13 10.4413 12.6839 9.87868 12.1213C9.31607 11.5587 9 10.7956 9 10C9 9.20435 9.31607 8.44129 9.87868 7.87868C10.4413 7.31607 11.2044 7 12 7C12.7956 7 13.5587 7.31607 14.1213 7.87868C14.6839 8.44129 15 9.20435 15 10ZM21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z"
-                            stroke="#7C6A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+    <div class="page">
+        <header>
+            <nav>
+                <button open-hamburger-menu class="btn-menu" onclick="handleHamburgerMenu(event)">
+                    <i open-hamburger-menu class="fa-solid fa-bars icon menu"></i>
                 </button>
-                <button class="wishlist">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                            stroke="#7C6A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <button class="cart">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M3 3H5L5.4 5M5.4 5H21L17 13H7M5.4 5L7 13M7 13L4.707 15.293C4.077 15.923 4.523 17 5.414 17H17M17 17C16.4696 17 15.9609 17.2107 15.5858 17.5858C15.2107 17.9609 15 18.4696 15 19C15 19.5304 15.2107 20.0391 15.5858 20.4142C15.9609 20.7893 16.4696 21 17 21C17.5304 21 18.0391 20.7893 18.4142 20.4142C18.7893 20.0391 19 19.5304 19 19C19 18.4696 18.7893 17.9609 18.4142 17.5858C18.0391 17.2107 17.5304 17 17 17ZM9 19C9 19.5304 8.78929 20.0391 8.41421 20.4142C8.03914 20.7893 7.53043 21 7 21C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19C5 18.4696 5.21071 17.9609 5.58579 17.5858C5.96086 17.2107 6.46957 17 7 17C7.53043 17 8.03914 17.2107 8.41421 17.5858C8.78929 17.9609 9 18.4696 9 19Z"
-                            stroke="#7C6A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <button class="toggle prevent-select toggle-efect">
-                    <span><i class="fa-solid fa-sun"></i></span>
-                    <span><i class="fa-solid fa-moon"></i></span>
-                </button>
-            </div>
-        </nav>
-        <article>
-            <div class="impact-section">
-                <h1>Impacto Ecológico</h1>
-                <p>Debido al impacto ambiental siendo las acciones
-                    humanas las que modifican el ambiente, Eco-store
-                    se compromete a elaborar sus productos de manera
-                    artesanal y con materiales que favorecen al cuidado
-                    del medio ambiente.
-                </p>
-                <button>Conoce más</button>
-            </div>
-            <div class="image-section">
-                <!-- <img src="./assets/transparent/safan-vs-qlIUkJE2DHY-unsplash-removebg-preview.png" alt=""> -->
-                <img src="./assets/background-img/ranurte-i-Bl3U6XbpQ-unsplash-removebg-preview.png" alt="">
-            </div>
-        </article>
-    </header>
-    <main class="main-section">
-        <!-- <h2>Nuestros productos estan elaborados con Bambu</h2>
+                <p>Eco-store</p>
+                <div class="icons">
+                    <button class="profile">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.121 17.804C7.21942 16.6179 9.58958 15.9963 12 16C14.5 16 16.847 16.655 18.879 17.804M15 10C15 10.7956 14.6839 11.5587 14.1213 12.1213C13.5587 12.6839 12.7956 13 12 13C11.2044 13 10.4413 12.6839 9.87868 12.1213C9.31607 11.5587 9 10.7956 9 10C9 9.20435 9.31607 8.44129 9.87868 7.87868C10.4413 7.31607 11.2044 7 12 7C12.7956 7 13.5587 7.31607 14.1213 7.87868C14.6839 8.44129 15 9.20435 15 10ZM21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z"
+                                stroke="#7C6A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button class="wishlist">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                stroke="#7C6A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button class="cart" onclick="displayMessage(event)">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3 3H5L5.4 5M5.4 5H21L17 13H7M5.4 5L7 13M7 13L4.707 15.293C4.077 15.923 4.523 17 5.414 17H17M17 17C16.4696 17 15.9609 17.2107 15.5858 17.5858C15.2107 17.9609 15 18.4696 15 19C15 19.5304 15.2107 20.0391 15.5858 20.4142C15.9609 20.7893 16.4696 21 17 21C17.5304 21 18.0391 20.7893 18.4142 20.4142C18.7893 20.0391 19 19.5304 19 19C19 18.4696 18.7893 17.9609 18.4142 17.5858C18.0391 17.2107 17.5304 17 17 17ZM9 19C9 19.5304 8.78929 20.0391 8.41421 20.4142C8.03914 20.7893 7.53043 21 7 21C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19C5 18.4696 5.21071 17.9609 5.58579 17.5858C5.96086 17.2107 6.46957 17 7 17C7.53043 17 8.03914 17.2107 8.41421 17.5858C8.78929 17.9609 9 18.4696 9 19Z"
+                                stroke="#7C6A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button class="toggle prevent-select toggle-efect">
+                        <span><i class="fa-solid fa-sun"></i></span>
+                        <span><i class="fa-solid fa-moon"></i></span>
+                    </button>
+                </div>
+            </nav>
+            <article>
+                <div class="impact-section">
+                    <h1>Impacto Ecológico</h1>
+                    <p>Debido al impacto ambiental siendo las acciones
+                        humanas las que modifican el ambiente, Eco-store
+                        se compromete a elaborar sus productos de manera
+                        artesanal y con materiales que favorecen al cuidado
+                        del medio ambiente.
+                    </p>
+                    <button>Conoce más</button>
+                </div>
+                <div class="image-section">
+                    <!-- <img src="./assets/transparent/safan-vs-qlIUkJE2DHY-unsplash-removebg-preview.png" alt=""> -->
+                    <img src="./assets/background-img/ranurte-i-Bl3U6XbpQ-unsplash-removebg-preview.png" alt="">
+                </div>
+            </article>
+        </header>
+        <main class="main-section">
+            <!-- <h2>Nuestros productos estan elaborados con Bambu</h2>
         <p>Cada Material utilizado en la elaboracion de nuestros productos esta pensado en ser 100% reciclable. Teniendo
             como objetovo cuidar el planeta</p> -->
-        <div class="main-gallery">
-            <img src="./assets/muestrario/main-gallery/toa-heftiba-SFKleE72S2o-unsplash (1).jpg" alt="">
-            <img src="./assets/muestrario/main-gallery/michela-ampolo-7tDGb3HrITg-unsplash.jpg" alt="">
-            <img src="./assets/muestrario/main-gallery/micheile-henderson-wwTvwS9vKZs-unsplash.jpg" alt="">
-            <img src="./assets/muestrario/main-gallery/sara-groblechner-h10-NImYZHs-unsplash.jpg" alt="">
-            <!-- <div class="overlay"></div> -->
-        </div>
-        <section class="product-section click-listener">
-            <div class="healthcare">
-                <h2>Cuidado de la salud</h2>
-                <div class="card-section click-listener">
-                    <div product="product1" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Crema para manos</h3>
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product1" src="./assets/img/products/hand-cream.jpeg" alt="">
-                        </div>
-                        <div class="card-description alert">
-                            <p>Crema hidratante con eucalipto ayuda al cuidado de la piel.</p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
+            <div class="main-gallery">
+                <img src="./assets/muestrario/main-gallery/toa-heftiba-SFKleE72S2o-unsplash (1).jpg" alt="img1">
+                <img src="./assets/muestrario/main-gallery/michela-ampolo-7tDGb3HrITg-unsplash.jpg" alt="img2">
+                <img src="./assets/muestrario/main-gallery/micheile-henderson-wwTvwS9vKZs-unsplash.jpg" alt="img3">
+                <img src="./assets/muestrario/main-gallery/sara-groblechner-h10-NImYZHs-unsplash.jpg" alt="img4">
+                <!-- <div class="overlay"></div> -->
+            </div>
+            <section class="product-section click-listener">
+                <div class="healthcare">
+                    <h2>Cuidado de la salud</h2>
+                    <div class="card-section click-listener">
+                        <div product="product1" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Crema para manos</h3>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
                             </div>
-                        </div>
-                    </div>
-                    <div product="product2" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Serum hidratante</h3>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product2" src="./assets/img/products/serum.jpg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Sérum hecho a base de extractos naturales y ácido hialurónico.</p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
+                            <div class="product-image">
+                                <img product="product1" src="./assets/img/products/hand-cream.jpeg" alt="">
                             </div>
-                        </div>
-                    </div>
-                    <div product="product3" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Kit de viaje</h3>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product3" src="./assets/img/products/organic-kit.jpg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Incluye peine y cepillo de bambú, jabón orgánico de eucalipto y shampoo tamaño de viaje.
-                            </p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div product="product4" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Set de jabones</h3>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product4" src="./assets/img/products/organic-soap.jpg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Paquete de 2 unidades jabón de carbón activado con coco.</p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div product="product5" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Kit de skincare</h3>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product5" src="./assets/img/products/guasha-kit.jpg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Incluye 2 rodillos y una gua sha</p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        let card = document.querySelector('[product="product1"]');
-
-                        card.addEventListener('click', function (e) {
-                            if (e.target.tagName === 'BUTTON') {
-                                // alert('submit event detected!');
-                            }
-                        });
-                    </script>
-                    <div product="product6" class="product-card">
-                        <div class="icon wish-list" style="display: flex; justify-content: space-between;">
-                            <h3>Cepillo de bambú</h3>
-                            <!-- Dispara Accion: Me gusta el producto -->
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product6" src="./assets/img/products/toothbrush.jpg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Paquete de 2 unidades hecho 100% de materiales ecológicos</p>
-                            <div style="display: flex; justify-content: space-between;">
-                                <div style="display: flex; justify-content: space-between;">
-                                    <i class="fa-regular fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <div style="display: flex; justify-content: space-between;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="32"
-                                        height="32">
-                                        <path stroke="#3F3F46"
-                                            d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
-                                    </svg>
-                                    <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                            <div class="card-description alert">
+                                <p>Crema hidratante con eucalipto ayuda al cuidado de la piel.</p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
                                 </div>
                             </div>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
+                        </div>
+                        <div product="product2" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Serum hidratante</h3>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product2" src="./assets/img/products/serum.jpg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Sérum hecho a base de extractos naturales y ácido hialurónico.</p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="furniture">
-                <h2>Decoración del hogar</h2>
-                <div class="card-section click-listener">
-                    <div product="product7" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Silla de bambú</h3>
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product7" src="./assets/img/furniture/wood-chair.jpg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Disponible en 2 colores: blanco y negro, acabado de bambú.</p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
+                        <div product="product3" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Kit de viaje</h3>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product3" src="./assets/img/products/organic-kit.jpg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Incluye peine y cepillo de bambú, jabón orgánico de eucalipto y shampoo tamaño de
+                                    viaje.
+                                </p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div product="product8" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Banco pequeño</h3>
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product8" src="./assets/img/furniture/small-table.jpeg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Ideal para agregar un toque de estilo a tus espacios.</p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
+                        <div product="product4" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Set de jabones</h3>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product4" src="./assets/img/products/organic-soap.jpg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Paquete de 2 unidades jabón de carbón activado con coco.</p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div product="product9" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Buró</h3>
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product9" src="./assets/img/furniture/stand-table.jpg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Elaborado con bambú, cuenta con 2 compartimentos para guardar cosas.</p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
+                        <div product="product5" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Kit de skincare</h3>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product5" src="./assets/img/products/guasha-kit.jpg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Incluye 2 rodillos y una gua sha</p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div product="product10" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Cajonera</h3>
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product10" src="./assets/img/furniture/mueble.jpg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div product="product11" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Espejo de pared</h3>
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product11" src="./assets/img/furniture/mirror.jpg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div product="product12" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Lámpara bambú</h3>
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product12" src="./assets/img/furniture/desk-lamp.jpg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div product="product13" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Mesita decorativa</h3>
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product13" src="./assets/img/furniture/stand.jpg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div product="product14" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Mesa de desayuno</h3>
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product14" src="./assets/img/furniture/mini-table.jpg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div product="product15" class="product-card">
-                        <div class="icon" style="display: flex; justify-content: space-between;">
-                            <h3>Mesa decorativa</h3>
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
-                                    stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="product-image">
-                            <img product="product15" src="./assets/img/furniture/table.jpg" alt="">
-                        </div>
-                        <div class="card-description">
-                            <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
-                            <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
-                            <div class="card-description-footer">
-                                <button type="button">
-                                    Agregar al carrito
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="info-section">
-            <div class="info-materiales">
-                <img src="./assets/muestrario/main-gallery/chuttersnap-BofgeVFG-_w-unsplash.jpg" alt="">
-                <p>
-                    El bambú es la planta con mayor velocidad de
-                    crecimiento del mundo. ¿Sabías que la mayoría de las plantas de bambú crecen entre 5 y 20
-                    centímetros cada día? </p>
-            </div>
-            <div class="about-us">
-                <h2>¿Por qué nosotros?</h2>
-                <div class="mision-section">
-                    <div class="earth">
-                        <!-- <img src="./assets/img/earth.png" alt="earth-img"> -->
-                        <svg width="164" height="164" viewBox="0 0 164 164" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M158.647 55.9394H143.119C141.394 51.8874 139.268 48.018 136.773 44.3889C135.689 42.8129 134.542 41.2947 133.333 39.834C134.522 37.2139 134.983 33.9179 134.698 29.978C134.659 29.4383 134.426 28.9308 134.042 28.5494C133.658 28.1679 133.149 27.9381 132.609 27.9024C128.548 27.6109 125.175 28.1074 122.519 29.3822C115.457 23.9448 107.373 19.982 98.7491 17.7293C99.2265 15.4386 99.3657 13.0903 99.1623 10.7593C99.1236 10.2216 98.8925 9.7158 98.5113 9.3346C98.1301 8.9534 97.6243 8.72231 97.0866 8.68365C90.7188 8.2256 86.0359 9.70545 83.1658 13.0815C82.7269 13.5952 82.3365 14.1485 81.9999 14.7344C81.6638 14.1452 81.2734 13.5886 80.834 13.0719C77.9512 9.69584 73.2842 8.21599 66.9132 8.67404C66.3755 8.7127 65.8697 8.94379 65.4885 9.32499C65.1073 9.70619 64.8762 10.212 64.8376 10.7497C64.6332 13.0731 64.7714 15.414 65.2476 17.6972C63.3257 18.1927 61.4358 18.7746 59.578 19.4429C52.3971 22.035 45.7136 25.8388 39.8179 30.6891C36.9351 28.4469 32.8287 27.5148 27.5788 27.8928C27.0411 27.9314 26.5353 28.1625 26.1541 28.5437C25.7729 28.9249 25.5418 29.4307 25.5032 29.9684C25.1092 35.4137 26.1438 39.6226 28.5558 42.5247C20.9372 52.8507 16.4696 65.1608 15.692 77.9696C14.9145 90.7784 17.8603 103.539 24.1739 114.71C26.9919 119.675 30.4368 124.257 34.4239 128.343H27.0279C24.9737 128.345 23.0043 129.162 21.5518 130.615C20.0992 132.068 19.2821 134.037 19.2795 136.091C19.2795 136.957 18.9356 137.787 18.3235 138.399C17.7114 139.011 16.8812 139.355 16.0155 139.355H4.93591C4.34125 139.355 3.77094 139.591 3.35045 140.012C2.92996 140.432 2.69373 141.003 2.69373 141.597C2.69373 142.192 2.92996 142.762 3.35045 143.183C3.77094 143.603 4.34125 143.84 4.93591 143.84H16.0155C18.0694 143.837 20.0385 143.02 21.4905 141.567C22.9425 140.114 23.759 138.145 23.7607 136.091C23.7615 135.226 24.1057 134.396 24.7176 133.784C25.3295 133.172 26.1593 132.828 27.0247 132.827H39.2286C51.15 142.88 66.2358 148.405 81.8301 148.43H81.9999C90.872 148.46 99.6588 146.698 107.833 143.249C116.007 139.8 123.401 134.735 129.57 128.359C132.046 125.818 134.316 123.083 136.357 120.181C142.38 111.594 146.289 101.705 147.764 91.32C149.239 80.9351 148.239 70.3486 144.845 60.4237H158.647C159.242 60.4237 159.812 60.1875 160.233 59.767C160.653 59.3465 160.89 58.7762 160.89 58.1815C160.89 57.5869 160.653 57.0166 160.233 56.5961C159.812 56.1756 159.242 55.9394 158.647 55.9394ZM127.404 40.4683C125.204 42.3517 122.106 42.4382 120.3 42.2908C120.156 40.4875 120.242 37.3965 122.103 35.2055C123.727 33.2837 126.472 32.3227 130.284 32.3227C130.265 36.1056 129.297 38.8443 127.404 40.4683ZM86.5804 15.9868C88.2044 14.0649 90.9494 13.104 94.7612 13.104C94.7419 16.9029 93.7746 19.6447 91.8783 21.2655C89.6874 23.1329 86.5836 23.2226 84.777 23.0625C84.6329 21.2687 84.7194 18.1777 86.5804 15.9868ZM77.4034 15.9676C79.2869 18.1681 79.3733 21.2687 79.2228 23.0721C77.4162 23.2194 74.3188 23.1329 72.1183 21.2495C70.2252 19.6287 69.2579 16.8869 69.2355 13.0879C73.0312 13.1072 75.7794 14.0713 77.4034 15.9676ZM55.4268 32.3035C55.4076 36.1024 54.4434 38.8411 52.544 40.4651C50.3434 42.3517 47.2428 42.435 45.4394 42.2876C45.2921 40.4811 45.3754 37.3836 47.2588 35.1831C48.886 33.2901 51.6279 32.3227 55.414 32.3067L55.4268 32.3035ZM38.069 35.1863C39.9525 37.3836 40.039 40.4843 39.8916 42.2876C38.0883 42.435 34.994 42.3485 32.8031 40.4843C30.8812 38.8635 29.9203 36.1152 29.9203 32.3067C33.7032 32.3259 36.4451 33.2901 38.069 35.1863ZM37.4284 98.5794C37.4956 99.0837 37.5288 99.592 37.5277 100.101C37.5161 102.889 36.5041 105.579 34.6759 107.684C32.8476 109.788 30.3247 111.167 27.566 111.568C23.3597 103.813 20.8554 95.2502 20.2202 86.4508C19.585 77.6514 20.8335 68.8178 23.8824 60.539C27.1447 59.6244 30.6125 59.7632 33.7913 60.9356C36.9701 62.108 39.6976 64.2541 41.5848 67.068C43.4719 69.8819 44.4224 73.2198 44.3007 76.6057C44.179 79.9916 42.9913 83.2527 40.907 85.9238C39.5226 87.7003 38.5029 89.7329 37.9065 91.9048C37.3101 94.0766 37.1487 96.3449 37.4316 98.5794H37.4284ZM85.4048 143.852C85.4048 143.612 85.4048 143.426 85.4048 143.33C85.4065 140.809 86.4085 138.391 88.1908 136.607C89.9731 134.824 92.3903 133.82 94.9117 133.817C98.6433 133.817 101.34 135.867 102.948 137.59C103.56 138.249 104.112 138.961 104.598 139.717C98.4622 142.112 91.9824 143.508 85.4048 143.852ZM143.942 82.1697C143.935 94.857 140.006 107.232 132.693 117.6C126.45 126.475 118.001 133.569 108.179 138.183C107.489 137.033 106.68 135.959 105.764 134.98C102.756 131.761 98.906 129.986 94.9181 129.986C91.3778 129.991 87.984 131.4 85.4811 133.904C82.9783 136.408 81.5709 139.803 81.5675 143.343C81.5675 143.449 81.5675 143.663 81.5675 143.952C70.5501 143.879 59.7519 140.866 50.289 135.223C49.0269 134.467 47.7959 133.669 46.5958 132.827H54.5876C55.1822 132.827 55.7525 132.591 56.173 132.17C56.5935 131.75 56.8298 131.18 56.8298 130.585C56.8298 129.99 56.5935 129.42 56.173 129C55.7525 128.579 55.1822 128.343 54.5876 128.343H40.9102C36.5466 124.471 32.749 120.005 29.6288 115.075C33.3169 114.168 36.5409 111.933 38.6838 108.797C40.8267 105.661 41.738 101.845 41.2433 98.0797C41.0235 96.349 41.1484 94.5919 41.6107 92.9097C42.0731 91.2275 42.8637 89.6534 43.9372 88.2781C46.2843 85.271 47.7193 81.6536 48.0717 77.8553C48.4242 74.0571 47.6794 70.2374 45.9258 66.8498C44.1721 63.4621 41.4832 60.6488 38.1783 58.7439C34.8734 56.8389 31.0913 55.9222 27.2809 56.1027C26.7332 56.1283 26.1887 56.1796 25.6473 56.2501C27.3993 52.4015 29.5462 48.7452 32.0536 45.3402C34.1406 46.3545 36.4376 46.8616 38.7577 46.8201C39.1837 46.8201 39.5841 46.8201 39.9557 46.7816V54.5268C39.9557 55.1214 40.1919 55.6917 40.6124 56.1122C41.0329 56.5327 41.6032 56.769 42.1979 56.769C42.7925 56.769 43.3628 56.5327 43.7833 56.1122C44.2038 55.6917 44.4401 55.1214 44.4401 54.5268V46.6951C45.1598 46.7791 45.8839 46.8208 46.6086 46.8201C49.1711 46.8201 52.6497 46.2819 55.4492 43.902C58.8253 41.0192 60.3051 36.3458 59.8439 29.978C59.8053 29.4408 59.5747 28.9355 59.1941 28.5543C58.8136 28.1732 58.3086 27.9418 57.7715 27.9024C55.6162 27.7186 53.446 27.8198 51.3172 28.2035C54.4409 26.4096 57.7165 24.894 61.1059 23.6743C63.0118 22.9888 64.9497 22.393 66.91 21.9158C67.5342 22.9589 68.3239 23.8936 69.2483 24.6833C72.0478 27.0632 75.5168 27.6013 78.0921 27.6013C78.7103 27.6013 79.2805 27.5725 79.7737 27.5276V35.308C79.7737 35.9027 80.01 36.473 80.4305 36.8935C80.851 37.314 81.4212 37.5502 82.0159 37.5502C82.6106 37.5502 83.1809 37.314 83.6014 36.8935C84.0219 36.473 84.2581 35.9027 84.2581 35.308V27.5276C84.7514 27.5725 85.3215 27.6013 85.9397 27.6013C88.5023 27.6013 91.9841 27.0632 94.7836 24.6833C95.7006 23.8985 96.4857 22.9717 97.1091 21.9382C104.94 23.9103 112.31 27.392 118.807 32.1882L118.705 32.3035C118.26 32.8155 117.864 33.3677 117.523 33.9531C117.186 33.3639 116.796 32.8074 116.357 32.2907C113.474 28.9146 108.804 27.4347 102.436 27.8928C101.898 27.9314 101.392 28.1625 101.011 28.5437C100.63 28.9249 100.399 29.4307 100.36 29.9684C99.899 36.3362 101.379 41.0224 104.755 43.8924C107.554 46.2723 111.023 46.8104 113.596 46.8104C114.195 46.8104 114.739 46.7816 115.22 46.74V54.5172C115.22 55.1118 115.456 55.6821 115.876 56.1026C116.297 56.5231 116.867 56.7594 117.462 56.7594C118.056 56.7594 118.627 56.5231 119.047 56.1026C119.468 55.6821 119.704 55.1118 119.704 54.5172V46.74C120.213 46.788 120.803 46.8201 121.446 46.8201C124.009 46.8201 127.491 46.2819 130.29 43.902C130.399 43.8091 130.502 43.7098 130.611 43.6105C131.463 44.6868 132.286 45.7919 133.067 46.9322C135.033 49.7846 136.755 52.7977 138.215 55.9394H131.088C129.034 55.9419 127.066 56.7587 125.614 58.2107C124.162 59.6626 123.345 61.6311 123.343 63.6845C123.341 64.5494 122.996 65.3783 122.385 65.9895C121.773 66.6007 120.944 66.9444 120.079 66.9453H108.996C108.401 66.9453 107.831 67.1815 107.41 67.602C106.99 68.0225 106.754 68.5928 106.754 69.1875C106.754 69.7821 106.99 70.3525 107.41 70.7729C107.831 71.1934 108.401 71.4297 108.996 71.4297H120.079C122.133 71.4271 124.102 70.61 125.555 69.1574C127.007 67.7049 127.824 65.7355 127.827 63.6813C127.829 62.817 128.173 61.9886 128.784 61.3775C129.395 60.7663 130.224 60.4222 131.088 60.4205H140.085C142.665 67.3802 143.972 74.7474 143.942 82.1697ZM114.745 42.2812C112.939 42.4286 109.841 42.3421 107.641 40.4586C105.745 38.8347 104.781 36.096 104.758 32.2971C108.557 32.3163 111.299 33.2804 112.923 35.1799C114.81 37.3869 114.896 40.4875 114.745 42.2812Z"
-                                fill="#7C6A0A" />
-                            <path
-                                d="M101.164 80.6101C98.7802 80.6126 96.4944 81.5606 94.8083 83.2462C93.1221 84.9317 92.1733 87.2172 92.1699 89.6013C92.1699 90.2809 92.4399 90.9327 92.9205 91.4132C93.401 91.8938 94.0528 92.1638 94.7324 92.1638C95.412 92.1638 96.0638 91.8938 96.5444 91.4132C97.0249 90.9327 97.2949 90.2809 97.2949 89.6013C97.3239 88.5948 97.7441 87.6392 98.4663 86.9375C99.1885 86.2358 100.156 85.8432 101.163 85.8432C102.17 85.8432 103.137 86.2358 103.859 86.9375C104.581 87.6392 105.001 88.5948 105.03 89.6013C105.03 90.2809 105.3 90.9327 105.781 91.4132C106.262 91.8938 106.913 92.1638 107.593 92.1638C108.273 92.1638 108.924 91.8938 109.405 91.4132C109.885 90.9327 110.155 90.2809 110.155 89.6013C110.153 87.2175 109.205 84.932 107.519 83.2464C105.834 81.5608 103.548 80.6127 101.164 80.6101Z"
-                                fill="#7C6A0A" />
-                            <path
-                                d="M92.1505 100.111C91.4709 100.111 90.8191 100.381 90.3386 100.861C89.858 101.342 89.588 101.993 89.588 102.673C89.588 104.976 88.6732 107.185 87.0447 108.813C85.4162 110.442 83.2074 111.357 80.9044 111.357C78.6013 111.357 76.3926 110.442 74.7641 108.813C73.1356 107.185 72.2207 104.976 72.2207 102.673C72.2207 101.993 71.9507 101.342 71.4702 100.861C70.9896 100.381 70.3378 100.111 69.6582 100.111C68.9786 100.111 68.3268 100.381 67.8462 100.861C67.3657 101.342 67.0957 101.993 67.0957 102.673C67.0957 106.335 68.5505 109.848 71.1402 112.437C73.7298 115.027 77.2421 116.482 80.9044 116.482C84.5667 116.482 88.079 115.027 90.6686 112.437C93.2582 109.848 94.713 106.335 94.713 102.673C94.713 101.993 94.4431 101.342 93.9625 100.861C93.482 100.381 92.8302 100.111 92.1505 100.111Z"
-                                fill="#7C6A0A" />
-                            <path
-                                d="M69.7097 89.6013C69.6652 87.2456 68.6982 85.0015 67.0166 83.3513C65.335 81.7011 63.073 80.7766 60.7169 80.7766C58.3608 80.7766 56.0988 81.7011 54.4172 83.3513C52.7356 85.0015 51.7686 87.2456 51.7241 89.6013C51.7241 90.2809 51.9941 90.9327 52.4747 91.4132C52.9552 91.8938 53.607 92.1638 54.2866 92.1638C54.9662 92.1638 55.618 91.8938 56.0986 91.4132C56.5791 90.9327 56.8491 90.2809 56.8491 89.6013C56.8781 88.5947 57.2983 87.6391 58.0205 86.9374C58.7427 86.2357 59.7099 85.8432 60.7169 85.8432C61.7238 85.8432 62.6911 86.2357 63.4133 86.9374C64.1355 87.6391 64.5557 88.5947 64.5847 89.6013C64.5847 90.2809 64.8546 90.9327 65.3352 91.4132C65.8158 91.8938 66.4676 92.1638 67.1472 92.1638C67.8268 92.1638 68.4786 91.8938 68.9591 91.4132C69.4397 90.9327 69.7097 90.2809 69.7097 89.6013Z"
-                                fill="#7C6A0A" />
-                            <path
-                                d="M149.666 146.274C146.063 144.781 145.3 144.016 143.82 140.415C143.566 139.801 143.135 139.276 142.582 138.906C142.029 138.537 141.378 138.34 140.713 138.34C140.048 138.34 139.398 138.537 138.845 138.906C138.292 139.276 137.861 139.801 137.606 140.415C136.114 144.016 135.348 144.781 131.748 146.274C131.133 146.529 130.608 146.96 130.239 147.513C129.869 148.066 129.672 148.716 129.672 149.381C129.672 150.046 129.869 150.696 130.239 151.249C130.608 151.802 131.133 152.233 131.748 152.488C135.271 153.945 136.146 154.823 137.603 158.343C137.857 158.959 138.288 159.485 138.842 159.855C139.395 160.225 140.046 160.423 140.712 160.423C141.378 160.423 142.028 160.225 142.582 159.855C143.135 159.485 143.566 158.959 143.82 158.343C145.278 154.82 146.155 153.942 149.676 152.485C150.29 152.23 150.815 151.799 151.185 151.246C151.554 150.693 151.751 150.043 151.751 149.378C151.751 148.713 151.554 148.063 151.185 147.51C150.815 146.957 150.29 146.525 149.676 146.271L149.666 146.274ZM140.697 155.848C139.16 152.475 137.603 150.919 134.23 149.381C137.638 147.837 139.15 146.325 140.697 142.914C142.241 146.325 143.753 147.837 147.164 149.381C143.798 150.919 142.238 152.469 140.704 155.848H140.697Z"
-                                fill="#7C6A0A" />
-                            <path
-                                d="M8.85047 19.1994C12.3739 20.6568 13.2484 21.5313 14.7058 25.0547C14.9604 25.6691 15.3915 26.1943 15.9445 26.5637C16.4976 26.9332 17.1477 27.1304 17.8128 27.1304C18.4779 27.1304 19.1281 26.9332 19.6811 26.5637C20.2341 26.1943 20.6652 25.6691 20.9198 25.0547C22.3805 21.5313 23.2549 20.6568 26.7784 19.1994C27.3925 18.9441 27.9173 18.5126 28.2865 17.9594C28.6557 17.4061 28.8527 16.7559 28.8527 16.0908C28.8527 15.4257 28.6557 14.7754 28.2865 14.2222C27.9173 13.6689 27.3925 13.2374 26.7784 12.9821C23.178 11.4927 22.4125 10.74 20.923 7.12684C20.6678 6.51266 20.2363 5.98787 19.683 5.61869C19.1298 5.24951 18.4795 5.05249 17.8144 5.05249C17.1493 5.05249 16.4991 5.24951 15.9458 5.61869C15.3926 5.98787 14.9611 6.51266 14.7058 7.12684C13.2163 10.7271 12.4636 11.4927 8.85047 12.9821C8.23629 13.2374 7.7115 13.6689 7.34232 14.2222C6.97314 14.7754 6.77612 15.4257 6.77612 16.0908C6.77612 16.7559 6.97314 17.4061 7.34232 17.9594C7.7115 18.5126 8.23629 18.9441 8.85047 19.1994ZM17.8192 9.62527C19.3599 13.0366 20.8718 14.5453 24.2799 16.0924C20.907 17.6171 19.3503 19.1866 17.8128 22.5595C16.2785 19.1866 14.7346 17.6171 11.3457 16.0924C14.757 14.5453 16.2689 13.0366 17.8128 9.62527H17.8192Z"
-                                fill="#7C6A0A" />
-                        </svg>
+                        <script>
+                            let card = document.querySelector('[product="product1"]');
 
-                        <p>Compromiso con el medio
-                            ambiente garantizando
-                            el uso de materiales
-                            100% reciclables.</p>
+                            card.addEventListener('click', function (e) {
+                                if (e.target.tagName === 'BUTTON') {
+                                    // alert('submit event detected!');
+                                }
+                            });
+                        </script>
+                        <div product="product6" class="product-card">
+                            <div class="icon wish-list" style="display: flex; justify-content: space-between;">
+                                <h3>Cepillo de bambú</h3>
+                                <!-- Dispara Accion: Me gusta el producto -->
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product6" src="./assets/img/products/toothbrush.jpg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Paquete de 2 unidades hecho 100% de materiales ecológicos</p>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="32"
+                                            height="32">
+                                            <path stroke="#3F3F46"
+                                                d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                                        </svg>
+                                        <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                    </div>
+                                </div>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="innovation">
-                        <!-- <img src="./assets/img/ecology.png" alt="ecology-img"> -->
-                        <svg width="164" height="164" viewBox="0 0 164 164" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M37.6624 58.2714C37.6624 69.7738 42.0474 80.6772 50.0136 88.9733C56.375 95.6006 59.8888 104.384 59.9113 113.721H56.5736C54.7959 113.721 53.3513 115.165 53.3513 116.943V136.024C53.3513 137.802 54.7959 139.246 56.5736 139.246H64.3027V147.824C64.3027 149.064 65.3053 150.067 66.5449 150.067H97.4583C98.6979 150.067 99.7005 149.064 99.7005 147.824V139.246H107.43C109.207 139.246 110.652 137.802 110.652 136.024V133.618C110.652 132.379 109.649 131.376 108.41 131.376C107.17 131.376 106.168 132.379 106.168 133.618V134.762H97.4583H66.5449H57.8356V128.724H74.0627C75.3023 128.724 76.3049 127.722 76.3049 126.482C76.3049 125.242 75.3023 124.24 74.0627 124.24H57.8356V118.202H106.168V119.899C106.168 121.139 107.17 122.142 108.41 122.142C109.649 122.142 110.652 121.139 110.652 119.899V116.943C110.652 115.165 109.207 113.721 107.43 113.721H101.859C101.856 113.721 101.853 113.721 101.85 113.721H84.2422V84.0661L90.783 76.2601C91.9938 76.4715 93.2077 76.5772 94.4121 76.5772C99.8831 76.5772 105.155 74.4279 109.146 70.4368C114.352 65.2318 116.424 57.8486 114.681 50.6864C114.483 49.8728 113.845 49.2354 113.032 49.0368C105.873 47.3007 98.4897 49.3699 93.2846 54.575C88.355 59.5046 86.2377 66.3913 87.5062 73.1883L82 79.7547L76.4938 73.1851C77.7623 66.3849 75.645 59.5014 70.7154 54.5718C65.5103 49.3667 58.1303 47.2975 50.9681 49.0336C50.1513 49.2322 49.5171 49.8664 49.3185 50.6832C47.5792 57.8421 49.6484 65.2253 54.8535 70.4336C58.8446 74.4247 64.117 76.574 69.5879 76.574C70.7923 76.574 72.0031 76.4683 73.217 76.2569L79.7578 84.0629V113.717H64.3956C64.37 103.221 60.4142 93.3328 53.2488 85.8663C46.0898 78.4094 42.1467 68.6111 42.1467 58.2714C42.1467 47.5729 46.3268 37.5311 53.9182 29.9942C61.5064 22.4572 71.5738 18.354 82.2819 18.4213C103.406 18.5654 121.152 35.8495 121.834 56.9485C122.18 67.6854 118.314 77.8873 110.943 85.6677C105.729 91.1739 102.128 97.9229 100.533 105.181C100.267 106.392 101.033 107.587 102.244 107.853C103.451 108.118 104.649 107.353 104.915 106.142C106.334 99.6814 109.544 93.6659 114.201 88.7523C122.401 80.0943 126.703 68.7488 126.318 56.8043C125.947 45.3468 121.187 34.6035 112.917 26.5476C104.649 18.495 93.7811 14.017 82.3139 13.9369C70.4079 13.8632 59.2034 18.4277 50.7599 26.8135C42.3133 35.1993 37.6624 46.3718 37.6624 58.2714ZM95.2161 139.246V145.582H68.7871V139.246H95.2161ZM96.4557 57.7429C100.213 53.9856 105.415 52.3072 110.598 53.1175C111.411 58.3034 109.733 63.5053 105.975 67.2625C102.218 71.0198 97.0163 72.6982 91.8304 71.8847C91.02 66.702 92.6984 61.5001 96.4557 57.7429ZM58.0246 67.2625C54.2674 63.5053 52.5889 58.3034 53.4025 53.1175C58.5884 52.3072 63.787 53.9856 67.5443 57.7429C71.3016 61.5001 72.98 66.702 72.1696 71.8847C66.987 72.6982 61.7819 71.0198 58.0246 67.2625Z"
-                                fill="#7C6A0A" />
-                            <path
-                                d="M97.8874 31.4418C96.824 30.8076 95.4466 31.1535 94.8124 32.217C94.1782 33.2804 94.5242 34.6578 95.5876 35.292C95.7894 35.4137 95.988 35.5354 96.1866 35.6603C96.5581 35.8974 96.9745 36.0095 97.3845 36.0095C98.1277 36.0095 98.8548 35.6411 99.2808 34.9653C99.9438 33.9178 99.6331 32.5341 98.5857 31.871C98.3551 31.7269 98.1213 31.5828 97.8874 31.4418Z"
-                                fill="#7C6A0A" />
-                            <path
-                                d="M82.2146 27.0664H82C74.7096 27.0664 67.6083 29.6449 62.0125 34.3247C61.0611 35.1191 60.9362 36.5316 61.7306 37.483C62.1726 38.0147 62.81 38.287 63.4507 38.287C63.9567 38.287 64.4692 38.1172 64.8889 37.7648C69.6839 33.7577 75.7603 31.5508 81.9935 31.5508H82.1921C83.7681 31.5604 85.3472 31.7141 86.8879 31.9992C88.1051 32.2266 89.2775 31.4227 89.5049 30.2055C89.7323 28.9883 88.9283 27.8159 87.7111 27.5885C85.9078 27.2554 84.0596 27.0792 82.2146 27.0664Z"
-                                fill="#7C6A0A" />
-                            <path
-                                d="M110.479 126.703C110.424 126.565 110.354 126.437 110.274 126.315C110.191 126.19 110.098 126.078 109.995 125.972C109.89 125.87 109.777 125.777 109.652 125.694C109.531 125.614 109.403 125.543 109.265 125.489C109.13 125.431 108.989 125.389 108.845 125.361C108.118 125.213 107.343 125.454 106.824 125.972C106.718 126.078 106.626 126.19 106.545 126.315C106.462 126.437 106.395 126.565 106.337 126.703C106.283 126.837 106.238 126.978 106.209 127.122C106.18 127.267 106.167 127.414 106.167 127.558C106.167 128.151 106.405 128.727 106.824 129.144C107.241 129.563 107.817 129.8 108.41 129.8C108.554 129.8 108.701 129.787 108.845 129.759C108.989 129.73 109.13 129.685 109.265 129.63C109.403 129.573 109.531 129.506 109.652 129.422C109.777 129.342 109.89 129.249 109.995 129.144C110.412 128.727 110.652 128.151 110.652 127.558C110.652 127.414 110.636 127.267 110.607 127.122C110.578 126.978 110.537 126.837 110.479 126.703Z"
-                                fill="#7C6A0A" />
-                            <path
-                                d="M84.7449 124.24C83.5053 124.24 82.5027 125.242 82.5027 126.482C82.5027 127.721 83.5053 128.724 84.7449 128.724H87.6885C88.9282 128.724 89.9307 127.721 89.9307 126.482C89.9307 125.242 88.9282 124.24 87.6885 124.24H84.7449Z"
-                                fill="#7C6A0A" />
-                        </svg>
+                </div>
+                <div class="furniture">
+                    <h2>Decoración del hogar</h2>
+                    <div class="card-section click-listener">
+                        <div product="product7" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Silla de bambú</h3>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product7" src="./assets/img/furniture/wood-chair.jpg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Disponible en 2 colores: blanco y negro, acabado de bambú.</p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div product="product8" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Banco pequeño</h3>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product8" src="./assets/img/furniture/small-table.jpeg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Ideal para agregar un toque de estilo a tus espacios.</p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div product="product9" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Buró</h3>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product9" src="./assets/img/furniture/stand-table.jpg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Elaborado con bambú, cuenta con 2 compartimentos para guardar cosas.</p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div product="product10" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Cajonera</h3>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product10" src="./assets/img/furniture/mueble.jpg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div product="product11" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Espejo de pared</h3>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product11" src="./assets/img/furniture/mirror.jpg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div product="product12" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Lámpara bambú</h3>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product12" src="./assets/img/furniture/desk-lamp.jpg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div product="product13" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Mesita decorativa</h3>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product13" src="./assets/img/furniture/stand.jpg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div product="product14" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Mesa de desayuno</h3>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product14" src="./assets/img/furniture/mini-table.jpg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div product="product15" class="product-card">
+                            <div class="icon" style="display: flex; justify-content: space-between;">
+                                <h3>Mesa decorativa</h3>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                                        stroke="#3F3F46" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product-image">
+                                <img product="product15" src="./assets/img/furniture/table.jpg" alt="">
+                            </div>
+                            <div class="card-description">
+                                <p>Paquete de 2 unidades hecho 100% de materiales ecológicos.</p>
+                                <h3 style="width: 100%; text-align: right; font-size: 22px;">$100</h3>
+                                <div class="card-description-footer">
+                                    <button type="button">
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="info-section">
+                <div class="info-materiales">
+                    <img src="./assets/muestrario/main-gallery/chuttersnap-BofgeVFG-_w-unsplash.jpg" alt="">
+                    <p>
+                        El bambú es la planta con mayor velocidad de
+                        crecimiento del mundo. ¿Sabías que la mayoría de las plantas de bambú crecen entre 5 y 20
+                        centímetros cada día? </p>
+                </div>
+                <div class="about-us">
+                    <h2>¿Por qué nosotros?</h2>
+                    <div class="mision-section">
+                        <div class="earth">
+                            <!-- <img src="./assets/img/earth.png" alt="earth-img"> -->
+                            <svg width="164" height="164" viewBox="0 0 164 164" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M158.647 55.9394H143.119C141.394 51.8874 139.268 48.018 136.773 44.3889C135.689 42.8129 134.542 41.2947 133.333 39.834C134.522 37.2139 134.983 33.9179 134.698 29.978C134.659 29.4383 134.426 28.9308 134.042 28.5494C133.658 28.1679 133.149 27.9381 132.609 27.9024C128.548 27.6109 125.175 28.1074 122.519 29.3822C115.457 23.9448 107.373 19.982 98.7491 17.7293C99.2265 15.4386 99.3657 13.0903 99.1623 10.7593C99.1236 10.2216 98.8925 9.7158 98.5113 9.3346C98.1301 8.9534 97.6243 8.72231 97.0866 8.68365C90.7188 8.2256 86.0359 9.70545 83.1658 13.0815C82.7269 13.5952 82.3365 14.1485 81.9999 14.7344C81.6638 14.1452 81.2734 13.5886 80.834 13.0719C77.9512 9.69584 73.2842 8.21599 66.9132 8.67404C66.3755 8.7127 65.8697 8.94379 65.4885 9.32499C65.1073 9.70619 64.8762 10.212 64.8376 10.7497C64.6332 13.0731 64.7714 15.414 65.2476 17.6972C63.3257 18.1927 61.4358 18.7746 59.578 19.4429C52.3971 22.035 45.7136 25.8388 39.8179 30.6891C36.9351 28.4469 32.8287 27.5148 27.5788 27.8928C27.0411 27.9314 26.5353 28.1625 26.1541 28.5437C25.7729 28.9249 25.5418 29.4307 25.5032 29.9684C25.1092 35.4137 26.1438 39.6226 28.5558 42.5247C20.9372 52.8507 16.4696 65.1608 15.692 77.9696C14.9145 90.7784 17.8603 103.539 24.1739 114.71C26.9919 119.675 30.4368 124.257 34.4239 128.343H27.0279C24.9737 128.345 23.0043 129.162 21.5518 130.615C20.0992 132.068 19.2821 134.037 19.2795 136.091C19.2795 136.957 18.9356 137.787 18.3235 138.399C17.7114 139.011 16.8812 139.355 16.0155 139.355H4.93591C4.34125 139.355 3.77094 139.591 3.35045 140.012C2.92996 140.432 2.69373 141.003 2.69373 141.597C2.69373 142.192 2.92996 142.762 3.35045 143.183C3.77094 143.603 4.34125 143.84 4.93591 143.84H16.0155C18.0694 143.837 20.0385 143.02 21.4905 141.567C22.9425 140.114 23.759 138.145 23.7607 136.091C23.7615 135.226 24.1057 134.396 24.7176 133.784C25.3295 133.172 26.1593 132.828 27.0247 132.827H39.2286C51.15 142.88 66.2358 148.405 81.8301 148.43H81.9999C90.872 148.46 99.6588 146.698 107.833 143.249C116.007 139.8 123.401 134.735 129.57 128.359C132.046 125.818 134.316 123.083 136.357 120.181C142.38 111.594 146.289 101.705 147.764 91.32C149.239 80.9351 148.239 70.3486 144.845 60.4237H158.647C159.242 60.4237 159.812 60.1875 160.233 59.767C160.653 59.3465 160.89 58.7762 160.89 58.1815C160.89 57.5869 160.653 57.0166 160.233 56.5961C159.812 56.1756 159.242 55.9394 158.647 55.9394ZM127.404 40.4683C125.204 42.3517 122.106 42.4382 120.3 42.2908C120.156 40.4875 120.242 37.3965 122.103 35.2055C123.727 33.2837 126.472 32.3227 130.284 32.3227C130.265 36.1056 129.297 38.8443 127.404 40.4683ZM86.5804 15.9868C88.2044 14.0649 90.9494 13.104 94.7612 13.104C94.7419 16.9029 93.7746 19.6447 91.8783 21.2655C89.6874 23.1329 86.5836 23.2226 84.777 23.0625C84.6329 21.2687 84.7194 18.1777 86.5804 15.9868ZM77.4034 15.9676C79.2869 18.1681 79.3733 21.2687 79.2228 23.0721C77.4162 23.2194 74.3188 23.1329 72.1183 21.2495C70.2252 19.6287 69.2579 16.8869 69.2355 13.0879C73.0312 13.1072 75.7794 14.0713 77.4034 15.9676ZM55.4268 32.3035C55.4076 36.1024 54.4434 38.8411 52.544 40.4651C50.3434 42.3517 47.2428 42.435 45.4394 42.2876C45.2921 40.4811 45.3754 37.3836 47.2588 35.1831C48.886 33.2901 51.6279 32.3227 55.414 32.3067L55.4268 32.3035ZM38.069 35.1863C39.9525 37.3836 40.039 40.4843 39.8916 42.2876C38.0883 42.435 34.994 42.3485 32.8031 40.4843C30.8812 38.8635 29.9203 36.1152 29.9203 32.3067C33.7032 32.3259 36.4451 33.2901 38.069 35.1863ZM37.4284 98.5794C37.4956 99.0837 37.5288 99.592 37.5277 100.101C37.5161 102.889 36.5041 105.579 34.6759 107.684C32.8476 109.788 30.3247 111.167 27.566 111.568C23.3597 103.813 20.8554 95.2502 20.2202 86.4508C19.585 77.6514 20.8335 68.8178 23.8824 60.539C27.1447 59.6244 30.6125 59.7632 33.7913 60.9356C36.9701 62.108 39.6976 64.2541 41.5848 67.068C43.4719 69.8819 44.4224 73.2198 44.3007 76.6057C44.179 79.9916 42.9913 83.2527 40.907 85.9238C39.5226 87.7003 38.5029 89.7329 37.9065 91.9048C37.3101 94.0766 37.1487 96.3449 37.4316 98.5794H37.4284ZM85.4048 143.852C85.4048 143.612 85.4048 143.426 85.4048 143.33C85.4065 140.809 86.4085 138.391 88.1908 136.607C89.9731 134.824 92.3903 133.82 94.9117 133.817C98.6433 133.817 101.34 135.867 102.948 137.59C103.56 138.249 104.112 138.961 104.598 139.717C98.4622 142.112 91.9824 143.508 85.4048 143.852ZM143.942 82.1697C143.935 94.857 140.006 107.232 132.693 117.6C126.45 126.475 118.001 133.569 108.179 138.183C107.489 137.033 106.68 135.959 105.764 134.98C102.756 131.761 98.906 129.986 94.9181 129.986C91.3778 129.991 87.984 131.4 85.4811 133.904C82.9783 136.408 81.5709 139.803 81.5675 143.343C81.5675 143.449 81.5675 143.663 81.5675 143.952C70.5501 143.879 59.7519 140.866 50.289 135.223C49.0269 134.467 47.7959 133.669 46.5958 132.827H54.5876C55.1822 132.827 55.7525 132.591 56.173 132.17C56.5935 131.75 56.8298 131.18 56.8298 130.585C56.8298 129.99 56.5935 129.42 56.173 129C55.7525 128.579 55.1822 128.343 54.5876 128.343H40.9102C36.5466 124.471 32.749 120.005 29.6288 115.075C33.3169 114.168 36.5409 111.933 38.6838 108.797C40.8267 105.661 41.738 101.845 41.2433 98.0797C41.0235 96.349 41.1484 94.5919 41.6107 92.9097C42.0731 91.2275 42.8637 89.6534 43.9372 88.2781C46.2843 85.271 47.7193 81.6536 48.0717 77.8553C48.4242 74.0571 47.6794 70.2374 45.9258 66.8498C44.1721 63.4621 41.4832 60.6488 38.1783 58.7439C34.8734 56.8389 31.0913 55.9222 27.2809 56.1027C26.7332 56.1283 26.1887 56.1796 25.6473 56.2501C27.3993 52.4015 29.5462 48.7452 32.0536 45.3402C34.1406 46.3545 36.4376 46.8616 38.7577 46.8201C39.1837 46.8201 39.5841 46.8201 39.9557 46.7816V54.5268C39.9557 55.1214 40.1919 55.6917 40.6124 56.1122C41.0329 56.5327 41.6032 56.769 42.1979 56.769C42.7925 56.769 43.3628 56.5327 43.7833 56.1122C44.2038 55.6917 44.4401 55.1214 44.4401 54.5268V46.6951C45.1598 46.7791 45.8839 46.8208 46.6086 46.8201C49.1711 46.8201 52.6497 46.2819 55.4492 43.902C58.8253 41.0192 60.3051 36.3458 59.8439 29.978C59.8053 29.4408 59.5747 28.9355 59.1941 28.5543C58.8136 28.1732 58.3086 27.9418 57.7715 27.9024C55.6162 27.7186 53.446 27.8198 51.3172 28.2035C54.4409 26.4096 57.7165 24.894 61.1059 23.6743C63.0118 22.9888 64.9497 22.393 66.91 21.9158C67.5342 22.9589 68.3239 23.8936 69.2483 24.6833C72.0478 27.0632 75.5168 27.6013 78.0921 27.6013C78.7103 27.6013 79.2805 27.5725 79.7737 27.5276V35.308C79.7737 35.9027 80.01 36.473 80.4305 36.8935C80.851 37.314 81.4212 37.5502 82.0159 37.5502C82.6106 37.5502 83.1809 37.314 83.6014 36.8935C84.0219 36.473 84.2581 35.9027 84.2581 35.308V27.5276C84.7514 27.5725 85.3215 27.6013 85.9397 27.6013C88.5023 27.6013 91.9841 27.0632 94.7836 24.6833C95.7006 23.8985 96.4857 22.9717 97.1091 21.9382C104.94 23.9103 112.31 27.392 118.807 32.1882L118.705 32.3035C118.26 32.8155 117.864 33.3677 117.523 33.9531C117.186 33.3639 116.796 32.8074 116.357 32.2907C113.474 28.9146 108.804 27.4347 102.436 27.8928C101.898 27.9314 101.392 28.1625 101.011 28.5437C100.63 28.9249 100.399 29.4307 100.36 29.9684C99.899 36.3362 101.379 41.0224 104.755 43.8924C107.554 46.2723 111.023 46.8104 113.596 46.8104C114.195 46.8104 114.739 46.7816 115.22 46.74V54.5172C115.22 55.1118 115.456 55.6821 115.876 56.1026C116.297 56.5231 116.867 56.7594 117.462 56.7594C118.056 56.7594 118.627 56.5231 119.047 56.1026C119.468 55.6821 119.704 55.1118 119.704 54.5172V46.74C120.213 46.788 120.803 46.8201 121.446 46.8201C124.009 46.8201 127.491 46.2819 130.29 43.902C130.399 43.8091 130.502 43.7098 130.611 43.6105C131.463 44.6868 132.286 45.7919 133.067 46.9322C135.033 49.7846 136.755 52.7977 138.215 55.9394H131.088C129.034 55.9419 127.066 56.7587 125.614 58.2107C124.162 59.6626 123.345 61.6311 123.343 63.6845C123.341 64.5494 122.996 65.3783 122.385 65.9895C121.773 66.6007 120.944 66.9444 120.079 66.9453H108.996C108.401 66.9453 107.831 67.1815 107.41 67.602C106.99 68.0225 106.754 68.5928 106.754 69.1875C106.754 69.7821 106.99 70.3525 107.41 70.7729C107.831 71.1934 108.401 71.4297 108.996 71.4297H120.079C122.133 71.4271 124.102 70.61 125.555 69.1574C127.007 67.7049 127.824 65.7355 127.827 63.6813C127.829 62.817 128.173 61.9886 128.784 61.3775C129.395 60.7663 130.224 60.4222 131.088 60.4205H140.085C142.665 67.3802 143.972 74.7474 143.942 82.1697ZM114.745 42.2812C112.939 42.4286 109.841 42.3421 107.641 40.4586C105.745 38.8347 104.781 36.096 104.758 32.2971C108.557 32.3163 111.299 33.2804 112.923 35.1799C114.81 37.3869 114.896 40.4875 114.745 42.2812Z"
+                                    fill="#7C6A0A" />
+                                <path
+                                    d="M101.164 80.6101C98.7802 80.6126 96.4944 81.5606 94.8083 83.2462C93.1221 84.9317 92.1733 87.2172 92.1699 89.6013C92.1699 90.2809 92.4399 90.9327 92.9205 91.4132C93.401 91.8938 94.0528 92.1638 94.7324 92.1638C95.412 92.1638 96.0638 91.8938 96.5444 91.4132C97.0249 90.9327 97.2949 90.2809 97.2949 89.6013C97.3239 88.5948 97.7441 87.6392 98.4663 86.9375C99.1885 86.2358 100.156 85.8432 101.163 85.8432C102.17 85.8432 103.137 86.2358 103.859 86.9375C104.581 87.6392 105.001 88.5948 105.03 89.6013C105.03 90.2809 105.3 90.9327 105.781 91.4132C106.262 91.8938 106.913 92.1638 107.593 92.1638C108.273 92.1638 108.924 91.8938 109.405 91.4132C109.885 90.9327 110.155 90.2809 110.155 89.6013C110.153 87.2175 109.205 84.932 107.519 83.2464C105.834 81.5608 103.548 80.6127 101.164 80.6101Z"
+                                    fill="#7C6A0A" />
+                                <path
+                                    d="M92.1505 100.111C91.4709 100.111 90.8191 100.381 90.3386 100.861C89.858 101.342 89.588 101.993 89.588 102.673C89.588 104.976 88.6732 107.185 87.0447 108.813C85.4162 110.442 83.2074 111.357 80.9044 111.357C78.6013 111.357 76.3926 110.442 74.7641 108.813C73.1356 107.185 72.2207 104.976 72.2207 102.673C72.2207 101.993 71.9507 101.342 71.4702 100.861C70.9896 100.381 70.3378 100.111 69.6582 100.111C68.9786 100.111 68.3268 100.381 67.8462 100.861C67.3657 101.342 67.0957 101.993 67.0957 102.673C67.0957 106.335 68.5505 109.848 71.1402 112.437C73.7298 115.027 77.2421 116.482 80.9044 116.482C84.5667 116.482 88.079 115.027 90.6686 112.437C93.2582 109.848 94.713 106.335 94.713 102.673C94.713 101.993 94.4431 101.342 93.9625 100.861C93.482 100.381 92.8302 100.111 92.1505 100.111Z"
+                                    fill="#7C6A0A" />
+                                <path
+                                    d="M69.7097 89.6013C69.6652 87.2456 68.6982 85.0015 67.0166 83.3513C65.335 81.7011 63.073 80.7766 60.7169 80.7766C58.3608 80.7766 56.0988 81.7011 54.4172 83.3513C52.7356 85.0015 51.7686 87.2456 51.7241 89.6013C51.7241 90.2809 51.9941 90.9327 52.4747 91.4132C52.9552 91.8938 53.607 92.1638 54.2866 92.1638C54.9662 92.1638 55.618 91.8938 56.0986 91.4132C56.5791 90.9327 56.8491 90.2809 56.8491 89.6013C56.8781 88.5947 57.2983 87.6391 58.0205 86.9374C58.7427 86.2357 59.7099 85.8432 60.7169 85.8432C61.7238 85.8432 62.6911 86.2357 63.4133 86.9374C64.1355 87.6391 64.5557 88.5947 64.5847 89.6013C64.5847 90.2809 64.8546 90.9327 65.3352 91.4132C65.8158 91.8938 66.4676 92.1638 67.1472 92.1638C67.8268 92.1638 68.4786 91.8938 68.9591 91.4132C69.4397 90.9327 69.7097 90.2809 69.7097 89.6013Z"
+                                    fill="#7C6A0A" />
+                                <path
+                                    d="M149.666 146.274C146.063 144.781 145.3 144.016 143.82 140.415C143.566 139.801 143.135 139.276 142.582 138.906C142.029 138.537 141.378 138.34 140.713 138.34C140.048 138.34 139.398 138.537 138.845 138.906C138.292 139.276 137.861 139.801 137.606 140.415C136.114 144.016 135.348 144.781 131.748 146.274C131.133 146.529 130.608 146.96 130.239 147.513C129.869 148.066 129.672 148.716 129.672 149.381C129.672 150.046 129.869 150.696 130.239 151.249C130.608 151.802 131.133 152.233 131.748 152.488C135.271 153.945 136.146 154.823 137.603 158.343C137.857 158.959 138.288 159.485 138.842 159.855C139.395 160.225 140.046 160.423 140.712 160.423C141.378 160.423 142.028 160.225 142.582 159.855C143.135 159.485 143.566 158.959 143.82 158.343C145.278 154.82 146.155 153.942 149.676 152.485C150.29 152.23 150.815 151.799 151.185 151.246C151.554 150.693 151.751 150.043 151.751 149.378C151.751 148.713 151.554 148.063 151.185 147.51C150.815 146.957 150.29 146.525 149.676 146.271L149.666 146.274ZM140.697 155.848C139.16 152.475 137.603 150.919 134.23 149.381C137.638 147.837 139.15 146.325 140.697 142.914C142.241 146.325 143.753 147.837 147.164 149.381C143.798 150.919 142.238 152.469 140.704 155.848H140.697Z"
+                                    fill="#7C6A0A" />
+                                <path
+                                    d="M8.85047 19.1994C12.3739 20.6568 13.2484 21.5313 14.7058 25.0547C14.9604 25.6691 15.3915 26.1943 15.9445 26.5637C16.4976 26.9332 17.1477 27.1304 17.8128 27.1304C18.4779 27.1304 19.1281 26.9332 19.6811 26.5637C20.2341 26.1943 20.6652 25.6691 20.9198 25.0547C22.3805 21.5313 23.2549 20.6568 26.7784 19.1994C27.3925 18.9441 27.9173 18.5126 28.2865 17.9594C28.6557 17.4061 28.8527 16.7559 28.8527 16.0908C28.8527 15.4257 28.6557 14.7754 28.2865 14.2222C27.9173 13.6689 27.3925 13.2374 26.7784 12.9821C23.178 11.4927 22.4125 10.74 20.923 7.12684C20.6678 6.51266 20.2363 5.98787 19.683 5.61869C19.1298 5.24951 18.4795 5.05249 17.8144 5.05249C17.1493 5.05249 16.4991 5.24951 15.9458 5.61869C15.3926 5.98787 14.9611 6.51266 14.7058 7.12684C13.2163 10.7271 12.4636 11.4927 8.85047 12.9821C8.23629 13.2374 7.7115 13.6689 7.34232 14.2222C6.97314 14.7754 6.77612 15.4257 6.77612 16.0908C6.77612 16.7559 6.97314 17.4061 7.34232 17.9594C7.7115 18.5126 8.23629 18.9441 8.85047 19.1994ZM17.8192 9.62527C19.3599 13.0366 20.8718 14.5453 24.2799 16.0924C20.907 17.6171 19.3503 19.1866 17.8128 22.5595C16.2785 19.1866 14.7346 17.6171 11.3457 16.0924C14.757 14.5453 16.2689 13.0366 17.8128 9.62527H17.8192Z"
+                                    fill="#7C6A0A" />
+                            </svg>
 
-                        <p>Innovando con estilo
-                            el diseño de nuestros
-                            muebles es único.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery">
-                <h2>Galería de estilos</h2>
-                <div class="gallery-images">
-                    <img src="./assets/img/gallery-2.jpg" alt="gallery-2">
-                    <img src="./assets/img/gallery-1.jpg" alt="gallery-1">
-                    <img src="./assets/img/gallery-3.jpg" alt="gallery-3">
-                </div>
-            </div>
-            <div class="location">
-                <h2>Encuéntranos en</h2>
-                <div class="map">
-                    <!-- <img src="./assets/img/map.png" alt="map"> -->
-                    <img src="./assets/background-img/location.png" alt="map">
-                </div>
-                <div class="address">
-                    <h3>Centro Mayor Centro Comercial </h3>
-                    <p>Cl. 38A Sur #34d-51, Bogotá, Colombia</p>
-                </div>
-        </section>
-    </main>
-    <footer>
-        <div class="contact-form">
-            <div class="" style="position: relative; width: 100%;">
-                <h2 class="title-contact">Contacto</h2>
-                <div class="phone-number contact-data">
-                    <div>
-                        <i class="fa-brands fa-whatsapp icon"></i>
-                        <span>(55) 56-67-54-45</span>
-                        <!-- <i class="fa-regular fa-copy icon"></i> -->
-                    </div>
-                </div>
-                <div class="email contact-data">
-                    <div>
-                        <i class="fa-regular fa-envelope icon"></i>
-                        <span>eco-store@email.com</span>
-                    </div>
-                </div>
-                <p style="display: block;">
-                    Llena el formulario y uno de nuestros vendedores te respondera a la
-                    brevedad.</p>
-                <div class="form-container">
-                    <form action="" enctype="multipart/form-data">
-                        <div class="form-control">
-                            <!-- <label for="">Nombre</label> -->
-                            <i class="fa-solid fa-user icon"></i>
-                            <input type="text" name="fullname" placeholder="Ingresa tu nombre" autocomplete="name"
-                                required>
-                            <div>
-                                <span><i class="fa-solid fa-check icon"></i></span>
-                            </div>
+                            <p>Compromiso con el medio
+                                ambiente garantizando
+                                el uso de materiales
+                                100% reciclables.</p>
                         </div>
-                        <div class="form-control">
-                            <!-- <label for="">Email</label> -->
-                            <i class="fa-solid fa-envelope icon"></i>
-                            <input type="email" name="email" placeholder="Ingresa tu email" autocomplete="email"
-                                required>
-                            <div>
-                                <span><i class="fa-solid fa-check icon"></i></span>
-                            </div>
+                        <div class="innovation">
+                            <!-- <img src="./assets/img/ecology.png" alt="ecology-img"> -->
+                            <svg width="164" height="164" viewBox="0 0 164 164" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M37.6624 58.2714C37.6624 69.7738 42.0474 80.6772 50.0136 88.9733C56.375 95.6006 59.8888 104.384 59.9113 113.721H56.5736C54.7959 113.721 53.3513 115.165 53.3513 116.943V136.024C53.3513 137.802 54.7959 139.246 56.5736 139.246H64.3027V147.824C64.3027 149.064 65.3053 150.067 66.5449 150.067H97.4583C98.6979 150.067 99.7005 149.064 99.7005 147.824V139.246H107.43C109.207 139.246 110.652 137.802 110.652 136.024V133.618C110.652 132.379 109.649 131.376 108.41 131.376C107.17 131.376 106.168 132.379 106.168 133.618V134.762H97.4583H66.5449H57.8356V128.724H74.0627C75.3023 128.724 76.3049 127.722 76.3049 126.482C76.3049 125.242 75.3023 124.24 74.0627 124.24H57.8356V118.202H106.168V119.899C106.168 121.139 107.17 122.142 108.41 122.142C109.649 122.142 110.652 121.139 110.652 119.899V116.943C110.652 115.165 109.207 113.721 107.43 113.721H101.859C101.856 113.721 101.853 113.721 101.85 113.721H84.2422V84.0661L90.783 76.2601C91.9938 76.4715 93.2077 76.5772 94.4121 76.5772C99.8831 76.5772 105.155 74.4279 109.146 70.4368C114.352 65.2318 116.424 57.8486 114.681 50.6864C114.483 49.8728 113.845 49.2354 113.032 49.0368C105.873 47.3007 98.4897 49.3699 93.2846 54.575C88.355 59.5046 86.2377 66.3913 87.5062 73.1883L82 79.7547L76.4938 73.1851C77.7623 66.3849 75.645 59.5014 70.7154 54.5718C65.5103 49.3667 58.1303 47.2975 50.9681 49.0336C50.1513 49.2322 49.5171 49.8664 49.3185 50.6832C47.5792 57.8421 49.6484 65.2253 54.8535 70.4336C58.8446 74.4247 64.117 76.574 69.5879 76.574C70.7923 76.574 72.0031 76.4683 73.217 76.2569L79.7578 84.0629V113.717H64.3956C64.37 103.221 60.4142 93.3328 53.2488 85.8663C46.0898 78.4094 42.1467 68.6111 42.1467 58.2714C42.1467 47.5729 46.3268 37.5311 53.9182 29.9942C61.5064 22.4572 71.5738 18.354 82.2819 18.4213C103.406 18.5654 121.152 35.8495 121.834 56.9485C122.18 67.6854 118.314 77.8873 110.943 85.6677C105.729 91.1739 102.128 97.9229 100.533 105.181C100.267 106.392 101.033 107.587 102.244 107.853C103.451 108.118 104.649 107.353 104.915 106.142C106.334 99.6814 109.544 93.6659 114.201 88.7523C122.401 80.0943 126.703 68.7488 126.318 56.8043C125.947 45.3468 121.187 34.6035 112.917 26.5476C104.649 18.495 93.7811 14.017 82.3139 13.9369C70.4079 13.8632 59.2034 18.4277 50.7599 26.8135C42.3133 35.1993 37.6624 46.3718 37.6624 58.2714ZM95.2161 139.246V145.582H68.7871V139.246H95.2161ZM96.4557 57.7429C100.213 53.9856 105.415 52.3072 110.598 53.1175C111.411 58.3034 109.733 63.5053 105.975 67.2625C102.218 71.0198 97.0163 72.6982 91.8304 71.8847C91.02 66.702 92.6984 61.5001 96.4557 57.7429ZM58.0246 67.2625C54.2674 63.5053 52.5889 58.3034 53.4025 53.1175C58.5884 52.3072 63.787 53.9856 67.5443 57.7429C71.3016 61.5001 72.98 66.702 72.1696 71.8847C66.987 72.6982 61.7819 71.0198 58.0246 67.2625Z"
+                                    fill="#7C6A0A" />
+                                <path
+                                    d="M97.8874 31.4418C96.824 30.8076 95.4466 31.1535 94.8124 32.217C94.1782 33.2804 94.5242 34.6578 95.5876 35.292C95.7894 35.4137 95.988 35.5354 96.1866 35.6603C96.5581 35.8974 96.9745 36.0095 97.3845 36.0095C98.1277 36.0095 98.8548 35.6411 99.2808 34.9653C99.9438 33.9178 99.6331 32.5341 98.5857 31.871C98.3551 31.7269 98.1213 31.5828 97.8874 31.4418Z"
+                                    fill="#7C6A0A" />
+                                <path
+                                    d="M82.2146 27.0664H82C74.7096 27.0664 67.6083 29.6449 62.0125 34.3247C61.0611 35.1191 60.9362 36.5316 61.7306 37.483C62.1726 38.0147 62.81 38.287 63.4507 38.287C63.9567 38.287 64.4692 38.1172 64.8889 37.7648C69.6839 33.7577 75.7603 31.5508 81.9935 31.5508H82.1921C83.7681 31.5604 85.3472 31.7141 86.8879 31.9992C88.1051 32.2266 89.2775 31.4227 89.5049 30.2055C89.7323 28.9883 88.9283 27.8159 87.7111 27.5885C85.9078 27.2554 84.0596 27.0792 82.2146 27.0664Z"
+                                    fill="#7C6A0A" />
+                                <path
+                                    d="M110.479 126.703C110.424 126.565 110.354 126.437 110.274 126.315C110.191 126.19 110.098 126.078 109.995 125.972C109.89 125.87 109.777 125.777 109.652 125.694C109.531 125.614 109.403 125.543 109.265 125.489C109.13 125.431 108.989 125.389 108.845 125.361C108.118 125.213 107.343 125.454 106.824 125.972C106.718 126.078 106.626 126.19 106.545 126.315C106.462 126.437 106.395 126.565 106.337 126.703C106.283 126.837 106.238 126.978 106.209 127.122C106.18 127.267 106.167 127.414 106.167 127.558C106.167 128.151 106.405 128.727 106.824 129.144C107.241 129.563 107.817 129.8 108.41 129.8C108.554 129.8 108.701 129.787 108.845 129.759C108.989 129.73 109.13 129.685 109.265 129.63C109.403 129.573 109.531 129.506 109.652 129.422C109.777 129.342 109.89 129.249 109.995 129.144C110.412 128.727 110.652 128.151 110.652 127.558C110.652 127.414 110.636 127.267 110.607 127.122C110.578 126.978 110.537 126.837 110.479 126.703Z"
+                                    fill="#7C6A0A" />
+                                <path
+                                    d="M84.7449 124.24C83.5053 124.24 82.5027 125.242 82.5027 126.482C82.5027 127.721 83.5053 128.724 84.7449 128.724H87.6885C88.9282 128.724 89.9307 127.721 89.9307 126.482C89.9307 125.242 88.9282 124.24 87.6885 124.24H84.7449Z"
+                                    fill="#7C6A0A" />
+                            </svg>
+
+                            <p>Innovando con estilo
+                                el diseño de nuestros
+                                muebles es único.</p>
                         </div>
-                        <div class="form-control">
-                            <!-- <label for="">Telefono</label> -->
-                            <i class="fa-solid fa-phone icon"></i>
-                            <input type="tel" name="phone-number" placeholder="Ingresa un número" autocomplete="tel">
-                            <div style="width: 50px;">
+                    </div>
+                </div>
+                <div class="gallery">
+                    <h2>Galería de estilos</h2>
+                    <div class="gallery-images">
+                        <img src="./assets/img/gallery-2.jpg" alt="gallery-2">
+                        <img src="./assets/img/gallery-1.jpg" alt="gallery-1">
+                        <img src="./assets/img/gallery-3.jpg" alt="gallery-3">
+                    </div>
+                </div>
+                <div class="location">
+                    <h2>Encuéntranos en</h2>
+                    <div class="map">
+                        <!-- <img src="./assets/img/map.png" alt="map"> -->
+                        <img src="./assets/background-img/location.png" alt="map">
+                    </div>
+                    <div class="address">
+                        <h3>Centro Mayor Centro Comercial </h3>
+                        <p>Cl. 38A Sur #34d-51, Bogotá, Colombia</p>
+                    </div>
+            </section>
+        </main>
+        <footer>
+            <div class="contact-form">
+                <div class="" style="position: relative; width: 100%;">
+                    <h2 class="title-contact">Contacto</h2>
+                    <div class="phone-number contact-data">
+                        <div>
+                            <i class="fa-brands fa-whatsapp icon"></i>
+                            <span>(55) 56-67-54-45</span>
+                            <!-- <i class="fa-regular fa-copy icon"></i> -->
+                        </div>
+                    </div>
+                    <div class="email contact-data">
+                        <div>
+                            <i class="fa-regular fa-envelope icon"></i>
+                            <span>eco-store@email.com</span>
+                        </div>
+                    </div>
+                    <!-- <p style="display: block;">
+                        Llena el formulario y uno de nuestros vendedores te respondera a la
+                        brevedad.</p> -->
+                    <div class="form-container">
+                        <form action="" enctype="multipart/form-data">
+                            <div class="form-control">
+                                <!-- <label for="">Nombre</label> -->
+                                <i class="fa-solid fa-user icon"></i>
+                                <input type="text" name="fullname" placeholder="Ingresa tu nombre" autocomplete="name"
+                                    required>
+                                <div>
+                                    <span><i class="fa-solid fa-check icon"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-control">
+                                <!-- <label for="">Email</label> -->
+                                <i class="fa-solid fa-envelope icon"></i>
+                                <input type="email" name="email" placeholder="Ingresa tu email" autocomplete="email"
+                                    required>
+                                <div>
+                                    <span><i class="fa-solid fa-check icon"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-control">
+                                <!-- <label for="">Telefono</label> -->
+                                <i class="fa-solid fa-phone icon"></i>
+                                <input type="tel" name="phone-number" placeholder="Ingresa un número"
+                                    autocomplete="tel">
+                                <div style="width: 50px;">
+                                    <!-- <span><i class="fa-solid fa-check icon"></i></span> -->
+                                    <!-- <span style="background-color: red;"><i class="fa-solid fa-x icon"></i></span> -->
+                                    <div class="loader-animation"
+                                        style="top: 0; left: 0; width: 25px; height: 25px; border: 5px solid #f3f3f3;border-top: 3px solid #3498db; border-radius: 50%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-control text-area">
+                                <!-- <label for="">Mensaje</label> -->
+                                <textarea name="message" id="" cols="30" rows="10"
+                                    placeholder="Escribenos un mensaje"></textarea>
+                                <div>
+                                    <span>
+                                        <i class="fa-solid fa-x icon"></i>
+                                    </span>
+                                </div>
                                 <!-- <span><i class="fa-solid fa-check icon"></i></span> -->
-                                <!-- <span style="background-color: red;"><i class="fa-solid fa-x icon"></i></span> -->
-                                <div class="loader-animation"
-                                    style="top: 0; left: 0; width: 25px; height: 25px; border: 5px solid #f3f3f3;border-top: 3px solid #3498db; border-radius: 50%;">
-                                </div>
                             </div>
-                        </div>
-                        <div class="form-control text-area">
-                            <!-- <label for="">Mensaje</label> -->
-                            <textarea name="message" id="" cols="30" rows="10"
-                                placeholder="Escribenos un mensaje"></textarea>
-                            <div>
-                                <span>
-                                    <i class="fa-solid fa-x icon"></i>
-                                </span>
-                            </div>
-                            <!-- <span><i class="fa-solid fa-check icon"></i></span> -->
-                        </div>
-                        <input type="submit" value="Enviar" onclick="handlerSubmit(event)">
-                    </form>
+                            <input type="submit" value="Enviar" onclick="handlerSubmit(event)">
+                        </form>
+                    </div>
+                    <!-- laoders -->
+                    <div class="loader-container hidden">
+                        <div class="loader"></div>
+                        <span>Enviando mensaje</span>
+                    </div>
                 </div>
-                <!-- laoders -->
-                <div class="loader-container hidden">
-                    <div class="loader"></div>
-                    <span>Enviando mensaje</span>
-                </div>
-            </div>
 
-            <div class="social-media">
-                <h2>Siguenos en nuestras redes sociales</h2>
-                <div class="social">
-                    <img src="./assets/img/instagram-logo.png" alt="instagram-logo">
-                    <img src="./assets/img/facebook-logo.png" alt="facebook-logo">
-                    <img src="./assets/img/twitter-logo.png" alt="twitter-logo">
+                <div class="social-media">
+                    <h2>Siguenos en nuestras redes sociales</h2>
+                    <div class="social">
+                        <img src="./assets/img/instagram-logo.png" alt="instagram-logo">
+                        <img src="./assets/img/facebook-logo.png" alt="facebook-logo">
+                        <img src="./assets/img/twitter-logo.png" alt="twitter-logo">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="copyright">
-            <span>Eco-Store 2024 &copy;</span>
-        </div>
-    </footer>
-    <div open modal="product-details" class="modal hidden listener-actions">
+            <div class="copyright">
+                <span>Eco-Store 2024 &copy;</span>
+            </div>
+        </footer>
+    </div>
+    <div class="modal hidden loader-wrapper"></div>
+
+    <div modal="product-details" class="modal product-details listener-actions hidden">
         <div class="container-product-details">
             <div class="header-product-details">
-                <!-- <h1>Cuidado de la Salud</h1>
+                <h1>Cuidado de la Salud</h1>
                 <button onclick="closedElement('product-details')">
                     <i modal="close-detail-product" class="fa-solid fa-xmark"></i>
-                </button> -->
+                </button>
             </div>
             <div class="flex-wrap">
-                <!-- renderizado dinamico -->
-                <!-- <div class="product-img-actions">
+                <div class="product-img-actions">
                     <h2>Crema para manos</h2>
                     <img src="./assets/transparent/hand-cream-removebg-preview.png" alt="">
                     <span class="price">$100 MXN</span>
@@ -714,21 +738,172 @@
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
 
 
             </div>
         </div>
         <!-- <p
-                style="position: absolute; bottom:40px; left: 0; background-color: #ECFCD7; color: black; padding: 12px;  border-radius: 0 5px 5px 0;">
-                En tu primera compra llevate otro de regalo!
-            </p>
-            <p
-                style="position: absolute; bottom:100px; left: 0; background-color: #ECFCD7; color: black; padding: 12px;  border-radius: 0 5px 5px 0;">
-                Pide 3 productos y llevate uno gratis!
-            </p> -->
+            style="position: absolute; bottom:40px; left: 0; background-color: #ECFCD7; color: black; padding: 12px;  border-radius: 0 5px 5px 0;">
+            En tu primera compra llevate otro de regalo!
+        </p>
+        <p
+            style="position: absolute; bottom:100px; left: 0; background-color: #ECFCD7; color: black; padding: 12px;  border-radius: 0 5px 5px 0;">
+            Pide 3 productos y llevate uno gratis!
+        </p> -->
     </div>
-    </div>
+
+    <!-- <div open class="modal shopping-cart-wrapper listener"> -->
+    <section shopping-cart class="shopping-cart hidden">
+        <div class="shopping-cart-header">
+            <button shopping-cart class="btn-shopping-cart" onclick="displayMessage(event)">
+                <i close-modal class="fa-solid fa-xmark icon"></i>
+            </button>
+            <span>Carrito de compras</span>
+        </div>
+        <div class="shopping-cart-body">
+            <div class="list-products">
+                <div class="product-cart">
+                    <img src="assets/img/products/hand-cream.jpeg" alt="shopping-cart">
+                    <div class="description-cart-product">
+                        <span>Crema para manos</span>
+                        <p>Crema hidratante con eucalipto ayuda al cuidado de la piel.</p>
+                        <span>$100</span>
+                    </div>
+                    <i class="fa-solid fa-trash icon"></i>
+                </div>
+                <div class="product-cart">
+                    <img src="assets/img/products/hand-cream.jpeg" alt="shopping-cart">
+                    <div class="description-cart-product">
+                        <span>Crema para manos</span>
+                        <p>Crema hidratante con eucalipto ayuda al cuidado de la piel.</p>
+                        <span>$100</span>
+                    </div>
+                    <i class="fa-solid fa-trash icon"></i>
+                </div>
+                <div class="product-cart">
+                    <img src="assets/img/products/hand-cream.jpeg" alt="shopping-cart">
+                    <div class="description-cart-product">
+                        <span>Crema para manos</span>
+                        <p>Crema hidratante con eucalipto ayuda al cuidado de la piel.</p>
+                        <span>$100</span>
+                    </div>
+                    <i class="fa-solid fa-trash icon"></i>
+                </div>
+                <div class="product-cart">
+                    <img src="assets/img/products/hand-cream.jpeg" alt="shopping-cart">
+                    <div class="description-cart-product">
+                        <span>Crema para manos</span>
+                        <p>Crema hidratante con eucalipto ayuda al cuidado de la piel.</p>
+                        <span>$100</span>
+                    </div>
+                    <i class="fa-solid fa-trash icon"></i>
+                </div>
+                <div class="product-cart">
+                    <img src="assets/img/products/hand-cream.jpeg" alt="shopping-cart">
+                    <div class="description-cart-product">
+                        <span>Crema para manos</span>
+                        <p>Crema hidratante con eucalipto ayuda al cuidado de la piel.</p>
+                        <span>$100</span>
+                    </div>
+                    <i class="fa-solid fa-trash icon"></i>
+                </div>
+                <div class="product-cart">
+                    <img src="assets/img/products/hand-cream.jpeg" alt="shopping-cart">
+                    <div class="description-cart-product">
+                        <span>Crema para manos</span>
+                        <p>Crema hidratante con eucalipto ayuda al cuidado de la piel.</p>
+                        <span>$100</span>
+                    </div>
+                    <button class="trash">
+                        <i class="fa-solid fa-trash icon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="amount">
+                    <span>Total $900 MXN</span>
+                </div>
+                <button class="btn-checkout">Checkout</button>
+            </div>
+        </div>
+    </section>
+    <!-- </div> -->
+
+    <section section="hamburger-menu" class="hamburger-menu listener hidden">
+        <div class="hamburger-menu-header">
+            <span>Menu</span>
+            <button btn-hamburger-menu class="btn-hamburger-menu">
+                <i close-hamburger-menu class="fa-solid fa-xmark icon"></i>
+            </button>
+        </div>
+        <div class="menu-list">
+            <div class="menu-options">
+                <button class="profile">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.121 17.804C7.21942 16.6179 9.58958 15.9963 12 16C14.5 16 16.847 16.655 18.879 17.804M15 10C15 10.7956 14.6839 11.5587 14.1213 12.1213C13.5587 12.6839 12.7956 13 12 13C11.2044 13 10.4413 12.6839 9.87868 12.1213C9.31607 11.5587 9 10.7956 9 10C9 9.20435 9.31607 8.44129 9.87868 7.87868C10.4413 7.31607 11.2044 7 12 7C12.7956 7 13.5587 7.31607 14.1213 7.87868C14.6839 8.44129 15 9.20435 15 10ZM21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z"
+                            stroke="#7C6A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                Perfil
+            </div>
+            <div class="menu-options">
+                <button class="wishlist">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.34255 7.7779C3.5687 7.23194 3.90017 6.73586 4.31804 6.31799C4.7359 5.90012 5.23198 5.56865 5.77795 5.3425C6.32392 5.11635 6.90909 4.99995 7.50004 4.99995C8.09099 4.99995 8.67616 5.11635 9.22213 5.3425C9.7681 5.56865 10.2642 5.90012 10.682 6.31799L12 7.63599L13.318 6.31799C14.162 5.47407 15.3066 4.99997 16.5 4.99997C17.6935 4.99997 18.8381 5.47407 19.682 6.31799C20.526 7.16191 21.0001 8.30651 21.0001 9.49999C21.0001 10.6935 20.526 11.8381 19.682 12.682L12 20.364L4.31804 12.682C3.90017 12.2641 3.5687 11.7681 3.34255 11.2221C3.1164 10.6761 3 10.0909 3 9.49999C3 8.90904 3.1164 8.32387 3.34255 7.7779Z"
+                            stroke="#7C6A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                Lista de Deseos
+            </div>
+            <div class="menu-options">
+                <button class="cart">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3 3H5L5.4 5M5.4 5H21L17 13H7M5.4 5L7 13M7 13L4.707 15.293C4.077 15.923 4.523 17 5.414 17H17M17 17C16.4696 17 15.9609 17.2107 15.5858 17.5858C15.2107 17.9609 15 18.4696 15 19C15 19.5304 15.2107 20.0391 15.5858 20.4142C15.9609 20.7893 16.4696 21 17 21C17.5304 21 18.0391 20.7893 18.4142 20.4142C18.7893 20.0391 19 19.5304 19 19C19 18.4696 18.7893 17.9609 18.4142 17.5858C18.0391 17.2107 17.5304 17 17 17ZM9 19C9 19.5304 8.78929 20.0391 8.41421 20.4142C8.03914 20.7893 7.53043 21 7 21C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19C5 18.4696 5.21071 17.9609 5.58579 17.5858C5.96086 17.2107 6.46957 17 7 17C7.53043 17 8.03914 17.2107 8.41421 17.5858C8.78929 17.9609 9 18.4696 9 19Z"
+                            stroke="#7C6A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                Carrito de compras
+            </div>
+            <!-- <div class="menu-options">
+                <button class="toggle prevent-select toggle-efect">
+                    <span><i class="fa-solid fa-sun"></i></span>
+                    <span><i class="fa-solid fa-moon"></i></span>
+                </button>
+            </div> -->
+    </section>
+
+
+    <script>
+        function handleHamburgerMenu(e) {
+            console.log(e.target.hasAttribute('open-hamburger-menu'));
+            let isContent = e.target.tagName === "I" && e.target.hasAttribute('btn-hamburger-menu');
+
+            if (e.target.hasAttribute('close-hamburger-menu') || e.target.hasAttribute('open-hamburger-menu')) {
+                document.body.querySelector('[section="hamburger-menu"]').classList.toggle('hidden');
+            }
+        }
+
+        document.body.querySelector('.hamburger-menu.listener').addEventListener("click", handleHamburgerMenu);
+
+
+        function displayMessage(event) {
+            document.body.querySelector('section[shopping-cart]').classList.toggle('hidden');
+        }
+        document.body.querySelector('.shopping-cart-header.icon');
+
+        let $shopping_cart_wrapper = document.body.querySelector('.shopping-cart-wrapper.listener');
+
+        // $shopping_cart_wrapper.addEventListener("click", function (e) {
+        //     if (e.target.hasAttribute('close-modal')) {
+        //         e.currentTarget.classList.add('hidden');
+        //         handleScrolling();
+        //     }
+        // });
+    </script>
     <script>
         const btnToggle = document.querySelector(".toggle");
 
@@ -752,7 +927,7 @@
             let ref = document.querySelector(`[modal=${elementToClose}]`);
             // ref.remove();
             disableScrolling();
-            console.log(ref.classList.toggle('hidden'));
+            ref.classList.toggle('hidden');
         }
 
         // actions: modal product details

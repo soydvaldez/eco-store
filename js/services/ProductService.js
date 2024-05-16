@@ -6,9 +6,9 @@ function getAll() {
     },
     method: "GET",
   };
-  // https://soydvaldez.github.io/eco-store
-  //   return fetch("http://localhost:3000/users", options)
-  return fetch("/eco-store/js/data/products.json", options)
+  
+  // return fetch("/eco-store/js/data/products.json", options)
+  return fetch("/js/data/products.json", options)
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -51,23 +51,4 @@ async function getById(productIdTofilter) {
 
 //throw new Error("failed to retrieve data");
 
-// Maneja los datos extraidos de la respuesta HTTP del servidor:
-function renderProducts() {
-  getAll()
-    .then((data) => {
-      let element = document.createElement("div");
-      element.classList.add("modal");
-      element.innerHTML = `<div class="container-product-details">
-        ${JSON.stringify(data.products[0])}
-    </div>`;
-      element.style.color = "#000";
-      document.body.appendChild(element);
-    })
-    .catch((err) => {
-      let element = document.createElement("div");
-      element.classList.add("modal");
-      element.innerHTML = `${err}`;
-      element.style.color = "#FFF";
-      document.body.appendChild(element);
-    });
-}
+

@@ -6,7 +6,7 @@
       "name": "Crema para manos",
       "description": "Crema hidratante con eucalipto ayuda al cuidado de la piel.",
       "price": 350,
-      "imgs": "/assets/img/products/hand-cream.jpeg"
+      "imgs": "assets/img/products/hand-cream.jpeg"
     },
     {
       "id": "product2",

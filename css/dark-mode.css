@@ -122,7 +122,7 @@ body.dark-mode footer .contact-form .form-container .form-control span .icon {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 10px 200px;
+    padding: 10px 30px;
   }
   body.dark-mode footer .contact-form h2 {
     width: 100%;

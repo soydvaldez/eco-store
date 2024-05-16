@@ -34,8 +34,13 @@
 body {
   width: 100%;
   height: 100vh;
-  background-color: rgb(236, 252, 215);
   font-family: "IBM Plex Sans", sans-serif;
+}
+
+.page {
+  background-color: #fff;
+  width: 100%;
+  margin: 0 auto;
 }
 
 header {
@@ -50,31 +55,32 @@ header {
   transition: background 0.5s;
 }
 header nav {
-  position: fixed;
-  width: 100%;
-  top: 0px;
-  z-index: 4;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 4;
   color: #7c6a0a;
-  padding: 0 20px;
-  padding-top: 5px;
-  padding-bottom: 25px;
-  display: flex;
-  align-items: flex-end;
+  padding: 15px 30px;
 }
 header nav p {
   position: relative;
   font-size: 1.5em;
   padding-left: 15px;
+  color: #6f8f22;
+}
+header nav .btn-menu {
+  border: none;
+  background-color: transparent;
+}
+header nav .btn-menu .icon.menu {
+  font-size: 18px;
 }
 header nav .icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: none;
   gap: 20px;
 }
 header nav .icons button {
@@ -84,11 +90,6 @@ header nav .icons button {
 }
 header nav .icons button:hover {
   opacity: 0.9;
-}
-header nav .icons .profile,
-header nav .icons .wishlist,
-header nav .icons .cart {
-  display: none;
 }
 header nav .icons .toggle {
   border-radius: 100px;
@@ -156,7 +157,7 @@ header article .impact-section h1 {
 }
 header article .impact-section p {
   width: 100%;
-  text-align: justify;
+  text-align: center;
   margin: 20px 0px;
   font-size: 17px;
   color: #3d9128;
@@ -210,19 +211,21 @@ header article .image-section {
   text-align: center;
 }
 header article .image-section img {
+  display: none;
   width: 10vw;
   border-radius: 5px;
   -o-object-fit: cover;
      object-fit: cover;
-  min-width: 220px;
+  min-width: 320px;
+  max-width: 400px;
 }
 
-section h2 {
+.product-section h2 {
   font-weight: 300;
   color: #7c6a0a;
   padding: 0px 0 30px 30px;
 }
-section .healthcare .card-section, section .furniture .card-section {
+.product-section .healthcare .card-section, .product-section .furniture .card-section {
   width: 100%;
   display: grid;
   grid-auto-flow: column;
@@ -231,7 +234,7 @@ section .healthcare .card-section, section .furniture .card-section {
   justify-content: space-evenly;
   padding-bottom: 20px;
 }
-section .healthcare .card-section .product-card, section .furniture .card-section .product-card {
+.product-section .healthcare .card-section .product-card, .product-section .furniture .card-section .product-card {
   width: auto;
   height: 535px;
   background-color: rgb(255, 255, 255);
@@ -244,7 +247,7 @@ section .healthcare .card-section .product-card, section .furniture .card-sectio
   align-items: center;
   border-radius: 8px;
 }
-section .healthcare .card-section .product-card .icon, section .furniture .card-section .product-card .icon {
+.product-section .healthcare .card-section .product-card .icon, .product-section .furniture .card-section .product-card .icon {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -252,17 +255,17 @@ section .healthcare .card-section .product-card .icon, section .furniture .card-
   align-items: center;
   padding: 10px 0;
 }
-section .healthcare .card-section .product-card .icon svg, section .furniture .card-section .product-card .icon svg {
+.product-section .healthcare .card-section .product-card .icon svg, .product-section .furniture .card-section .product-card .icon svg {
   width: 24px;
   height: 24px;
 }
-section .healthcare .card-section .product-card .icon svg path, section .furniture .card-section .product-card .icon svg path {
+.product-section .healthcare .card-section .product-card .icon svg path, .product-section .furniture .card-section .product-card .icon svg path {
   stroke: #7c6a0a;
 }
-section .healthcare .card-section .product-card .icon h3, section .furniture .card-section .product-card .icon h3 {
+.product-section .healthcare .card-section .product-card .icon h3, .product-section .furniture .card-section .product-card .icon h3 {
   font-size: 17px;
 }
-section .healthcare .card-section .product-card .product-image, section .furniture .card-section .product-card .product-image {
+.product-section .healthcare .card-section .product-card .product-image, .product-section .furniture .card-section .product-card .product-image {
   position: relative;
   width: 100%;
   height: 900px;
@@ -272,7 +275,7 @@ section .healthcare .card-section .product-card .product-image, section .furnitu
   justify-content: center;
   align-items: center;
 }
-section .healthcare .card-section .product-card .product-image img, section .furniture .card-section .product-card .product-image img {
+.product-section .healthcare .card-section .product-card .product-image img, .product-section .furniture .card-section .product-card .product-image img {
   position: relative;
   width: 30vw;
   min-width: 200px;
@@ -282,19 +285,19 @@ section .healthcare .card-section .product-card .product-image img, section .fur
   -o-object-fit: cover;
      object-fit: cover;
 }
-section .healthcare .card-section .product-card .card-description, section .furniture .card-section .product-card .card-description {
+.product-section .healthcare .card-section .product-card .card-description, .product-section .furniture .card-section .product-card .card-description {
   width: 100%;
   height: 100%;
   padding: 0px 15px;
   margin-top: 15px;
   margin-bottom: 20px;
 }
-section .healthcare .card-section .product-card .card-description .card-description-footer, section .furniture .card-section .product-card .card-description .card-description-footer {
+.product-section .healthcare .card-section .product-card .card-description .card-description-footer, .product-section .furniture .card-section .product-card .card-description .card-description-footer {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-section .healthcare .card-section .product-card .card-description .card-description-footer button, section .furniture .card-section .product-card .card-description .card-description-footer button {
+.product-section .healthcare .card-section .product-card .card-description .card-description-footer button, .product-section .furniture .card-section .product-card .card-description .card-description-footer button {
   margin-top: 10px;
   background-color: bisque;
   width: 100%;
@@ -306,18 +309,18 @@ section .healthcare .card-section .product-card .card-description .card-descript
   padding: 15px;
   transition: 0.5s ease transform;
 }
-section .healthcare .card-section .product-card .card-description .card-description-footer button:hover, section .furniture .card-section .product-card .card-description .card-description-footer button:hover {
+.product-section .healthcare .card-section .product-card .card-description .card-description-footer button:hover, .product-section .furniture .card-section .product-card .card-description .card-description-footer button:hover {
   cursor: pointer;
   transform: scale(1.1);
   transition: 0.5s ease transform;
 }
-section .healthcare .card-section .product-card:first-child, section .furniture .card-section .product-card:first-child {
+.product-section .healthcare .card-section .product-card:first-child, .product-section .furniture .card-section .product-card:first-child {
   margin-left: 30px;
 }
-section .healthcare .card-section .product-card:last-child, section .furniture .card-section .product-card:last-child {
+.product-section .healthcare .card-section .product-card:last-child, .product-section .furniture .card-section .product-card:last-child {
   margin-right: 30px;
 }
-section .healthcare .card-section::-webkit-scrollbar, section .furniture .card-section::-webkit-scrollbar {
+.product-section .healthcare .card-section::-webkit-scrollbar, .product-section .furniture .card-section::-webkit-scrollbar {
   display: none;
 }
 
@@ -345,7 +348,12 @@ main .main-gallery img {
           mask-image: linear-gradient(black 95%, transparent);
 }
 main .main-gallery img:hover {
-  opacity: 0.7;
+  opacity: 0.5;
+  cursor: pointer;
+}
+main .main-gallery img:after {
+  position: absolute;
+  content: "instragram";
 }
 main .main-gallery .overlay {
   position: absolute;
@@ -435,7 +443,7 @@ main .gallery .gallery-images img:hover {
 main .location {
   width: 100%;
   height: auto;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 main .location .map {
   width: 100%;
@@ -749,11 +757,15 @@ footer .copyright span {
   width: 100%;
 }
 
-@media (1100px <= width) {
+@media (800px <= width) {
   header {
     height: auto;
   }
   header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
     top: 0;
     padding: 25px 90px;
@@ -762,9 +774,16 @@ footer .copyright span {
   header nav p {
     position: relative;
     font-size: 26px;
-    padding-left: 0px;
+    padding-left: 70px;
+  }
+  header nav button[open-hamburger-menu] {
+    display: none;
   }
   header nav .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     position: relative;
     gap: 50px;
   }
@@ -814,31 +833,35 @@ footer .copyright span {
     margin-bottom: 180px;
     font-size: 15px;
   }
+  header article .image-section {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
   header article .image-section img {
-    width: 35vw;
-    max-width: 530px;
+    display: block;
+    width: 100%;
+    max-width: 400px;
     border-radius: 35px;
     -o-object-fit: contain;
        object-fit: contain;
-    -webkit-mask-image: radial-gradient(black, transparent);
-            mask-image: radial-gradient(black, transparent);
   }
-  section {
+  .product-section {
     width: 100%;
     height: auto;
     padding: 0 70px;
   }
-  section h2 {
+  .product-section h2 {
     color: #7c6a0a;
     font-size: 35px;
     font-weight: 300;
     padding: 0;
     padding-left: 30px;
   }
-  section .healthcare, section .furniture {
+  .product-section .healthcare, .product-section .furniture {
     padding-bottom: 60px;
   }
-  section .healthcare .card-section, section .furniture .card-section {
+  .product-section .healthcare .card-section, .product-section .furniture .card-section {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -850,7 +873,7 @@ footer .copyright span {
     margin: 0 auto;
     row-gap: 20px;
   }
-  section .healthcare .card-section .product-card, section .furniture .card-section .product-card {
+  .product-section .healthcare .card-section .product-card, .product-section .furniture .card-section .product-card {
     color: 1px solid #fff;
     width: 40vw;
     min-width: 450px;
@@ -864,7 +887,7 @@ footer .copyright span {
     justify-content: space-evenly;
     margin-top: 20px;
   }
-  section .healthcare .card-section .product-card .icon, section .furniture .card-section .product-card .icon {
+  .product-section .healthcare .card-section .product-card .icon, .product-section .furniture .card-section .product-card .icon {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -872,30 +895,30 @@ footer .copyright span {
     align-items: center;
     padding: 20px 25px;
   }
-  section .healthcare .card-section .product-card .icon svg, section .furniture .card-section .product-card .icon svg {
+  .product-section .healthcare .card-section .product-card .icon svg, .product-section .furniture .card-section .product-card .icon svg {
     width: 32px;
     height: 32px;
     cursor: pointer;
   }
-  section .healthcare .card-section .product-card .icon svg:active, section .furniture .card-section .product-card .icon svg:active {
+  .product-section .healthcare .card-section .product-card .icon svg:active, .product-section .furniture .card-section .product-card .icon svg:active {
     fill: #7c6a0a;
   }
-  section .healthcare .card-section .product-card .icon svg path, section .furniture .card-section .product-card .icon svg path {
+  .product-section .healthcare .card-section .product-card .icon svg path, .product-section .furniture .card-section .product-card .icon svg path {
     stroke: #7c6a0a;
     transition: all 0.5s ease-in-out;
   }
-  section .healthcare .card-section .product-card .icon svg:hover path, section .furniture .card-section .product-card .icon svg:hover path {
+  .product-section .healthcare .card-section .product-card .icon svg:hover path, .product-section .furniture .card-section .product-card .icon svg:hover path {
     stroke: #7c6a0a;
     transition: all 0.5s ease-in-out;
   }
-  section .healthcare .card-section .product-card .product-image, section .furniture .card-section .product-card .product-image {
+  .product-section .healthcare .card-section .product-card .product-image, .product-section .furniture .card-section .product-card .product-image {
     position: relative;
     width: 100%;
     max-height: 450px;
     height: auto;
     transition: 0.5s ease all;
   }
-  section .healthcare .card-section .product-card .product-image img, section .furniture .card-section .product-card .product-image img {
+  .product-section .healthcare .card-section .product-card .product-image img, .product-section .furniture .card-section .product-card .product-image img {
     width: 50%;
     max-width: 300px;
     height: auto;
@@ -904,21 +927,21 @@ footer .copyright span {
     -o-object-fit: contain;
        object-fit: contain;
   }
-  section .healthcare .card-section .product-card .product-image:hover, section .furniture .card-section .product-card .product-image:hover {
+  .product-section .healthcare .card-section .product-card .product-image:hover, .product-section .furniture .card-section .product-card .product-image:hover {
     transition: 0.5s ease all;
     cursor: pointer;
     opacity: 0.8;
   }
-  section .healthcare .card-section .product-card .card-description, section .furniture .card-section .product-card .card-description {
+  .product-section .healthcare .card-section .product-card .card-description, .product-section .furniture .card-section .product-card .card-description {
     margin: 20px 0;
     width: 80%;
     min-width: 260px;
     height: 150px;
   }
-  section .healthcare .card-section .product-card:first-child, section .furniture .card-section .product-card:first-child {
+  .product-section .healthcare .card-section .product-card:first-child, .product-section .furniture .card-section .product-card:first-child {
     margin-left: 0;
   }
-  section .healthcare .card-section .product-card:last-child, section .furniture .card-section .product-card:last-child {
+  .product-section .healthcare .card-section .product-card:last-child, .product-section .furniture .card-section .product-card:last-child {
     margin-right: 0;
   }
   main .main-gallery {
@@ -987,8 +1010,7 @@ footer .copyright span {
   }
   main .info-section .gallery .gallery-images img {
     border-radius: 16px;
-    width: 28vw;
-    height: 34vh;
+    width: 20vw;
     -o-object-fit: cover;
        object-fit: cover;
   }
@@ -1214,9 +1236,9 @@ footer .copyright span {
     font-weight: 500;
     margin: 10px 0;
     font-size: 14px;
+    padding: 0 60px;
   }
   footer .copyright span {
-    padding-left: 240px;
     width: 100%;
   }
 }
@@ -1227,4 +1249,17 @@ footer .copyright span {
 .toggle-efect {
   transition: left 5s;
   transition: right 5s;
+}
+
+@media (1500px <= width) {
+  header article {
+    margin: 0 300px;
+  }
+  header article .image-section img {
+    width: 35%;
+  }
+  main {
+    width: 80%;
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=main.css.map */

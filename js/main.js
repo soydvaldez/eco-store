@@ -47,7 +47,7 @@ function print() {
 }
 
 function renderProductDetails() {
-  document.body.querySelector(".modal").classList.remove("hidden");
+  document.body.querySelector(".modal.product-details").classList.remove("hidden");
   //Existe un modal abierto: si-cierralo y crea otro
   // if (document.querySelector('[modal="product-details"]')) {
   //   document.querySelector('[modal="product-details"]').remove();
@@ -79,7 +79,7 @@ function renderProductDetails() {
   let $flexWrap = document.body.querySelector(".flex-wrap");
   $flexWrap.innerHTML = `<div class="product-img-actions">
   <h2>${selectedProductCard.name}</h2>
-  <img src="${window.location.href}${selectedProductCard.imgs}" alt="">
+  <img src="${selectedProductCard.imgs}" alt="">
   <span class="price">$${selectedProductCard.price} MXN</span>
   <div class="container-collapsible">
       <div class="collapsible description">
@@ -93,11 +93,11 @@ function renderProductDetails() {
   <div class="actions">
       <button action="addToCart" class="button-product">
           <i class="fa-solid fa-cart-shopping"></i>
-          Agregar al carrito
+          <span>Agregar al carrito</span>
       </button>
       <button action="addToWishList" class="button-product">
           <i class="fa-solid fa-heart"></i>
-          Agregar a la lista de deseos
+          <span>Agregar a la lista de deseos</span>
       </button>
   </div>
 </div>
