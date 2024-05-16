@@ -7,8 +7,8 @@ function getAll() {
     method: "GET",
   };
   
-  // return fetch("/eco-store/js/data/products.json", options)
-  return fetch("/js/data/products.json", options)
+  // return fetch("/js/data/products.json", options)
+  return fetch("/eco-store/js/data/products.json", options)
     .then((response) => {
       if (response.ok) {
         return response.json();
